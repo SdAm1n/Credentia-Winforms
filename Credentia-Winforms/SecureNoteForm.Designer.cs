@@ -1,6 +1,6 @@
 ﻿namespace Credentia_Winforms
 {
-    partial class AllLoginsForm
+    partial class SecureNoteForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,27 +34,23 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(334, 195);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(353, 233);
             label1.Name = "label1";
-            label1.Size = new Size(119, 21);
+            label1.Size = new Size(95, 21);
             label1.TabIndex = 0;
-            label1.Text = "All Logins Form";
-            label1.Click += label1_Click;
+            label1.Text = "Secure Note";
             // 
-            // AllLoginsForm
+            // SecureNoteForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(791, 552);
+            ClientSize = new Size(1029, 630);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
-            Name = "AllLoginsForm";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "AllLoginsForm";
-            Load += AllLoginsForm_Load;
+            Margin = new Padding(4, 4, 4, 4);
+            Name = "SecureNoteForm";
+            Text = "SecureNoteForm";
             ResumeLayout(false);
             PerformLayout();
         }

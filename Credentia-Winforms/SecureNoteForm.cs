@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Credentia_Winforms
 {
-    public partial class AllLoginsForm : Form
+    public partial class SecureNoteForm : Form
     {
-        public AllLoginsForm()
+        public SecureNoteForm()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AllLoginsForm_Load(object sender, EventArgs e)
-        {
-            this.ControlBox = false;
         }
     }
 }

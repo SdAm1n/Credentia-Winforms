@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeForm));
             LoginsMenuBtn = new Button();
             CardMenuBtn = new Button();
@@ -37,10 +36,11 @@
             PasswordGeneratorMenuBtn = new Button();
             SettingsMenuBtn = new Button();
             LogoutMenuBtn = new Button();
-            sidebarTransition = new System.Windows.Forms.Timer(components);
             sidebarLayout = new FlowLayoutPanel();
+            panel1 = new Panel();
             MenuHamBtn = new Button();
             sidebarLayout.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // LoginsMenuBtn
@@ -49,7 +49,7 @@
             LoginsMenuBtn.BackColor = Color.FromArgb(248, 251, 252);
             LoginsMenuBtn.Image = (Image)resources.GetObject("LoginsMenuBtn.Image");
             LoginsMenuBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            LoginsMenuBtn.Location = new Point(3, 39);
+            LoginsMenuBtn.Location = new Point(3, 64);
             LoginsMenuBtn.Name = "LoginsMenuBtn";
             LoginsMenuBtn.Size = new Size(248, 43);
             LoginsMenuBtn.TabIndex = 0;
@@ -65,7 +65,7 @@
             CardMenuBtn.BackColor = Color.FromArgb(248, 251, 252);
             CardMenuBtn.Image = (Image)resources.GetObject("CardMenuBtn.Image");
             CardMenuBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            CardMenuBtn.Location = new Point(3, 88);
+            CardMenuBtn.Location = new Point(3, 113);
             CardMenuBtn.Name = "CardMenuBtn";
             CardMenuBtn.Size = new Size(248, 43);
             CardMenuBtn.TabIndex = 0;
@@ -81,7 +81,7 @@
             IdentityMenuBtn.BackColor = Color.FromArgb(248, 251, 252);
             IdentityMenuBtn.Image = (Image)resources.GetObject("IdentityMenuBtn.Image");
             IdentityMenuBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            IdentityMenuBtn.Location = new Point(3, 137);
+            IdentityMenuBtn.Location = new Point(3, 162);
             IdentityMenuBtn.Name = "IdentityMenuBtn";
             IdentityMenuBtn.Size = new Size(248, 43);
             IdentityMenuBtn.TabIndex = 0;
@@ -97,7 +97,7 @@
             SecureNoteMenuBtn.BackColor = Color.FromArgb(248, 251, 252);
             SecureNoteMenuBtn.Image = (Image)resources.GetObject("SecureNoteMenuBtn.Image");
             SecureNoteMenuBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            SecureNoteMenuBtn.Location = new Point(3, 186);
+            SecureNoteMenuBtn.Location = new Point(3, 211);
             SecureNoteMenuBtn.Name = "SecureNoteMenuBtn";
             SecureNoteMenuBtn.Size = new Size(248, 43);
             SecureNoteMenuBtn.TabIndex = 0;
@@ -113,7 +113,7 @@
             PasswordGeneratorMenuBtn.BackColor = Color.FromArgb(248, 251, 252);
             PasswordGeneratorMenuBtn.Image = (Image)resources.GetObject("PasswordGeneratorMenuBtn.Image");
             PasswordGeneratorMenuBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            PasswordGeneratorMenuBtn.Location = new Point(3, 235);
+            PasswordGeneratorMenuBtn.Location = new Point(3, 260);
             PasswordGeneratorMenuBtn.Name = "PasswordGeneratorMenuBtn";
             PasswordGeneratorMenuBtn.Size = new Size(248, 43);
             PasswordGeneratorMenuBtn.TabIndex = 0;
@@ -129,7 +129,7 @@
             SettingsMenuBtn.BackColor = Color.FromArgb(248, 251, 252);
             SettingsMenuBtn.Image = (Image)resources.GetObject("SettingsMenuBtn.Image");
             SettingsMenuBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            SettingsMenuBtn.Location = new Point(3, 284);
+            SettingsMenuBtn.Location = new Point(3, 309);
             SettingsMenuBtn.Name = "SettingsMenuBtn";
             SettingsMenuBtn.Size = new Size(248, 43);
             SettingsMenuBtn.TabIndex = 0;
@@ -145,7 +145,7 @@
             LogoutMenuBtn.BackColor = Color.FromArgb(248, 251, 252);
             LogoutMenuBtn.Image = (Image)resources.GetObject("LogoutMenuBtn.Image");
             LogoutMenuBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            LogoutMenuBtn.Location = new Point(3, 333);
+            LogoutMenuBtn.Location = new Point(3, 358);
             LogoutMenuBtn.Name = "LogoutMenuBtn";
             LogoutMenuBtn.Size = new Size(248, 43);
             LogoutMenuBtn.TabIndex = 0;
@@ -156,16 +156,10 @@
             LogoutMenuBtn.UseVisualStyleBackColor = false;
             LogoutMenuBtn.Click += LogoutMenuBtn_Click;
             // 
-            // sidebarTransition
-            // 
-            sidebarTransition.Enabled = true;
-            sidebarTransition.Interval = 10;
-            sidebarTransition.Tick += sidebarTransition_Tick;
-            // 
             // sidebarLayout
             // 
             sidebarLayout.BackColor = Color.FromArgb(248, 251, 252);
-            sidebarLayout.Controls.Add(MenuHamBtn);
+            sidebarLayout.Controls.Add(panel1);
             sidebarLayout.Controls.Add(LoginsMenuBtn);
             sidebarLayout.Controls.Add(CardMenuBtn);
             sidebarLayout.Controls.Add(IdentityMenuBtn);
@@ -174,17 +168,27 @@
             sidebarLayout.Controls.Add(SettingsMenuBtn);
             sidebarLayout.Controls.Add(LogoutMenuBtn);
             sidebarLayout.Dock = DockStyle.Left;
+            sidebarLayout.FlowDirection = FlowDirection.TopDown;
             sidebarLayout.Location = new Point(0, 0);
             sidebarLayout.Name = "sidebarLayout";
             sidebarLayout.Size = new Size(251, 630);
             sidebarLayout.TabIndex = 3;
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Left;
+            panel1.Controls.Add(MenuHamBtn);
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(36, 55);
+            panel1.TabIndex = 5;
+            // 
             // MenuHamBtn
             // 
             MenuHamBtn.Image = Properties.Resources.Menu;
-            MenuHamBtn.Location = new Point(3, 3);
+            MenuHamBtn.Location = new Point(0, 3);
             MenuHamBtn.Name = "MenuHamBtn";
-            MenuHamBtn.Size = new Size(37, 30);
+            MenuHamBtn.Size = new Size(33, 30);
             MenuHamBtn.TabIndex = 4;
             MenuHamBtn.UseVisualStyleBackColor = true;
             MenuHamBtn.Click += MenuHamBtn_Click;
@@ -193,13 +197,18 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(248, 251, 252);
             ClientSize = new Size(1029, 630);
             Controls.Add(sidebarLayout);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = Color.Black;
+            IsMdiContainer = true;
             Margin = new Padding(4);
             Name = "HomeForm";
-            Text = "HomeForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Credentia";
             sidebarLayout.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -211,8 +220,8 @@
         private Button PasswordGeneratorMenuBtn;
         private Button SettingsMenuBtn;
         private Button LogoutMenuBtn;
-        private System.Windows.Forms.Timer sidebarTransition;
         private FlowLayoutPanel sidebarLayout;
         private Button MenuHamBtn;
+        private Panel panel1;
     }
 }
