@@ -101,9 +101,9 @@
             DockPanel2.Controls.Add(UsernameTextBox);
             DockPanel2.Controls.Add(PasswordLabel);
             DockPanel2.Controls.Add(UsernameLabel);
-            DockPanel2.Location = new Point(414, 79);
+            DockPanel2.Location = new Point(414, 72);
             DockPanel2.Name = "DockPanel2";
-            DockPanel2.Size = new Size(612, 472);
+            DockPanel2.Size = new Size(612, 485);
             DockPanel2.TabIndex = 1;
             // 
             // CreateAccLinkLabel

@@ -29,6 +29,7 @@ namespace Credentia_Winforms
         private void SignUpBtn_Click(object sender, EventArgs e)
         {
             HomeForm homeForm = new HomeForm();
+            this.Hide();
             homeForm.Show();
         }
 
