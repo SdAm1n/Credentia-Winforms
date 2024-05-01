@@ -2,6 +2,8 @@ namespace Credentia_Winforms
 {
     public partial class LoginForm : Form
     {
+        private string Password_Regex = "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$";
+
         public LoginForm()
         {
             InitializeComponent();
@@ -20,6 +22,16 @@ namespace Credentia_Winforms
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
+
+            //if (string.IsNullOrEmpty(UsernameTextBox.Text) == true)
+            //{
+            //    UsernameErrorProvider.SetError(UsernameTextBox, "Username is required");
+            //}
+            //else if (System.Text.RegularExpressions.Regex.IsMatch(PasswordTextBox.Texts, Password_Regex) == false)
+            //{
+            //    PasswordErrorProvider.SetError(PasswordTextBox, "Password must contain at least 8 characters, including UPPER & lowercase and numbers & special characters");
+            //}
+
             HomeForm homeForm = new HomeForm();
             this.Hide();
             homeForm.Show();
@@ -30,6 +42,51 @@ namespace Credentia_Winforms
             SignUpForm signUpForm = new SignUpForm();
             this.Hide();
             signUpForm.Show();
+        }
+
+        private void UsernameTextBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(UsernameTextBox.Texts) == true)
+            {
+
+                UsernameErrorProvider.SetError(UsernameTextBox, "Username is required");
+            }
+            else
+            {
+                UsernameErrorProvider.Clear();
+            }
+        }
+
+        private void PasswordTextBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(PasswordTextBox.Texts) == true)
+            {
+                PasswordErrorProvider.SetError(PasswordTextBox, "Master Password is required");
+            }
+            else
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(PasswordTextBox.Texts, Password_Regex) == false)
+                {
+                    PasswordErrorProvider.SetError(PasswordTextBox, "Password must contain at least 8 characters, including UPPER & lowercase and numbers & special characters");
+                }
+                else
+                {
+                    PasswordErrorProvider.Clear();
+                }
+
+            }
+        }
+
+        private void ShowPasswordToggle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ShowPasswordToggle.Checked == true)
+            {
+                PasswordTextBox.PasswordChar = false;
+            }
+            else
+            {
+                PasswordTextBox.PasswordChar = true;
+            }
         }
     }
 }

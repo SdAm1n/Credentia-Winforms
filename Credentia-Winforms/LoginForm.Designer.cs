@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
             DockPanel1 = new Panel();
             pictureBox1 = new PictureBox();
             DockPanel2 = new Panel();
+            ShowPasswordLabel = new Label();
+            ShowPasswordToggle = new CustomControls.CustomToggleButton();
             CreateAccLinkLabel = new LinkLabel();
             CreateAccLabel = new Label();
             LoginBtn = new CustomControls.CustomButton();
@@ -40,11 +43,15 @@
             UsernameTextBox = new CustomControls.CustomTextBox();
             PasswordLabel = new Label();
             UsernameLabel = new Label();
+            UsernameErrorProvider = new ErrorProvider(components);
+            PasswordErrorProvider = new ErrorProvider(components);
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             DockPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DockPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)UsernameErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PasswordErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -94,6 +101,8 @@
             // DockPanel2
             // 
             DockPanel2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            DockPanel2.Controls.Add(ShowPasswordLabel);
+            DockPanel2.Controls.Add(ShowPasswordToggle);
             DockPanel2.Controls.Add(CreateAccLinkLabel);
             DockPanel2.Controls.Add(CreateAccLabel);
             DockPanel2.Controls.Add(LoginBtn);
@@ -105,6 +114,31 @@
             DockPanel2.Name = "DockPanel2";
             DockPanel2.Size = new Size(612, 485);
             DockPanel2.TabIndex = 1;
+            // 
+            // ShowPasswordLabel
+            // 
+            ShowPasswordLabel.AutoSize = true;
+            ShowPasswordLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ShowPasswordLabel.Location = new Point(507, 235);
+            ShowPasswordLabel.Name = "ShowPasswordLabel";
+            ShowPasswordLabel.Size = new Size(99, 17);
+            ShowPasswordLabel.TabIndex = 5;
+            ShowPasswordLabel.Text = "Show Password";
+            // 
+            // ShowPasswordToggle
+            // 
+            ShowPasswordToggle.AutoSize = true;
+            ShowPasswordToggle.Location = new Point(463, 235);
+            ShowPasswordToggle.MinimumSize = new Size(38, 20);
+            ShowPasswordToggle.Name = "ShowPasswordToggle";
+            ShowPasswordToggle.OffBackColor = Color.Gray;
+            ShowPasswordToggle.OffToggleColor = Color.Gainsboro;
+            ShowPasswordToggle.OnBackColor = Color.MediumSlateBlue;
+            ShowPasswordToggle.OnToggleColor = Color.WhiteSmoke;
+            ShowPasswordToggle.Size = new Size(38, 20);
+            ShowPasswordToggle.TabIndex = 4;
+            ShowPasswordToggle.UseVisualStyleBackColor = true;
+            ShowPasswordToggle.CheckedChanged += ShowPasswordToggle_CheckedChanged;
             // 
             // CreateAccLinkLabel
             // 
@@ -158,13 +192,14 @@
             PasswordTextBox.Multiline = false;
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.Padding = new Padding(7);
-            PasswordTextBox.PasswordChar = false;
+            PasswordTextBox.PasswordChar = true;
             PasswordTextBox.PlaceholderColor = Color.DarkGray;
             PasswordTextBox.PlaceholderText = "";
             PasswordTextBox.Size = new Size(250, 32);
             PasswordTextBox.TabIndex = 1;
             PasswordTextBox.Texts = "";
             PasswordTextBox.UnderlinedStyle = false;
+            PasswordTextBox.Leave += PasswordTextBox_Leave;
             // 
             // UsernameTextBox
             // 
@@ -186,6 +221,7 @@
             UsernameTextBox.TabIndex = 0;
             UsernameTextBox.Texts = "";
             UsernameTextBox.UnderlinedStyle = false;
+            UsernameTextBox.Leave += UsernameTextBox_Leave;
             // 
             // PasswordLabel
             // 
@@ -205,6 +241,14 @@
             UsernameLabel.TabIndex = 0;
             UsernameLabel.Text = "Username";
             // 
+            // UsernameErrorProvider
+            // 
+            UsernameErrorProvider.ContainerControl = this;
+            // 
+            // PasswordErrorProvider
+            // 
+            PasswordErrorProvider.ContainerControl = this;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -222,6 +266,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             DockPanel2.ResumeLayout(false);
             DockPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)UsernameErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PasswordErrorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -239,5 +285,9 @@
         private Label CreateAccLabel;
         private CustomControls.CustomTextBox PasswordTextBox;
         private Label PasswordLabel;
+        private ErrorProvider UsernameErrorProvider;
+        private ErrorProvider PasswordErrorProvider;
+        private CustomControls.CustomToggleButton ShowPasswordToggle;
+        private Label ShowPasswordLabel;
     }
 }
