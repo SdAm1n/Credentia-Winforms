@@ -133,7 +133,7 @@
             ShowPasswordToggle.Name = "ShowPasswordToggle";
             ShowPasswordToggle.OffBackColor = Color.Gray;
             ShowPasswordToggle.OffToggleColor = Color.Gainsboro;
-            ShowPasswordToggle.OnBackColor = Color.MediumSlateBlue;
+            ShowPasswordToggle.OnBackColor = Color.Crimson;
             ShowPasswordToggle.OnToggleColor = Color.WhiteSmoke;
             ShowPasswordToggle.Size = new Size(38, 20);
             ShowPasswordToggle.TabIndex = 4;

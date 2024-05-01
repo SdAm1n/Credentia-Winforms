@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
             DockPanel1 = new Panel();
@@ -43,11 +44,19 @@
             ConfirmPasswordLabel = new Label();
             PasswordLabel = new Label();
             UsernameLabel = new Label();
+            UsernameErrorProvider = new ErrorProvider(components);
+            PasswordErrorProvider = new ErrorProvider(components);
+            EmailErrorProvider = new ErrorProvider(components);
+            ConfirmPasswordErrorProvider = new ErrorProvider(components);
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             DockPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)LogoPictureBox).BeginInit();
             DockPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)UsernameErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)PasswordErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)EmailErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)ConfirmPasswordErrorProvider).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -87,7 +96,7 @@
             // 
             LogoPictureBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             LogoPictureBox.Image = Properties.Resources.logo_no_background;
-            LogoPictureBox.Location = new Point(27, 197);
+            LogoPictureBox.Location = new Point(24, 186);
             LogoPictureBox.Name = "LogoPictureBox";
             LogoPictureBox.Size = new Size(378, 230);
             LogoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
@@ -170,6 +179,7 @@
             EmailTextBox.TabIndex = 3;
             EmailTextBox.Texts = "";
             EmailTextBox.UnderlinedStyle = false;
+            EmailTextBox.Leave += EmailTextBox_Leave;
             // 
             // PasswordTextBox
             // 
@@ -191,6 +201,7 @@
             PasswordTextBox.TabIndex = 1;
             PasswordTextBox.Texts = "";
             PasswordTextBox.UnderlinedStyle = false;
+            PasswordTextBox.Leave += PasswordTextBox_Leave;
             // 
             // ConfirmPasswordTextBox
             // 
@@ -212,6 +223,7 @@
             ConfirmPasswordTextBox.TabIndex = 2;
             ConfirmPasswordTextBox.Texts = "";
             ConfirmPasswordTextBox.UnderlinedStyle = false;
+            ConfirmPasswordTextBox.Leave += ConfirmPasswordTextBox_Leave;
             // 
             // UsernameTextBox
             // 
@@ -233,6 +245,7 @@
             UsernameTextBox.TabIndex = 0;
             UsernameTextBox.Texts = "";
             UsernameTextBox.UnderlinedStyle = false;
+            UsernameTextBox.Leave += UsernameTextBox_Leave;
             // 
             // EmailLabel
             // 
@@ -270,6 +283,22 @@
             UsernameLabel.TabIndex = 0;
             UsernameLabel.Text = "Username";
             // 
+            // UsernameErrorProvider
+            // 
+            UsernameErrorProvider.ContainerControl = this;
+            // 
+            // PasswordErrorProvider
+            // 
+            PasswordErrorProvider.ContainerControl = this;
+            // 
+            // EmailErrorProvider
+            // 
+            EmailErrorProvider.ContainerControl = this;
+            // 
+            // ConfirmPasswordErrorProvider
+            // 
+            ConfirmPasswordErrorProvider.ContainerControl = this;
+            // 
             // SignUpForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -288,6 +317,10 @@
             ((System.ComponentModel.ISupportInitialize)LogoPictureBox).EndInit();
             DockPanel2.ResumeLayout(false);
             DockPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)UsernameErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)PasswordErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)EmailErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)ConfirmPasswordErrorProvider).EndInit();
             ResumeLayout(false);
         }
 
@@ -308,5 +341,9 @@
         private CustomControls.CustomTextBox ConfirmPasswordTextBox;
         private Label EmailLabel;
         private Label ConfirmPasswordLabel;
+        private ErrorProvider UsernameErrorProvider;
+        private ErrorProvider PasswordErrorProvider;
+        private ErrorProvider EmailErrorProvider;
+        private ErrorProvider ConfirmPasswordErrorProvider;
     }
 }

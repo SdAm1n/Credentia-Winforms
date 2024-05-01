@@ -12,6 +12,10 @@ namespace Credentia_Winforms
 {
     public partial class SignUpForm : Form
     {
+
+        private string Password_Regex = "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$";
+        private string email_regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+
         public SignUpForm()
         {
             InitializeComponent();
@@ -43,6 +47,77 @@ namespace Credentia_Winforms
         private void SignUpForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void UsernameTextBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(UsernameTextBox.Texts) == true)
+            {
+
+                UsernameErrorProvider.SetError(UsernameTextBox, "Username is required");
+            }
+            else
+            {
+                UsernameErrorProvider.Clear();
+            }
+        }
+
+        private void PasswordTextBox_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(PasswordTextBox.Texts) == true)
+            {
+                PasswordErrorProvider.SetError(PasswordTextBox, "Master Password is required");
+            }
+            else
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(PasswordTextBox.Texts, Password_Regex) == false)
+                {
+                    PasswordErrorProvider.SetError(PasswordTextBox, "Password must contain at least 8 characters, including UPPER & lowercase and numbers & special characters");
+                }
+                else
+                {
+                    PasswordErrorProvider.Clear();
+                }
+
+            }
+        }
+
+        private void ConfirmPasswordTextBox_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(ConfirmPasswordTextBox.Texts) == true)
+            {
+                ConfirmPasswordErrorProvider.SetError(ConfirmPasswordTextBox, "Confirm Password is required");
+            }
+            else
+            {
+                if(ConfirmPasswordTextBox.Texts != PasswordTextBox.Texts)
+                {
+                    ConfirmPasswordErrorProvider.SetError(ConfirmPasswordTextBox, "Password does not match");
+                }
+                else
+                {
+                    ConfirmPasswordErrorProvider.Clear();
+                }
+            }
+        }
+
+        private void EmailTextBox_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(EmailTextBox.Texts) == true)
+            {
+                EmailErrorProvider.SetError(EmailTextBox, "Email is required");
+            }
+            else
+            {
+                if(System.Text.RegularExpressions.Regex.IsMatch(EmailTextBox.Texts, email_regex) == false)
+                {
+                    EmailErrorProvider.SetError(EmailTextBox, "Email is not valid");
+                }
+                else
+                {
+                    EmailErrorProvider.Clear();
+                }
+            }
         }
     }
 }
