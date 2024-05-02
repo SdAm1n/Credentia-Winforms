@@ -1,3 +1,7 @@
+using DataAccessLibrary;
+using DataAccessLibrary.Helpers;
+using Microsoft.Extensions.Configuration;
+
 namespace Credentia_Winforms
 {
     public partial class LoginForm : Form
@@ -32,9 +36,35 @@ namespace Credentia_Winforms
             //    PasswordErrorProvider.SetError(PasswordTextBox, "Password must contain at least 8 characters, including UPPER & lowercase and numbers & special characters");
             //}
 
-            HomeForm homeForm = new HomeForm();
-            this.Hide();
-            homeForm.Show();
+            // Login Logic
+            string DATABASE_NAME = "users";
+
+            // Create an instance of the MySqlCrud class
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={DATABASE_NAME};");
+
+            string username = UsernameTextBox.Texts.ToLower();
+            string masterPassword = PasswordTextBox.Texts;
+            var storedMasterPassword = sql.GetMasterPassword(username);
+            try
+            {
+                bool verified = MasterPasswordHelper.VerifyMasterPassword(masterPassword, storedMasterPassword);
+                if (verified)
+                {
+                    HomeForm homeForm = new HomeForm();
+                    this.Hide();
+                    homeForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error Occured During Hash Verification");
+            }
+
+
         }
 
         private void CreateAccLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -87,6 +117,32 @@ namespace Credentia_Winforms
             {
                 PasswordTextBox.PasswordChar = true;
             }
+        }
+
+
+
+        // ----------------- DATABASE FUNCTIONS ----------------- //
+
+        // Get Master Password from the Users database's user_table
+        private static string GetMasterPassword(UsersDBCrud sql, string username)
+        {
+            return sql.GetMasterPassword(username);
+        }
+
+        // Getting the connection string from the appsettings.json file
+        private static string GetConnectionString(string connectionStringName = "Default")
+        {
+            string output = "";
+
+            var builder = new ConfigurationBuilder()
+                          .SetBasePath(Directory.GetCurrentDirectory())
+                          .AddJsonFile("appsettings.json");
+
+            var config = builder.Build();
+
+            output = config.GetConnectionString(connectionStringName);
+
+            return output;
         }
     }
 }

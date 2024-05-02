@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DataAccessLibrary.Helpers;
+using DataAccessLibrary;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +15,7 @@ namespace Credentia_Winforms
 {
     public partial class SignUpForm : Form
     {
-
+        
         private string Password_Regex = "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$";
         private string email_regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
 
@@ -32,9 +35,32 @@ namespace Credentia_Winforms
 
         private void SignUpBtn_Click(object sender, EventArgs e)
         {
-            HomeForm homeForm = new HomeForm();
+            string DATABASE_NAME = "users";
+
+
+            // Create an instance of the MySqlCrud class
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={DATABASE_NAME};");
+            string username = UsernameTextBox.Texts.ToLower();
+            string masterPassword = PasswordTextBox.Texts;
+            string email = EmailTextBox.Texts;
+
+            try
+            {
+                // Create a new user in the Users database's user_table
+                CreateUser(sql, username, masterPassword, email);
+                MessageBox.Show("User Created Successfully.", "Sign Up Completed", MessageBoxButtons.OK);
+            }
+            catch
+            {
+                MessageBox.Show("Error Occured.");
+            }
+
+
+
+            // Redirect to the Login Form
+            LoginForm loginForm = new LoginForm();
             this.Hide();
-            homeForm.Show();
+            loginForm.Show();
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
@@ -118,6 +144,58 @@ namespace Credentia_Winforms
                     EmailErrorProvider.Clear();
                 }
             }
+        }
+
+
+        // ------------------ DATABASE ------------------ //
+
+
+        // Create a new user database
+        private static void CreateUserDB(UsersDBCrud sql, string userDatabase)
+        {
+            // Create a new user database
+            sql.CreateUserDatabase(userDatabase);
+            CreateUserTables(userDatabase);
+        }
+
+        // Create Tables for the user in their particular newly created database
+        private static void CreateUserTables(string userDatabase)
+        {
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={userDatabase};");
+
+            // Create Tables for the user in their particular newly created database
+            sql.CreateTables(userDatabase);
+        }
+
+
+        // Create a new user in the Users database's user_table
+        private static void CreateUser(UsersDBCrud sql, string username, string masterPassword, string email)
+        {
+
+            var hashedMasterPassword = MasterPasswordHelper.HashMasterPassword(masterPassword);
+ 
+            string userDatabase = $"{username}_credentia_db";
+
+            sql.CreateUser(username, hashedMasterPassword, email, userDatabase);
+
+            CreateUserDB(sql, userDatabase);
+        }
+
+
+        // Getting the connection string from the appsettings.json file
+        private static string GetConnectionString(string connectionStringName = "Default")
+        {
+            string output = "";
+
+            var builder = new ConfigurationBuilder()
+                          .SetBasePath(Directory.GetCurrentDirectory())
+                          .AddJsonFile("appsettings.json");
+
+            var config = builder.Build();
+
+            output = config.GetConnectionString(connectionStringName);
+
+            return output;
         }
     }
 }
