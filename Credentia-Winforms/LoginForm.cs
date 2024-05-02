@@ -6,6 +6,8 @@ namespace Credentia_Winforms
 {
     public partial class LoginForm : Form
     {
+        public static string? ActiveUser;
+        public static string? ActiveUserDB;
         private string Password_Regex = "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$";
 
         public LoginForm()
@@ -50,6 +52,8 @@ namespace Credentia_Winforms
                 bool verified = MasterPasswordHelper.VerifyMasterPassword(masterPassword, storedMasterPassword);
                 if (verified)
                 {
+                    ActiveUser = username;
+                    ActiveUserDB = username + "_credentia_db";
                     HomeForm homeForm = new HomeForm();
                     this.Hide();
                     homeForm.Show();

@@ -12,14 +12,22 @@ namespace Credentia_Winforms
 {
     public partial class SettingsForm : Form
     {
+
         public SettingsForm()
         {
             InitializeComponent();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SettingsForm_Load(object sender, EventArgs e)
+        {
+            ActiveUsernameLabel.Text = LoginForm.ActiveUser;
+            ActiveUserDBNameLabel.Text = LoginForm.ActiveUserDB;
         }
     }
 }
