@@ -12,6 +12,7 @@ namespace Credentia_Winforms
 {
     public partial class AllLoginsForm : Form
     {
+        int flag = -1;
         public AllLoginsForm()
         {
             InitializeComponent();
@@ -41,6 +42,7 @@ namespace Credentia_Winforms
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Delete")
             {
                 // Remove the row corresponding to the clicked button
@@ -77,6 +79,11 @@ namespace Credentia_Winforms
                 }
             }
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
