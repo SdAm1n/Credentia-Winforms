@@ -42,10 +42,12 @@
             addButton = new CustomControls.CustomButton();
             searchBox = new CustomControls.CustomTextBox();
             panel2 = new Panel();
+            label2 = new Label();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel3.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -191,10 +193,23 @@
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(234, 238, 238);
+            panel2.Controls.Add(label2);
             panel2.Location = new Point(567, -1);
             panel2.Name = "panel2";
             panel2.Size = new Size(325, 497);
             panel2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(295, 12);
+            label2.Name = "label2";
+            label2.Size = new Size(20, 21);
+            label2.TabIndex = 0;
+            label2.Text = "x";
+            label2.Click += label2_Click;
             // 
             // AllLoginsForm
             // 
@@ -215,6 +230,8 @@
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -234,5 +251,6 @@
         private DataGridViewTextBoxColumn URLColumn;
         private DataGridViewButtonColumn updateColumn;
         private DataGridViewButtonColumn deleteColumn;
+        private Label label2;
     }
 }
