@@ -51,6 +51,12 @@ namespace Credentia_Winforms
             SecureAddTextBox.Texts = "";
             SecureNameBox.Focus();
 
+            // Deselect all other items
+            foreach (ListViewItem listItem in listView.Items)
+            {
+                listItem.Selected = false;
+            }
+
             // Select the newly added item by default
             item.Selected = true;
             listView.Focus();
