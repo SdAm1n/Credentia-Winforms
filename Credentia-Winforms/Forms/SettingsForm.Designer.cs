@@ -31,6 +31,8 @@
             label1 = new Label();
             ActiveUserDBNameLabel = new Label();
             ActiveUsernameLabel = new Label();
+            UsernameLabel = new Label();
+            UsernameDB = new Label();
             SuspendLayout();
             // 
             // label1
@@ -46,7 +48,7 @@
             // ActiveUserDBNameLabel
             // 
             ActiveUserDBNameLabel.AutoSize = true;
-            ActiveUserDBNameLabel.Location = new Point(404, 280);
+            ActiveUserDBNameLabel.Location = new Point(428, 280);
             ActiveUserDBNameLabel.Name = "ActiveUserDBNameLabel";
             ActiveUserDBNameLabel.Size = new Size(112, 21);
             ActiveUserDBNameLabel.TabIndex = 1;
@@ -55,17 +57,37 @@
             // ActiveUsernameLabel
             // 
             ActiveUsernameLabel.AutoSize = true;
-            ActiveUsernameLabel.Location = new Point(404, 237);
+            ActiveUsernameLabel.Location = new Point(428, 237);
             ActiveUsernameLabel.Name = "ActiveUsernameLabel";
             ActiveUsernameLabel.Size = new Size(88, 21);
             ActiveUsernameLabel.TabIndex = 2;
             ActiveUsernameLabel.Text = "Active User";
+            // 
+            // UsernameLabel
+            // 
+            UsernameLabel.AutoSize = true;
+            UsernameLabel.Location = new Point(314, 237);
+            UsernameLabel.Name = "UsernameLabel";
+            UsernameLabel.Size = new Size(84, 21);
+            UsernameLabel.TabIndex = 3;
+            UsernameLabel.Text = "Username:";
+            // 
+            // UsernameDB
+            // 
+            UsernameDB.AutoSize = true;
+            UsernameDB.Location = new Point(314, 280);
+            UsernameDB.Name = "UsernameDB";
+            UsernameDB.Size = new Size(108, 21);
+            UsernameDB.TabIndex = 4;
+            UsernameDB.Text = "Username DB:";
             // 
             // SettingsForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1029, 630);
+            Controls.Add(UsernameDB);
+            Controls.Add(UsernameLabel);
             Controls.Add(ActiveUsernameLabel);
             Controls.Add(ActiveUserDBNameLabel);
             Controls.Add(label1);
@@ -84,5 +106,7 @@
         private Label label1;
         private Label ActiveUserDBNameLabel;
         private Label ActiveUsernameLabel;
+        private Label UsernameLabel;
+        private Label UsernameDB;
     }
 }
