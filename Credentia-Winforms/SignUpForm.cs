@@ -46,21 +46,29 @@ namespace Credentia_Winforms
 
             try
             {
-                // Create a new user in the Users database's user_table
-                CreateUser(sql, username, masterPassword, email);
-                MessageBox.Show("User Created Successfully.", "Sign Up Completed", MessageBoxButtons.OK);
+                // check to see if any fields are empty
+                if (!(string.IsNullOrEmpty(username) || string.IsNullOrEmpty(masterPassword) || string.IsNullOrEmpty(email)))
+                {
+                    MessageBox.Show("User Created Successfully.", "Sign Up Completed", MessageBoxButtons.OK);
+                    // Create a new user in the Users database's user_table
+                    CreateUser(sql, username, masterPassword, email);
+
+
+                    // Redirect to the Login Form
+                    LoginForm loginForm = new LoginForm();
+                    this.Hide();
+                    loginForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Please fill in all fields.");
+                }
             }
             catch
             {
                 MessageBox.Show("Error Occured.");
             }
 
-
-
-            // Redirect to the Login Form
-            LoginForm loginForm = new LoginForm();
-            this.Hide();
-            loginForm.Show();
         }
 
         private void CancelBtn_Click(object sender, EventArgs e)
