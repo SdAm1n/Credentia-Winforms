@@ -86,12 +86,44 @@ namespace Credentia_Winforms
                 SecureDetailNameBox.PlaceholderText = listView.SelectedItems[0].Text;
                 SecureNoteDetailText.PlaceholderText = listView.SelectedItems[0].SubItems[1].Text;
             }
-            else
+           
+
+        }
+
+
+        private void SecureNoteDetailText__TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SecureNoteUpdatebtn_Click(object sender, EventArgs e)
+        {
+            // Check if one item is selected
+            if (listView.SelectedItems.Count == 1)
             {
-                // Hide the SecureNoteDetailsPanel if no item is selected
-                SecureNoteDetailsPanel.Visible = false;
+                // Prompt the user for confirmation
+                DialogResult result = MessageBox.Show("Are you sure you want to update this item?", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                // If the user confirms the update
+                if (result == DialogResult.Yes)
+                {
+                    // Update the selected item
+                    listView.SelectedItems[0].Text = SecureNameBox.Texts;
+                    listView.SelectedItems[0].SubItems[1].Text = SecureAddTextBox.Texts;
+
+                    // Clear input fields and set focus to the name field
+                    SecureNameBox.Texts = "";
+                    SecureAddTextBox.Texts = "";
+                    SecureNameBox.Focus();
+                    
+                }
             }
-            
+        }
+
+        private void SecureNoteEditbtn_Click(object sender, EventArgs e)
+        {
+            SecureNoteDetailsPanel.Visible = false;
+            SecureNoteAddForm.Visible = true;
         }
     }
 }

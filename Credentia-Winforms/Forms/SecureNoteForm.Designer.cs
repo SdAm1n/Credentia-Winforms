@@ -34,6 +34,7 @@
             SecureNotedetails = new Label();
             SecureNoteName = new Label();
             SecureNoteAddForm = new Panel();
+            SecureNoteUpdatebtn = new CustomControls.CustomButton();
             SecureAddFormDonebtn = new CustomControls.CustomButton();
             SecureAddNote = new Label();
             SecureAddTextBox = new CustomControls.CustomTextBox();
@@ -41,6 +42,7 @@
             SecureNameBox = new CustomControls.CustomTextBox();
             SecureNotepanel1 = new Panel();
             panel1 = new Panel();
+            SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
             panel5 = new Panel();
             listView = new ListView();
@@ -69,6 +71,7 @@
             SecureNoteDetailsPanel.Name = "SecureNoteDetailsPanel";
             SecureNoteDetailsPanel.Size = new Size(339, 537);
             SecureNoteDetailsPanel.TabIndex = 2;
+            SecureNoteDetailsPanel.Visible = false;
             SecureNoteDetailsPanel.Paint += SecureNoteDetailsPanel_Paint;
             // 
             // SecureNoteDetailText
@@ -91,6 +94,7 @@
             SecureNoteDetailText.TabIndex = 3;
             SecureNoteDetailText.Texts = "";
             SecureNoteDetailText.UnderlinedStyle = false;
+            SecureNoteDetailText._TextChanged += SecureNoteDetailText__TextChanged;
             // 
             // SecureDetailNameBox
             // 
@@ -136,6 +140,7 @@
             SecureNoteAddForm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             SecureNoteAddForm.BackColor = Color.FromArgb(234, 238, 238);
             SecureNoteAddForm.Controls.Add(SecureNoteDetailsPanel);
+            SecureNoteAddForm.Controls.Add(SecureNoteUpdatebtn);
             SecureNoteAddForm.Controls.Add(SecureAddFormDonebtn);
             SecureNoteAddForm.Controls.Add(SecureAddNote);
             SecureNoteAddForm.Controls.Add(SecureAddTextBox);
@@ -145,6 +150,26 @@
             SecureNoteAddForm.Name = "SecureNoteAddForm";
             SecureNoteAddForm.Size = new Size(339, 537);
             SecureNoteAddForm.TabIndex = 3;
+            // 
+            // SecureNoteUpdatebtn
+            // 
+            SecureNoteUpdatebtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            SecureNoteUpdatebtn.BackColor = Color.MediumSlateBlue;
+            SecureNoteUpdatebtn.BackgroundColor = Color.MediumSlateBlue;
+            SecureNoteUpdatebtn.BorderColor = Color.PaleVioletRed;
+            SecureNoteUpdatebtn.BorderRadius = 0;
+            SecureNoteUpdatebtn.BorderSize = 0;
+            SecureNoteUpdatebtn.FlatAppearance.BorderSize = 0;
+            SecureNoteUpdatebtn.FlatStyle = FlatStyle.Flat;
+            SecureNoteUpdatebtn.ForeColor = Color.White;
+            SecureNoteUpdatebtn.Location = new Point(198, 381);
+            SecureNoteUpdatebtn.Name = "SecureNoteUpdatebtn";
+            SecureNoteUpdatebtn.Size = new Size(69, 31);
+            SecureNoteUpdatebtn.TabIndex = 2;
+            SecureNoteUpdatebtn.Text = "Update";
+            SecureNoteUpdatebtn.TextColor = Color.White;
+            SecureNoteUpdatebtn.UseVisualStyleBackColor = false;
+            SecureNoteUpdatebtn.Click += SecureNoteUpdatebtn_Click;
             // 
             // SecureAddFormDonebtn
             // 
@@ -156,7 +181,7 @@
             SecureAddFormDonebtn.FlatAppearance.BorderSize = 0;
             SecureAddFormDonebtn.FlatStyle = FlatStyle.Flat;
             SecureAddFormDonebtn.ForeColor = Color.White;
-            SecureAddFormDonebtn.Location = new Point(151, 387);
+            SecureAddFormDonebtn.Location = new Point(99, 383);
             SecureAddFormDonebtn.Name = "SecureAddFormDonebtn";
             SecureAddFormDonebtn.Size = new Size(72, 29);
             SecureAddFormDonebtn.TabIndex = 4;
@@ -241,11 +266,32 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Controls.Add(SecureNoteEditbtn);
             panel1.Controls.Add(SecureNoteDeletebtn);
             panel1.Location = new Point(0, 500);
             panel1.Name = "panel1";
             panel1.Size = new Size(467, 37);
             panel1.TabIndex = 1;
+            // 
+            // SecureNoteEditbtn
+            // 
+            SecureNoteEditbtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            SecureNoteEditbtn.BackColor = Color.MediumSlateBlue;
+            SecureNoteEditbtn.BackgroundColor = Color.MediumSlateBlue;
+            SecureNoteEditbtn.BorderColor = Color.PaleVioletRed;
+            SecureNoteEditbtn.BorderRadius = 0;
+            SecureNoteEditbtn.BorderSize = 0;
+            SecureNoteEditbtn.FlatAppearance.BorderSize = 0;
+            SecureNoteEditbtn.FlatStyle = FlatStyle.Flat;
+            SecureNoteEditbtn.ForeColor = Color.White;
+            SecureNoteEditbtn.Location = new Point(10, 3);
+            SecureNoteEditbtn.Name = "SecureNoteEditbtn";
+            SecureNoteEditbtn.Size = new Size(71, 31);
+            SecureNoteEditbtn.TabIndex = 2;
+            SecureNoteEditbtn.Text = "Edit";
+            SecureNoteEditbtn.TextColor = Color.White;
+            SecureNoteEditbtn.UseVisualStyleBackColor = false;
+            SecureNoteEditbtn.Click += SecureNoteEditbtn_Click;
             // 
             // SecureNoteDeletebtn
             // 
@@ -404,5 +450,13 @@
         private Panel panel1;
         public CustomControls.CustomTextBox SecureDetailNameBox;
         public CustomControls.CustomTextBox SecureNoteDetailText;
+        public CustomControls.CustomButton SecureNoteUpdatebtn;
+        public Panel secureNoteUpdateForm;
+        public CustomControls.CustomButton SecureNoteUpdateDonebtn;
+        public Label SecureNoteUpdateNote;
+        public CustomControls.CustomTextBox SecureNoteUpdateNoteBox;
+        public Label SecureNoteUpdateName;
+        public CustomControls.CustomTextBox SecureNoteUpdateNameBox;
+        private CustomControls.CustomButton SecureNoteEditbtn;
     }
 }
