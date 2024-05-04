@@ -28,429 +28,193 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SecureNoteDetailsPanel = new Panel();
-            SecureNoteDetailText = new CustomControls.CustomTextBox();
-            SecureDetailNameBox = new CustomControls.CustomTextBox();
-            SecureNotedetails = new Label();
-            SecureNoteName = new Label();
-            SecureNoteAddForm = new Panel();
-            SecureNoteUpdatebtn = new CustomControls.CustomButton();
-            SecureAddFormDonebtn = new CustomControls.CustomButton();
-            SecureAddNote = new Label();
-            SecureAddTextBox = new CustomControls.CustomTextBox();
-            SecureAddFormName = new Label();
-            SecureNameBox = new CustomControls.CustomTextBox();
-            SecureNotepanel1 = new Panel();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
-            panel5 = new Panel();
-            listView = new ListView();
-            NameColumnHeader1 = new ColumnHeader();
-            NoteColumnHeader1 = new ColumnHeader();
-            SecureNotepanel3 = new Panel();
-            SecureNoteaddButton = new CustomControls.CustomButton();
-            SecureNotesearchBox = new CustomControls.CustomTextBox();
-            SecureNoteDetailsPanel.SuspendLayout();
-            SecureNoteAddForm.SuspendLayout();
-            SecureNotepanel1.SuspendLayout();
+            panel2 = new Panel();
+            customTextBox1 = new CustomControls.CustomTextBox();
+            dataGridView2 = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            panel3 = new Panel();
+            SecureNoteAddBtn = new CustomControls.CustomButton();
             panel1.SuspendLayout();
-            panel5.SuspendLayout();
-            SecureNotepanel3.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
-            // 
-            // SecureNoteDetailsPanel
-            // 
-            SecureNoteDetailsPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            SecureNoteDetailsPanel.BackColor = Color.FromArgb(234, 238, 238);
-            SecureNoteDetailsPanel.Controls.Add(SecureNoteDetailText);
-            SecureNoteDetailsPanel.Controls.Add(SecureDetailNameBox);
-            SecureNoteDetailsPanel.Controls.Add(SecureNotedetails);
-            SecureNoteDetailsPanel.Controls.Add(SecureNoteName);
-            SecureNoteDetailsPanel.Location = new Point(0, 0);
-            SecureNoteDetailsPanel.Name = "SecureNoteDetailsPanel";
-            SecureNoteDetailsPanel.Size = new Size(339, 537);
-            SecureNoteDetailsPanel.TabIndex = 2;
-            SecureNoteDetailsPanel.Visible = false;
-            SecureNoteDetailsPanel.Paint += SecureNoteDetailsPanel_Paint;
-            // 
-            // SecureNoteDetailText
-            // 
-            SecureNoteDetailText.BackColor = SystemColors.Window;
-            SecureNoteDetailText.BorderColor = Color.GhostWhite;
-            SecureNoteDetailText.BorderFocusColor = Color.GhostWhite;
-            SecureNoteDetailText.BorderRadius = 0;
-            SecureNoteDetailText.BorderSize = 2;
-            SecureNoteDetailText.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SecureNoteDetailText.ForeColor = Color.DimGray;
-            SecureNoteDetailText.Location = new Point(29, 190);
-            SecureNoteDetailText.Multiline = true;
-            SecureNoteDetailText.Name = "SecureNoteDetailText";
-            SecureNoteDetailText.Padding = new Padding(7);
-            SecureNoteDetailText.PasswordChar = false;
-            SecureNoteDetailText.PlaceholderColor = Color.DarkGray;
-            SecureNoteDetailText.PlaceholderText = "";
-            SecureNoteDetailText.Size = new Size(279, 243);
-            SecureNoteDetailText.TabIndex = 3;
-            SecureNoteDetailText.Texts = "";
-            SecureNoteDetailText.UnderlinedStyle = false;
-            SecureNoteDetailText._TextChanged += SecureNoteDetailText__TextChanged;
-            // 
-            // SecureDetailNameBox
-            // 
-            SecureDetailNameBox.BackColor = SystemColors.Window;
-            SecureDetailNameBox.BorderColor = Color.GhostWhite;
-            SecureDetailNameBox.BorderFocusColor = Color.GhostWhite;
-            SecureDetailNameBox.BorderRadius = 0;
-            SecureDetailNameBox.BorderSize = 2;
-            SecureDetailNameBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SecureDetailNameBox.ForeColor = Color.DimGray;
-            SecureDetailNameBox.Location = new Point(29, 99);
-            SecureDetailNameBox.Multiline = false;
-            SecureDetailNameBox.Name = "SecureDetailNameBox";
-            SecureDetailNameBox.Padding = new Padding(7);
-            SecureDetailNameBox.PasswordChar = false;
-            SecureDetailNameBox.PlaceholderColor = Color.DarkGray;
-            SecureDetailNameBox.PlaceholderText = "";
-            SecureDetailNameBox.Size = new Size(279, 32);
-            SecureDetailNameBox.TabIndex = 2;
-            SecureDetailNameBox.Texts = "";
-            SecureDetailNameBox.UnderlinedStyle = false;
-            // 
-            // SecureNotedetails
-            // 
-            SecureNotedetails.AutoSize = true;
-            SecureNotedetails.Location = new Point(29, 166);
-            SecureNotedetails.Name = "SecureNotedetails";
-            SecureNotedetails.Size = new Size(91, 21);
-            SecureNotedetails.TabIndex = 1;
-            SecureNotedetails.Text = "SecureNote";
-            // 
-            // SecureNoteName
-            // 
-            SecureNoteName.AutoSize = true;
-            SecureNoteName.Location = new Point(29, 65);
-            SecureNoteName.Name = "SecureNoteName";
-            SecureNoteName.Size = new Size(52, 21);
-            SecureNoteName.TabIndex = 0;
-            SecureNoteName.Text = "Name";
-            // 
-            // SecureNoteAddForm
-            // 
-            SecureNoteAddForm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            SecureNoteAddForm.BackColor = Color.FromArgb(234, 238, 238);
-            SecureNoteAddForm.Controls.Add(SecureNoteDetailsPanel);
-            SecureNoteAddForm.Controls.Add(SecureNoteUpdatebtn);
-            SecureNoteAddForm.Controls.Add(SecureAddFormDonebtn);
-            SecureNoteAddForm.Controls.Add(SecureAddNote);
-            SecureNoteAddForm.Controls.Add(SecureAddTextBox);
-            SecureNoteAddForm.Controls.Add(SecureAddFormName);
-            SecureNoteAddForm.Controls.Add(SecureNameBox);
-            SecureNoteAddForm.Location = new Point(468, 0);
-            SecureNoteAddForm.Name = "SecureNoteAddForm";
-            SecureNoteAddForm.Size = new Size(339, 537);
-            SecureNoteAddForm.TabIndex = 3;
-            // 
-            // SecureNoteUpdatebtn
-            // 
-            SecureNoteUpdatebtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            SecureNoteUpdatebtn.BackColor = Color.MediumSlateBlue;
-            SecureNoteUpdatebtn.BackgroundColor = Color.MediumSlateBlue;
-            SecureNoteUpdatebtn.BorderColor = Color.PaleVioletRed;
-            SecureNoteUpdatebtn.BorderRadius = 0;
-            SecureNoteUpdatebtn.BorderSize = 0;
-            SecureNoteUpdatebtn.FlatAppearance.BorderSize = 0;
-            SecureNoteUpdatebtn.FlatStyle = FlatStyle.Flat;
-            SecureNoteUpdatebtn.ForeColor = Color.White;
-            SecureNoteUpdatebtn.Location = new Point(198, 381);
-            SecureNoteUpdatebtn.Name = "SecureNoteUpdatebtn";
-            SecureNoteUpdatebtn.Size = new Size(69, 31);
-            SecureNoteUpdatebtn.TabIndex = 2;
-            SecureNoteUpdatebtn.Text = "Update";
-            SecureNoteUpdatebtn.TextColor = Color.White;
-            SecureNoteUpdatebtn.UseVisualStyleBackColor = false;
-            SecureNoteUpdatebtn.Click += SecureNoteUpdatebtn_Click;
-            // 
-            // SecureAddFormDonebtn
-            // 
-            SecureAddFormDonebtn.BackColor = Color.MediumSlateBlue;
-            SecureAddFormDonebtn.BackgroundColor = Color.MediumSlateBlue;
-            SecureAddFormDonebtn.BorderColor = Color.PaleVioletRed;
-            SecureAddFormDonebtn.BorderRadius = 0;
-            SecureAddFormDonebtn.BorderSize = 0;
-            SecureAddFormDonebtn.FlatAppearance.BorderSize = 0;
-            SecureAddFormDonebtn.FlatStyle = FlatStyle.Flat;
-            SecureAddFormDonebtn.ForeColor = Color.White;
-            SecureAddFormDonebtn.Location = new Point(99, 383);
-            SecureAddFormDonebtn.Name = "SecureAddFormDonebtn";
-            SecureAddFormDonebtn.Size = new Size(72, 29);
-            SecureAddFormDonebtn.TabIndex = 4;
-            SecureAddFormDonebtn.Text = "Done";
-            SecureAddFormDonebtn.TextColor = Color.White;
-            SecureAddFormDonebtn.UseVisualStyleBackColor = false;
-            SecureAddFormDonebtn.Click += SecureAddFormDonebtn_Click;
-            // 
-            // SecureAddNote
-            // 
-            SecureAddNote.AutoSize = true;
-            SecureAddNote.Location = new Point(58, 153);
-            SecureAddNote.Name = "SecureAddNote";
-            SecureAddNote.Size = new Size(95, 21);
-            SecureAddNote.TabIndex = 3;
-            SecureAddNote.Text = "Secure Note";
-            SecureAddNote.Click += label1_Click;
-            // 
-            // SecureAddTextBox
-            // 
-            SecureAddTextBox.BackColor = SystemColors.Window;
-            SecureAddTextBox.BorderColor = Color.MediumSlateBlue;
-            SecureAddTextBox.BorderFocusColor = Color.HotPink;
-            SecureAddTextBox.BorderRadius = 0;
-            SecureAddTextBox.BorderSize = 2;
-            SecureAddTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SecureAddTextBox.ForeColor = Color.DimGray;
-            SecureAddTextBox.Location = new Point(58, 182);
-            SecureAddTextBox.Multiline = true;
-            SecureAddTextBox.Name = "SecureAddTextBox";
-            SecureAddTextBox.Padding = new Padding(7);
-            SecureAddTextBox.PasswordChar = false;
-            SecureAddTextBox.PlaceholderColor = Color.DarkGray;
-            SecureAddTextBox.PlaceholderText = "";
-            SecureAddTextBox.Size = new Size(250, 178);
-            SecureAddTextBox.TabIndex = 2;
-            SecureAddTextBox.Texts = "";
-            SecureAddTextBox.UnderlinedStyle = false;
-            // 
-            // SecureAddFormName
-            // 
-            SecureAddFormName.AutoSize = true;
-            SecureAddFormName.Location = new Point(59, 42);
-            SecureAddFormName.Name = "SecureAddFormName";
-            SecureAddFormName.Size = new Size(52, 21);
-            SecureAddFormName.TabIndex = 1;
-            SecureAddFormName.Text = "Name";
-            // 
-            // SecureNameBox
-            // 
-            SecureNameBox.BackColor = SystemColors.Window;
-            SecureNameBox.BorderColor = Color.MediumSlateBlue;
-            SecureNameBox.BorderFocusColor = Color.HotPink;
-            SecureNameBox.BorderRadius = 0;
-            SecureNameBox.BorderSize = 2;
-            SecureNameBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SecureNameBox.ForeColor = Color.DimGray;
-            SecureNameBox.Location = new Point(58, 74);
-            SecureNameBox.Multiline = false;
-            SecureNameBox.Name = "SecureNameBox";
-            SecureNameBox.Padding = new Padding(7);
-            SecureNameBox.PasswordChar = false;
-            SecureNameBox.PlaceholderColor = Color.DarkGray;
-            SecureNameBox.PlaceholderText = "";
-            SecureNameBox.Size = new Size(250, 32);
-            SecureNameBox.TabIndex = 0;
-            SecureNameBox.Texts = "";
-            SecureNameBox.UnderlinedStyle = false;
-            // 
-            // SecureNotepanel1
-            // 
-            SecureNotepanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SecureNotepanel1.AutoScroll = true;
-            SecureNotepanel1.BackColor = Color.FromArgb(238, 246, 247);
-            SecureNotepanel1.Controls.Add(panel1);
-            SecureNotepanel1.Controls.Add(panel5);
-            SecureNotepanel1.Location = new Point(2, 0);
-            SecureNotepanel1.Name = "SecureNotepanel1";
-            SecureNotepanel1.Size = new Size(467, 537);
-            SecureNotepanel1.TabIndex = 1;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Controls.Add(SecureNoteEditbtn);
             panel1.Controls.Add(SecureNoteDeletebtn);
-            panel1.Location = new Point(0, 500);
+            panel1.Location = new Point(1, 493);
             panel1.Name = "panel1";
-            panel1.Size = new Size(467, 37);
+            panel1.Size = new Size(926, 50);
             panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
             // 
             // SecureNoteEditbtn
             // 
-            SecureNoteEditbtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            SecureNoteEditbtn.BackColor = Color.MediumSlateBlue;
-            SecureNoteEditbtn.BackgroundColor = Color.MediumSlateBlue;
-            SecureNoteEditbtn.BorderColor = Color.PaleVioletRed;
-            SecureNoteEditbtn.BorderRadius = 0;
-            SecureNoteEditbtn.BorderSize = 0;
+            SecureNoteEditbtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            SecureNoteEditbtn.BackColor = Color.Transparent;
+            SecureNoteEditbtn.BackgroundColor = Color.Transparent;
+            SecureNoteEditbtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SecureNoteEditbtn.BorderRadius = 16;
+            SecureNoteEditbtn.BorderSize = 2;
             SecureNoteEditbtn.FlatAppearance.BorderSize = 0;
             SecureNoteEditbtn.FlatStyle = FlatStyle.Flat;
-            SecureNoteEditbtn.ForeColor = Color.White;
-            SecureNoteEditbtn.Location = new Point(10, 3);
+            SecureNoteEditbtn.ForeColor = Color.Black;
+            SecureNoteEditbtn.Location = new Point(772, 8);
             SecureNoteEditbtn.Name = "SecureNoteEditbtn";
-            SecureNoteEditbtn.Size = new Size(71, 31);
+            SecureNoteEditbtn.Size = new Size(69, 37);
             SecureNoteEditbtn.TabIndex = 2;
             SecureNoteEditbtn.Text = "Edit";
-            SecureNoteEditbtn.TextColor = Color.White;
+            SecureNoteEditbtn.TextColor = Color.Black;
             SecureNoteEditbtn.UseVisualStyleBackColor = false;
             SecureNoteEditbtn.Click += SecureNoteEditbtn_Click;
             // 
             // SecureNoteDeletebtn
             // 
             SecureNoteDeletebtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            SecureNoteDeletebtn.BackColor = Color.MediumSlateBlue;
-            SecureNoteDeletebtn.BackgroundColor = Color.MediumSlateBlue;
-            SecureNoteDeletebtn.BorderColor = Color.PaleVioletRed;
-            SecureNoteDeletebtn.BorderRadius = 0;
-            SecureNoteDeletebtn.BorderSize = 0;
+            SecureNoteDeletebtn.BackColor = Color.Transparent;
+            SecureNoteDeletebtn.BackgroundColor = Color.Transparent;
+            SecureNoteDeletebtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SecureNoteDeletebtn.BorderRadius = 16;
+            SecureNoteDeletebtn.BorderSize = 2;
             SecureNoteDeletebtn.FlatAppearance.BorderSize = 0;
             SecureNoteDeletebtn.FlatStyle = FlatStyle.Flat;
-            SecureNoteDeletebtn.ForeColor = Color.White;
-            SecureNoteDeletebtn.Location = new Point(392, 5);
+            SecureNoteDeletebtn.ForeColor = Color.Black;
+            SecureNoteDeletebtn.Location = new Point(847, 8);
             SecureNoteDeletebtn.Name = "SecureNoteDeletebtn";
-            SecureNoteDeletebtn.Size = new Size(68, 29);
+            SecureNoteDeletebtn.Size = new Size(68, 37);
             SecureNoteDeletebtn.TabIndex = 1;
             SecureNoteDeletebtn.Text = "Delete";
-            SecureNoteDeletebtn.TextColor = Color.White;
+            SecureNoteDeletebtn.TextColor = Color.Black;
             SecureNoteDeletebtn.UseVisualStyleBackColor = false;
             SecureNoteDeletebtn.Click += SecureNoteDeletebtn_Click;
             // 
-            // panel5
+            // panel2
             // 
-            panel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel5.Controls.Add(listView);
-            panel5.Location = new Point(0, 56);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(467, 443);
-            panel5.TabIndex = 0;
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel2.Controls.Add(customTextBox1);
+            panel2.Location = new Point(1, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(846, 50);
+            panel2.TabIndex = 2;
+            panel2.Paint += panel2_Paint;
             // 
-            // listView
+            // customTextBox1
             // 
-            listView.BackColor = Color.FromArgb(238, 246, 247);
-            listView.BorderStyle = BorderStyle.None;
-            listView.Columns.AddRange(new ColumnHeader[] { NameColumnHeader1, NoteColumnHeader1 });
-            listView.Dock = DockStyle.Fill;
-            listView.FullRowSelect = true;
-            listView.GridLines = true;
-            listView.Location = new Point(0, 0);
-            listView.Name = "listView";
-            listView.Size = new Size(467, 443);
-            listView.TabIndex = 2;
-            listView.UseCompatibleStateImageBehavior = false;
-            listView.View = View.Details;
-            listView.SelectedIndexChanged += listView_SelectedIndexChanged_1;
+            customTextBox1.BackColor = Color.FromArgb(217, 217, 217);
+            customTextBox1.BorderColor = Color.Transparent;
+            customTextBox1.BorderFocusColor = Color.Transparent;
+            customTextBox1.BorderRadius = 16;
+            customTextBox1.BorderSize = 2;
+            customTextBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            customTextBox1.ForeColor = Color.DimGray;
+            customTextBox1.Location = new Point(0, 10);
+            customTextBox1.Multiline = false;
+            customTextBox1.Name = "customTextBox1";
+            customTextBox1.Padding = new Padding(7);
+            customTextBox1.PasswordChar = false;
+            customTextBox1.PlaceholderColor = Color.DarkGray;
+            customTextBox1.PlaceholderText = "";
+            customTextBox1.Size = new Size(846, 32);
+            customTextBox1.TabIndex = 0;
+            customTextBox1.Texts = "";
+            customTextBox1.UnderlinedStyle = false;
             // 
-            // NameColumnHeader1
+            // dataGridView2
             // 
-            NameColumnHeader1.Text = "Name";
-            NameColumnHeader1.Width = 150;
+            dataGridView2.AllowUserToAddRows = false;
+            dataGridView2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView2.BackgroundColor = Color.FromArgb(238, 246, 247);
+            dataGridView2.BorderStyle = BorderStyle.None;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.ColumnHeadersVisible = false;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
+            dataGridView2.GridColor = SystemColors.ScrollBar;
+            dataGridView2.Location = new Point(0, 72);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersVisible = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(217, 217, 217);
+            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.Size = new Size(927, 423);
+            dataGridView2.TabIndex = 3;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
-            // NoteColumnHeader1
+            // dataGridViewTextBoxColumn1
             // 
-            NoteColumnHeader1.Text = "Secure Note";
-            NoteColumnHeader1.Width = 150;
+            dataGridViewTextBoxColumn1.FillWeight = 40.07614F;
+            dataGridViewTextBoxColumn1.HeaderText = "Name";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // SecureNotepanel3
+            // dataGridViewTextBoxColumn2
             // 
-            SecureNotepanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            SecureNotepanel3.BackColor = Color.FromArgb(238, 246, 247);
-            SecureNotepanel3.Controls.Add(SecureNoteaddButton);
-            SecureNotepanel3.Controls.Add(SecureNotesearchBox);
-            SecureNotepanel3.Location = new Point(2, 0);
-            SecureNotepanel3.Name = "SecureNotepanel3";
-            SecureNotepanel3.Size = new Size(467, 50);
-            SecureNotepanel3.TabIndex = 1;
+            dataGridViewTextBoxColumn2.FillWeight = 194.923859F;
+            dataGridViewTextBoxColumn2.HeaderText = "SecureNote";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // SecureNoteaddButton
+            // panel3
             // 
-            SecureNoteaddButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            SecureNoteaddButton.BackColor = Color.MediumSlateBlue;
-            SecureNoteaddButton.BackgroundColor = Color.MediumSlateBlue;
-            SecureNoteaddButton.BorderColor = Color.PaleVioletRed;
-            SecureNoteaddButton.BorderRadius = 10;
-            SecureNoteaddButton.BorderSize = 0;
-            SecureNoteaddButton.FlatAppearance.BorderSize = 0;
-            SecureNoteaddButton.FlatStyle = FlatStyle.Flat;
-            SecureNoteaddButton.ForeColor = Color.White;
-            SecureNoteaddButton.Location = new Point(405, 7);
-            SecureNoteaddButton.Name = "SecureNoteaddButton";
-            SecureNoteaddButton.Size = new Size(55, 32);
-            SecureNoteaddButton.TabIndex = 2;
-            SecureNoteaddButton.Text = "ADD";
-            SecureNoteaddButton.TextColor = Color.White;
-            SecureNoteaddButton.UseVisualStyleBackColor = false;
-            SecureNoteaddButton.Click += SecureNoteaddButton_Click;
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            panel3.BackColor = Color.FromArgb(238, 246, 247);
+            panel3.Controls.Add(SecureNoteAddBtn);
+            panel3.Location = new Point(853, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(63, 42);
+            panel3.TabIndex = 4;
             // 
-            // SecureNotesearchBox
+            // SecureNoteAddBtn
             // 
-            SecureNotesearchBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            SecureNotesearchBox.AutoScroll = true;
-            SecureNotesearchBox.BackColor = SystemColors.Window;
-            SecureNotesearchBox.BorderColor = Color.MediumSlateBlue;
-            SecureNotesearchBox.BorderFocusColor = Color.HotPink;
-            SecureNotesearchBox.BorderRadius = 0;
-            SecureNotesearchBox.BorderSize = 2;
-            SecureNotesearchBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SecureNotesearchBox.ForeColor = Color.DimGray;
-            SecureNotesearchBox.Location = new Point(3, 5);
-            SecureNotesearchBox.Margin = new Padding(3, 3, 20, 3);
-            SecureNotesearchBox.Multiline = false;
-            SecureNotesearchBox.Name = "SecureNotesearchBox";
-            SecureNotesearchBox.Padding = new Padding(7);
-            SecureNotesearchBox.PasswordChar = false;
-            SecureNotesearchBox.PlaceholderColor = Color.DarkGray;
-            SecureNotesearchBox.PlaceholderText = "";
-            SecureNotesearchBox.Size = new Size(380, 32);
-            SecureNotesearchBox.TabIndex = 1;
-            SecureNotesearchBox.Texts = "";
-            SecureNotesearchBox.UnderlinedStyle = false;
+            SecureNoteAddBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            SecureNoteAddBtn.BackColor = Color.Transparent;
+            SecureNoteAddBtn.BackgroundColor = Color.Transparent;
+            SecureNoteAddBtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SecureNoteAddBtn.BorderRadius = 16;
+            SecureNoteAddBtn.BorderSize = 2;
+            SecureNoteAddBtn.FlatAppearance.BorderSize = 0;
+            SecureNoteAddBtn.FlatStyle = FlatStyle.Flat;
+            SecureNoteAddBtn.ForeColor = Color.Black;
+            SecureNoteAddBtn.Location = new Point(3, 10);
+            SecureNoteAddBtn.Name = "SecureNoteAddBtn";
+            SecureNoteAddBtn.Size = new Size(57, 32);
+            SecureNoteAddBtn.TabIndex = 5;
+            SecureNoteAddBtn.Text = "ADD";
+            SecureNoteAddBtn.TextColor = Color.Black;
+            SecureNoteAddBtn.UseVisualStyleBackColor = false;
+            SecureNoteAddBtn.Click += SecureNoteAddBtn_Click;
             // 
             // SecureNoteForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(806, 536);
-            Controls.Add(SecureNoteAddForm);
-            Controls.Add(SecureNotepanel3);
-            Controls.Add(SecureNotepanel1);
+            BackColor = Color.FromArgb(238, 246, 247);
+            ClientSize = new Size(928, 543);
+            Controls.Add(panel3);
+            Controls.Add(dataGridView2);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "SecureNoteForm";
             Text = "SecureNoteForm";
-            Load += SecureNoteForm_Load;
-            SecureNoteDetailsPanel.ResumeLayout(false);
-            SecureNoteDetailsPanel.PerformLayout();
-            SecureNoteAddForm.ResumeLayout(false);
-            SecureNoteAddForm.PerformLayout();
-            SecureNotepanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            SecureNotepanel3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-        public Panel SecureNoteDetailsPanel;
-        public Panel SecureNotepanel1;
-        private Panel SecureNotepanel3;
-        public CustomControls.CustomTextBox SecureNotesearchBox;
-        public CustomControls.CustomButton SecureNoteaddButton;
-        private Label SecureNotedetails;
-        private Label SecureNoteName;
-        public Panel SecureNoteAddForm;
-        public CustomControls.CustomTextBox SecureNameBox;
-        public CustomControls.CustomTextBox SecureAddTextBox;
-        public Label SecureAddNote;
-        public CustomControls.CustomButton SecureAddFormDonebtn;
-        public Label SecureAddFormName;
-        public ListView listView;
-        public ColumnHeader NameColumnHeader1;
-        public ColumnHeader NoteColumnHeader1;
-        private Panel panel5;
         private CustomControls.CustomButton SecureNoteDeletebtn;
         private Panel panel1;
-        public CustomControls.CustomTextBox SecureDetailNameBox;
-        public CustomControls.CustomTextBox SecureNoteDetailText;
-        public CustomControls.CustomButton SecureNoteUpdatebtn;
         public Panel secureNoteUpdateForm;
         public CustomControls.CustomButton SecureNoteUpdateDonebtn;
         public Label SecureNoteUpdateNote;
@@ -458,5 +222,12 @@
         public Label SecureNoteUpdateName;
         public CustomControls.CustomTextBox SecureNoteUpdateNameBox;
         private CustomControls.CustomButton SecureNoteEditbtn;
+        private Panel panel2;
+        private Panel panel3;
+        public CustomControls.CustomButton SecureNoteAddBtn;
+        public DataGridView dataGridView2;
+        private CustomControls.CustomTextBox customTextBox1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

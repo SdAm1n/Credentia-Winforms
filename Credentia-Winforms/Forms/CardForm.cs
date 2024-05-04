@@ -16,5 +16,20 @@ namespace Credentia_Winforms
         {
             InitializeComponent();
         }
+
+        private void CardDetailsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CardDetailsName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExMonthDetails_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

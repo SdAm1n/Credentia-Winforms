@@ -148,20 +148,20 @@
             // addButton
             // 
             addButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            addButton.BackColor = Color.MediumSlateBlue;
-            addButton.BackgroundColor = Color.MediumSlateBlue;
+            addButton.BackColor = Color.Transparent;
+            addButton.BackgroundColor = Color.Transparent;
             addButton.BorderColor = Color.PaleVioletRed;
-            addButton.BorderRadius = 10;
-            addButton.BorderSize = 0;
+            addButton.BorderRadius = 16;
+            addButton.BorderSize = 2;
             addButton.FlatAppearance.BorderSize = 0;
             addButton.FlatStyle = FlatStyle.Flat;
-            addButton.ForeColor = Color.White;
+            addButton.ForeColor = Color.Black;
             addButton.Location = new Point(505, 6);
             addButton.Name = "addButton";
             addButton.Size = new Size(55, 32);
             addButton.TabIndex = 1;
             addButton.Text = "ADD";
-            addButton.TextColor = Color.White;
+            addButton.TextColor = Color.Black;
             addButton.UseVisualStyleBackColor = false;
             addButton.Click += addButton_Click;
             // 

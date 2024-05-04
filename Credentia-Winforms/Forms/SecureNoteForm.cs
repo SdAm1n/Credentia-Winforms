@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Credentia_Winforms.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,79 +17,13 @@ namespace Credentia_Winforms
         public SecureNoteForm()
         {
             InitializeComponent();
-        }
-
-        private void SecureNoteaddButton_Click(object sender, EventArgs e)
-        {
-            SecureNoteDetailsPanel.Visible = false;
-            SecureNoteAddForm.Visible = true;
-
-        }
-
-        private void SecureNoteForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SecureNoteDetailsPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void SecureAddFormDonebtn_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(SecureNameBox.Texts) || string.IsNullOrEmpty(SecureAddTextBox.Texts))
-                return;
-
-            ListViewItem item = new ListViewItem(SecureNameBox.Texts);
-            item.SubItems.Add(SecureAddTextBox.Texts);
-            listView.Items.Add(item);
-            SecureNameBox.Texts = "";
-            SecureAddTextBox.Texts = "";
-            SecureNameBox.Focus();
-
-            // Deselect all other items
-            foreach (ListViewItem listItem in listView.Items)
-            {
-                listItem.Selected = false;
-            }
-
-            // Select the newly added item by default
-            item.Selected = true;
-            listView.Focus();
+            // Subscribe to the CellPainting event to customize row appearance
         }
 
         private void SecureNoteDeletebtn_Click(object sender, EventArgs e)
         {
-            if (listView.Items.Count > 0)
-                listView.Items.Remove(listView.SelectedItems[0]);
-        }
-
-        private void SecureNoteAddForm_Load(object sender, EventArgs e)
-        {
-            // Subscribe to the SelectedIndexChanged event of the listView
-            listView.SelectedIndexChanged += listView_SelectedIndexChanged_1;
-            // Check if there are items in the listView
-        }
-
-
-        private void listView_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            // Check if an item is selected
-            if (listView.SelectedItems.Count == 1)
-            {
-                // Display the details of the selected item in the SecureNoteDetailsPanel
-                SecureNoteDetailsPanel.Visible = true;
-                SecureDetailNameBox.PlaceholderText = listView.SelectedItems[0].Text;
-                SecureNoteDetailText.PlaceholderText = listView.SelectedItems[0].SubItems[1].Text;
-            }
-           
-
+            int rowIndex = dataGridView2.CurrentCell.RowIndex;
+            dataGridView2.Rows.RemoveAt(rowIndex);
         }
 
 
@@ -96,34 +32,42 @@ namespace Credentia_Winforms
 
         }
 
-        private void SecureNoteUpdatebtn_Click(object sender, EventArgs e)
-        {
-            // Check if one item is selected
-            if (listView.SelectedItems.Count == 1)
-            {
-                // Prompt the user for confirmation
-                DialogResult result = MessageBox.Show("Are you sure you want to update this item?", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                // If the user confirms the update
-                if (result == DialogResult.Yes)
-                {
-                    // Update the selected item
-                    listView.SelectedItems[0].Text = SecureNameBox.Texts;
-                    listView.SelectedItems[0].SubItems[1].Text = SecureAddTextBox.Texts;
-
-                    // Clear input fields and set focus to the name field
-                    SecureNameBox.Texts = "";
-                    SecureAddTextBox.Texts = "";
-                    SecureNameBox.Focus();
-                    
-                }
-            }
-        }
 
         private void SecureNoteEditbtn_Click(object sender, EventArgs e)
         {
-            SecureNoteDetailsPanel.Visible = false;
-            SecureNoteAddForm.Visible = true;
+            int rowIndex = dataGridView2.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = dataGridView2.Rows[rowIndex];
+
+            SecureNoteUpdateForm f2 = new SecureNoteUpdateForm(selectedRow, dataGridView2);
+            f2.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SecureNoteAddBtn_Click(object sender, EventArgs e)
+        {
+            SecureNoteAddItemForm addForm = new SecureNoteAddItemForm(this);
+            addForm.Show();
+
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void customTextBox1__TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
