@@ -1,4 +1,7 @@
 ﻿using Credentia_Winforms.Forms;
+using DataAccessLibrary.Helpers;
+using DataAccessLibrary.Models;
+using DataAccessLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,14 +12,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Extensions.Configuration;
 
 namespace Credentia_Winforms
 {
     public partial class SecureNoteForm : Form
     {
+        SecureNoteForm fgrid1;
+        public string ActiveUserDB = LoginForm.ActiveUserDB;
+
         public SecureNoteForm()
         {
             InitializeComponent();
+
+            // Bind the DataGridView to the Secure Notes Table on Form Load
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            BindGridView(sql);
+
             SecureNoteUpdateVisibility();
         }
 
@@ -24,7 +36,19 @@ namespace Credentia_Winforms
         {
             //Selected row deleted
             int rowIndex = dataGridView2.CurrentCell.RowIndex;
+
+            // Get the selected row
+            DataGridViewRow selectedRow = dataGridView2.Rows[rowIndex];
+
+            // get id from secure_notes_table by name
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            int id = GetId(sql, selectedRow.Cells["dataGridViewTextBoxColumn1"].Value.ToString(), ActiveUserDB);
+
+            // Delete the Secure Note from the user's database's secure_notes_table
+            DeleteSecureNote(sql, id, ActiveUserDB);
+
             dataGridView2.Rows.RemoveAt(rowIndex);
+
             SecureNoteUpdateVisibility();
         }
 
@@ -37,6 +61,7 @@ namespace Credentia_Winforms
 
         private void SecureNoteEditbtn_Click(object sender, EventArgs e)
         {
+
             //Open Update Form to Change the value of selcted row
             int rowIndex = dataGridView2.CurrentCell.RowIndex;
             DataGridViewRow selectedRow = dataGridView2.Rows[rowIndex];
@@ -109,9 +134,60 @@ namespace Credentia_Winforms
 
         }
 
-        private void SecureNoteForm_Load(object sender, EventArgs e)
+        // ----------------- Database Operations ----------------- //
+
+
+        // Get id from secure_notes_table
+        private static int GetId(UsersDBCrud sql, string name, string userDatabase)
         {
+            // Get the id of the Secure Note from the user's database's secure_notes_table
+            int id = sql.GetSecureNoteId(name, userDatabase);
+
+            return id;
+        }
+
+        // Delete a Secure Note from the user's database's secure_notes_table
+        private static void DeleteSecureNote(UsersDBCrud sql, int id, string userDatabase)
+        {
+            sql.DeleteSecureNote(id, userDatabase);
+        }
+
+
+        void BindGridView(UsersDBCrud sql)
+        {
+            // Bind the DataGridView to the Secure Notes Table
+            List<SecureNotesModel> secureNotes = sql.GetSecureNotes(ActiveUserDB);
+
+            try
+            {
+                foreach (SecureNotesModel note in secureNotes)
+                {
+                    string decrypted = AesHelper.Decrypt(note.SecureNote);
+                    dataGridView2.Rows.Add(note.Name, decrypted);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
+
+        // Getting the connection string from the appsettings.json file
+        private static string GetConnectionString(string connectionStringName = "Default")
+        {
+            string output = "";
+
+            var builder = new ConfigurationBuilder()
+                          .SetBasePath(Directory.GetCurrentDirectory())
+                          .AddJsonFile("appsettings.json");
+
+            var config = builder.Build();
+
+            output = config.GetConnectionString(connectionStringName);
+
+            return output;
+        }
+
     }
 }

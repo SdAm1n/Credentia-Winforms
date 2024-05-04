@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccessLibrary.Helpers;
+using DataAccessLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using DataAccessLibrary.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace Credentia_Winforms.Forms
 {
@@ -15,6 +19,7 @@ namespace Credentia_Winforms.Forms
     {
         private DataGridViewRow selectedRow;
         private DataGridView dataGridView;
+        public string ActiveUserDB = LoginForm.ActiveUserDB;
 
         public SecureNoteUpdateForm(DataGridViewRow selectedRow, DataGridView dataGridView)
         {
@@ -36,6 +41,21 @@ namespace Credentia_Winforms.Forms
 
         private void SecureNoteUpdateSubmitbtn_Click(object sender, EventArgs e)
         {
+            // get id from secure_notes_table by name
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            int id = GetId(sql, selectedRow.Cells["dataGridViewTextBoxColumn1"].Value.ToString(), ActiveUserDB);
+
+            try
+            {
+                // update the database
+                UpdateSecureNote(sql, id, SecureUpdateNoteNameBox.Texts, SecureNoteUpdateTextBox.Texts, ActiveUserDB);
+                MessageBox.Show("Secure Note Updated Successfully");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             // Update the selected row with the new values
             selectedRow.Cells["dataGridViewTextBoxColumn1"].Value = SecureUpdateNoteNameBox.Texts;
             selectedRow.Cells["dataGridViewTextBoxColumn2"].Value = SecureNoteUpdateTextBox.Texts;
@@ -45,6 +65,47 @@ namespace Credentia_Winforms.Forms
 
             // Close the form
             this.Close();
+        }
+
+
+        // --------------------------- DATABASE ---------------------------- //
+
+
+        // Get id from secure_notes_table
+        private static int GetId(UsersDBCrud sql, string name, string userDatabase)
+        {
+            // Get the id of the Secure Note from the user's database's secure_notes_table
+            int id = sql.GetSecureNoteId(name, userDatabase);
+
+            return id;
+        }
+
+
+        // Update a Secure Note in the user's database's secure_notes_table
+
+        private static void UpdateSecureNote(UsersDBCrud sql, int id, string name, string securenote, string userDatabase)
+        {
+            // Update a Secure Note in the user's database's secure_notes_table
+            byte[] encrypted = AesHelper.Encrypt(securenote);
+
+            sql.UpdateSecureNote(id, name, encrypted, userDatabase);
+        }
+
+
+        // Getting the connection string from the appsettings.json file
+        private static string GetConnectionString(string connectionStringName = "Default")
+        {
+            string output = "";
+
+            var builder = new ConfigurationBuilder()
+                          .SetBasePath(Directory.GetCurrentDirectory())
+                          .AddJsonFile("appsettings.json");
+
+            var config = builder.Build();
+
+            output = config.GetConnectionString(connectionStringName);
+
+            return output;
         }
     }
 }
