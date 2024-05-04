@@ -23,6 +23,25 @@ namespace DataAccessLibrary
         // ----------------- CRUD Operations ----------------- //
         // ----------------- Users DB CRUD Operations ----------------- //
 
+        // Create Users table if doesn't exist and create user_table in the users database
+        public void CreateUsersDB()
+        {
+            string sql = @"CREATE SCHEMA IF NOT EXISTS users;
+                            USE users;
+                            CREATE TABLE IF NOT EXISTS user_table (
+                            Id INT NOT NULL AUTO_INCREMENT,
+                            Username VARCHAR(200) NOT NULL,
+                            MasterPassword VARCHAR(500) NOT NULL,
+                            Email VARCHAR(300) NOT NULL,
+                            User_Database VARCHAR(300) NOT NULL,
+                            PRIMARY KEY (Id),
+                            UNIQUE KEY Id_UNIQUE (Id),
+                            UNIQUE KEY Username_UNIQUE (Username),
+                            UNIQUE KEY Email_UNIQUE (Email));";
+
+            db.SaveData(sql, new { }, _connectionString);
+        }
+
 
         // Get all users from the users database's user_table
         public List<UsersModel> GetAllUsers()

@@ -40,6 +40,8 @@ namespace Credentia_Winforms
 
             // Create an instance of the MySqlCrud class
             UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={DATABASE_NAME};");
+
+
             string username = UsernameTextBox.Texts.ToLower();
             string masterPassword = PasswordTextBox.Texts;
             string email = EmailTextBox.Texts;
@@ -49,6 +51,7 @@ namespace Credentia_Winforms
                 // check to see if any fields are empty
                 if (!(string.IsNullOrEmpty(username) || string.IsNullOrEmpty(masterPassword) || string.IsNullOrEmpty(email)))
                 {
+
                     MessageBox.Show("User Created Successfully.", "Sign Up Completed", MessageBoxButtons.OK);
                     // Create a new user in the Users database's user_table
                     CreateUser(sql, username, masterPassword, email);
@@ -80,7 +83,10 @@ namespace Credentia_Winforms
 
         private void SignUpForm_Load(object sender, EventArgs e)
         {
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString());
 
+            // Create Users database if doesn't exist
+           CreateUsersDB(sql);
         }
 
         private void UsernameTextBox_Leave(object sender, EventArgs e)
@@ -156,6 +162,12 @@ namespace Credentia_Winforms
 
 
         // ------------------ DATABASE ------------------ //
+
+        // create users db and user_table if doesn't exist
+        private static void CreateUsersDB(UsersDBCrud sql)
+        {
+            sql.CreateUsersDB();
+        }
 
 
         // Create a new user database
