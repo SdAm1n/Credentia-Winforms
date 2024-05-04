@@ -34,7 +34,6 @@
             CardAddExYrName = new Label();
             CardAddExYrBox = new CustomControls.CustomTextBox();
             CardAddSecurityCode = new CustomControls.CustomTextBox();
-            CardAddExMnthname = new Label();
             CardBrandAddName = new Label();
             ExMnAddTextBox = new CustomControls.CustomTextBox();
             CardBrandAddBox = new CustomControls.CustomTextBox();
@@ -49,6 +48,7 @@
             SecureNoteNoteName = new Label();
             CardAddFormName = new Label();
             CardAddNameBox1 = new CustomControls.CustomTextBox();
+            CardAddExMnthname = new Label();
             SeureNoteAddItemPanel.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -147,15 +147,6 @@
             CardAddSecurityCode.TabIndex = 17;
             CardAddSecurityCode.Texts = "";
             CardAddSecurityCode.UnderlinedStyle = false;
-            // 
-            // CardAddExMnthname
-            // 
-            CardAddExMnthname.AutoSize = true;
-            CardAddExMnthname.Location = new Point(257, 270);
-            CardAddExMnthname.Name = "CardAddExMnthname";
-            CardAddExMnthname.Size = new Size(99, 15);
-            CardAddExMnthname.TabIndex = 16;
-            CardAddExMnthname.Text = "Expiration Month";
             // 
             // CardBrandAddName
             // 
@@ -377,6 +368,16 @@
             CardAddNameBox1.Texts = "";
             CardAddNameBox1.UnderlinedStyle = false;
             // 
+            // CardAddExMnthname
+            // 
+            CardAddExMnthname.AutoSize = true;
+            CardAddExMnthname.Location = new Point(257, 270);
+            CardAddExMnthname.Name = "CardAddExMnthname";
+            CardAddExMnthname.Size = new Size(99, 15);
+            CardAddExMnthname.TabIndex = 16;
+            CardAddExMnthname.Text = "Expiration Month";
+            CardAddExMnthname.Click += CardAddExMnthname_Click;
+            // 
             // CardAddItemForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -410,10 +411,10 @@
         public CustomControls.CustomTextBox CardBrandAddBox;
         public CustomControls.CustomTextBox ExMnAddTextBox;
         public Label CardBrandAddName;
-        public Label CardAddExMnthname;
         public Label CardAddSecurityCodeBox;
         public Label CardAddExYrName;
         public CustomControls.CustomTextBox CardAddExYrBox;
         public CustomControls.CustomTextBox CardAddSecurityCode;
+        public Label CardAddExMnthname;
     }
 }

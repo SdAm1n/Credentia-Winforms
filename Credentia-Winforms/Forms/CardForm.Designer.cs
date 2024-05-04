@@ -144,11 +144,11 @@
             // 
             // CardPanel1
             // 
-            CardPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             CardPanel1.Controls.Add(CardSearchBox);
+            CardPanel1.Controls.Add(CardAddBtn);
             CardPanel1.Location = new Point(-2, 1);
             CardPanel1.Name = "CardPanel1";
-            CardPanel1.Size = new Size(859, 51);
+            CardPanel1.Size = new Size(744, 51);
             CardPanel1.TabIndex = 3;
             // 
             // CardSearchBox
@@ -161,14 +161,14 @@
             CardSearchBox.BorderSize = 2;
             CardSearchBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CardSearchBox.ForeColor = Color.DimGray;
-            CardSearchBox.Location = new Point(14, 10);
+            CardSearchBox.Location = new Point(220, 11);
             CardSearchBox.Multiline = false;
             CardSearchBox.Name = "CardSearchBox";
             CardSearchBox.Padding = new Padding(7);
             CardSearchBox.PasswordChar = false;
             CardSearchBox.PlaceholderColor = Color.DarkGray;
             CardSearchBox.PlaceholderText = "";
-            CardSearchBox.Size = new Size(832, 32);
+            CardSearchBox.Size = new Size(353, 32);
             CardSearchBox.TabIndex = 0;
             CardSearchBox.Texts = "";
             CardSearchBox.UnderlinedStyle = false;
@@ -183,7 +183,7 @@
             CardAddBtn.FlatAppearance.BorderSize = 0;
             CardAddBtn.FlatStyle = FlatStyle.Flat;
             CardAddBtn.ForeColor = Color.Black;
-            CardAddBtn.Location = new Point(868, 11);
+            CardAddBtn.Location = new Point(665, 11);
             CardAddBtn.Name = "CardAddBtn";
             CardAddBtn.Size = new Size(57, 32);
             CardAddBtn.TabIndex = 6;
@@ -275,7 +275,6 @@
             ClientSize = new Size(937, 545);
             Controls.Add(NoItemsLabel);
             Controls.Add(CarddataGridView);
-            Controls.Add(CardAddBtn);
             Controls.Add(CardPanel1);
             Controls.Add(CardPanel3);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
