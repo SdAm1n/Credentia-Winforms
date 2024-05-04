@@ -16,6 +16,7 @@ namespace Credentia_Winforms
         public AllLoginsForm()
         {
             InitializeComponent();
+            LoginUpdateVisibility();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -35,21 +36,22 @@ namespace Credentia_Winforms
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            //To show AddItemAllLoginForm when Add button is clicked
+            // To show AddItemAllLoginForm when Add button is clicked
             AddItemAllLoginForm f2 = new AddItemAllLoginForm(this);
-            f2.Show();
+            f2.ShowDialog();
+            LoginUpdateVisibility();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
             if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Delete")
             {
                 // Remove the row corresponding to the clicked button
                 dataGridView1.Rows.RemoveAt(e.RowIndex);
+                LoginUpdateVisibility();
             }
 
-            // Check if the click is on a button cell and if that button cell has "Delete" as its value
+            // Check if the click is on a button cell and if that button cell has "Update" as its value
             else if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Update")
             {
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
@@ -77,13 +79,30 @@ namespace Credentia_Winforms
                     selectedRow.Cells["PasswordColumn"].Value = updateForm.passwordTextBox2.Texts;
                     selectedRow.Cells["URLColumn"].Value = updateForm.urlTextBox3.Texts;
                 }
+
+                LoginUpdateVisibility(); // Update visibility after updating a value
             }
+        }
+
+        private void searchBox__TextChanged(object sender, EventArgs e)
+        {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void LoginUpdateVisibility()
         {
-           
+            if (dataGridView1.Rows.Count == 0)
+            {
+                // Hide DataGridView and show the message label
+                dataGridView1.Visible = false;
+                AllLoginNoItems.Visible = true;
+            }
+            else
+            {
+                // Show DataGridView and hide the message label
+                dataGridView1.Visible = true;
+                AllLoginNoItems.Visible = false;
+            }
         }
     }
 }

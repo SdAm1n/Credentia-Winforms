@@ -39,6 +39,7 @@
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             panel3 = new Panel();
             SecureNoteAddBtn = new CustomControls.CustomButton();
+            SCNoItemsLabel = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -138,13 +139,13 @@
             dataGridView2.ColumnHeadersVisible = false;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
             dataGridView2.GridColor = SystemColors.ScrollBar;
-            dataGridView2.Location = new Point(0, 72);
+            dataGridView2.Location = new Point(12, 72);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersVisible = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(217, 217, 217);
             dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView2.Size = new Size(927, 423);
+            dataGridView2.Size = new Size(901, 423);
             dataGridView2.TabIndex = 3;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
@@ -165,9 +166,9 @@
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel3.BackColor = Color.FromArgb(238, 246, 247);
             panel3.Controls.Add(SecureNoteAddBtn);
-            panel3.Location = new Point(853, 0);
+            panel3.Location = new Point(853, 10);
             panel3.Name = "panel3";
-            panel3.Size = new Size(63, 42);
+            panel3.Size = new Size(63, 32);
             panel3.TabIndex = 4;
             // 
             // SecureNoteAddBtn
@@ -181,7 +182,7 @@
             SecureNoteAddBtn.FlatAppearance.BorderSize = 0;
             SecureNoteAddBtn.FlatStyle = FlatStyle.Flat;
             SecureNoteAddBtn.ForeColor = Color.Black;
-            SecureNoteAddBtn.Location = new Point(3, 10);
+            SecureNoteAddBtn.Location = new Point(3, 0);
             SecureNoteAddBtn.Name = "SecureNoteAddBtn";
             SecureNoteAddBtn.Size = new Size(57, 32);
             SecureNoteAddBtn.TabIndex = 5;
@@ -190,12 +191,23 @@
             SecureNoteAddBtn.UseVisualStyleBackColor = false;
             SecureNoteAddBtn.Click += SecureNoteAddBtn_Click;
             // 
+            // SCNoItemsLabel
+            // 
+            SCNoItemsLabel.AutoSize = true;
+            SCNoItemsLabel.Location = new Point(395, 251);
+            SCNoItemsLabel.Name = "SCNoItemsLabel";
+            SCNoItemsLabel.Size = new Size(133, 21);
+            SCNoItemsLabel.TabIndex = 9;
+            SCNoItemsLabel.Text = "No Item Available";
+            SCNoItemsLabel.Visible = false;
+            // 
             // SecureNoteForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 246, 247);
             ClientSize = new Size(928, 543);
+            Controls.Add(SCNoItemsLabel);
             Controls.Add(panel3);
             Controls.Add(dataGridView2);
             Controls.Add(panel2);
@@ -205,11 +217,13 @@
             Margin = new Padding(4);
             Name = "SecureNoteForm";
             Text = "SecureNoteForm";
+            Load += SecureNoteForm_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             panel3.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -229,5 +243,6 @@
         private CustomControls.CustomTextBox customTextBox1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        public Label SCNoItemsLabel;
     }
 }

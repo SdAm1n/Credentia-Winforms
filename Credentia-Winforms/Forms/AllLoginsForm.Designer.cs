@@ -41,13 +41,11 @@
             panel3 = new Panel();
             addButton = new CustomControls.CustomButton();
             searchBox = new CustomControls.CustomTextBox();
-            panel2 = new Panel();
-            label2 = new Label();
+            AllLoginNoItems = new Label();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel3.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -59,18 +57,19 @@
             panel1.Controls.Add(panel3);
             panel1.Location = new Point(1, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(570, 497);
+            panel1.Size = new Size(888, 497);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel4.Controls.Add(AllLoginNoItems);
             panel4.Controls.Add(dataGridView1);
             panel4.Controls.Add(label1);
             panel4.Location = new Point(0, 44);
             panel4.Name = "panel4";
-            panel4.Size = new Size(567, 450);
+            panel4.Size = new Size(885, 450);
             panel4.TabIndex = 1;
             // 
             // dataGridView1
@@ -87,7 +86,9 @@
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { nameColumn, UsernameColumn, PasswordColumn, URLColumn, updateColumn, deleteColumn });
             dataGridView1.Location = new Point(11, 38);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(549, 412);
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(867, 412);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -142,7 +143,7 @@
             panel3.Controls.Add(searchBox);
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(567, 46);
+            panel3.Size = new Size(885, 46);
             panel3.TabIndex = 0;
             // 
             // addButton
@@ -156,7 +157,7 @@
             addButton.FlatAppearance.BorderSize = 0;
             addButton.FlatStyle = FlatStyle.Flat;
             addButton.ForeColor = Color.Black;
-            addButton.Location = new Point(505, 6);
+            addButton.Location = new Point(823, 6);
             addButton.Name = "addButton";
             addButton.Size = new Size(55, 32);
             addButton.TabIndex = 1;
@@ -184,39 +185,27 @@
             searchBox.PasswordChar = false;
             searchBox.PlaceholderColor = Color.DarkGray;
             searchBox.PlaceholderText = "";
-            searchBox.Size = new Size(485, 32);
+            searchBox.Size = new Size(803, 32);
             searchBox.TabIndex = 0;
             searchBox.Texts = "";
             searchBox.UnderlinedStyle = false;
+            searchBox._TextChanged += searchBox__TextChanged;
             // 
-            // panel2
+            // AllLoginNoItems
             // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel2.BackColor = Color.FromArgb(234, 238, 238);
-            panel2.Controls.Add(label2);
-            panel2.Location = new Point(567, -1);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(325, 497);
-            panel2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(295, 12);
-            label2.Name = "label2";
-            label2.Size = new Size(20, 21);
-            label2.TabIndex = 0;
-            label2.Text = "x";
-            label2.Click += label2_Click;
+            AllLoginNoItems.AutoSize = true;
+            AllLoginNoItems.Location = new Point(376, 215);
+            AllLoginNoItems.Name = "AllLoginNoItems";
+            AllLoginNoItems.Size = new Size(133, 21);
+            AllLoginNoItems.TabIndex = 10;
+            AllLoginNoItems.Text = "No Item Available";
+            AllLoginNoItems.Visible = false;
             // 
             // AllLoginsForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(891, 495);
-            Controls.Add(panel2);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
@@ -230,15 +219,12 @@
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private Panel panel2;
         private Panel panel3;
         private Panel panel4;
         private Label label1;
@@ -251,6 +237,6 @@
         private DataGridViewTextBoxColumn URLColumn;
         private DataGridViewButtonColumn updateColumn;
         private DataGridViewButtonColumn deleteColumn;
-        private Label label2;
+        public Label AllLoginNoItems;
     }
 }

@@ -19,6 +19,8 @@ namespace Credentia_Winforms.Forms
         public SecureNoteUpdateForm(DataGridViewRow selectedRow, DataGridView dataGridView)
         {
             InitializeComponent();
+
+            //Select Row to update from datagrid
             this.selectedRow = selectedRow;
             this.dataGridView = dataGridView;
 

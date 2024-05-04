@@ -28,312 +28,286 @@
         /// </summary>
         private void InitializeComponent()
         {
-            CardDetailsPanel = new Panel();
-            CardDetailNameBox = new CustomControls.CustomTextBox();
-            CardHolderNameDetails = new Label();
-            SecureNotepanel1 = new Panel();
-            CardDetailsName = new Label();
-            CardHolderNameTextBox = new CustomControls.CustomTextBox();
-            BrandDetailsBox = new CustomControls.CustomTextBox();
-            CardNumberDetail = new Label();
-            CardNumberDetailBox = new CustomControls.CustomTextBox();
-            BrandDetails = new Label();
-            ExYearDetailBox = new CustomControls.CustomTextBox();
-            ExMonthDetails = new Label();
-            ExYearDetailsBox = new CustomControls.CustomTextBox();
-            ExYearDetails = new Label();
-            SecurityCodeDetails = new Label();
-            SecurityCodeDetailsBox = new CustomControls.CustomTextBox();
-            CardDetailsPanel.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            CardPanel3 = new Panel();
+            CardEditBtn = new CustomControls.CustomButton();
+            CardDeleteBtn = new CustomControls.CustomButton();
+            SecureNoteEditbtn = new CustomControls.CustomButton();
+            SecureNoteDeletebtn = new CustomControls.CustomButton();
+            CardPanel1 = new Panel();
+            CardSearchBox = new CustomControls.CustomTextBox();
+            CardAddBtn = new CustomControls.CustomButton();
+            CarddataGridView = new DataGridView();
+            CardNameBoxColumn = new DataGridViewTextBoxColumn();
+            CardHolderBoxColumn = new DataGridViewTextBoxColumn();
+            CardNumberColumn = new DataGridViewTextBoxColumn();
+            BrandColumn = new DataGridViewTextBoxColumn();
+            ExMonthColumn = new DataGridViewTextBoxColumn();
+            ExYearColumn = new DataGridViewTextBoxColumn();
+            SecurityCodeColumn = new DataGridViewTextBoxColumn();
+            NoItemsLabel = new Label();
+            CardPanel3.SuspendLayout();
+            CardPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CarddataGridView).BeginInit();
             SuspendLayout();
             // 
-            // CardDetailsPanel
+            // CardPanel3
             // 
-            CardDetailsPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            CardDetailsPanel.BackColor = Color.FromArgb(234, 238, 238);
-            CardDetailsPanel.Controls.Add(SecurityCodeDetails);
-            CardDetailsPanel.Controls.Add(SecurityCodeDetailsBox);
-            CardDetailsPanel.Controls.Add(ExYearDetailBox);
-            CardDetailsPanel.Controls.Add(ExMonthDetails);
-            CardDetailsPanel.Controls.Add(ExYearDetailsBox);
-            CardDetailsPanel.Controls.Add(ExYearDetails);
-            CardDetailsPanel.Controls.Add(BrandDetailsBox);
-            CardDetailsPanel.Controls.Add(CardNumberDetail);
-            CardDetailsPanel.Controls.Add(CardNumberDetailBox);
-            CardDetailsPanel.Controls.Add(BrandDetails);
-            CardDetailsPanel.Controls.Add(CardHolderNameTextBox);
-            CardDetailsPanel.Controls.Add(CardDetailsName);
-            CardDetailsPanel.Controls.Add(CardDetailNameBox);
-            CardDetailsPanel.Controls.Add(CardHolderNameDetails);
-            CardDetailsPanel.Location = new Point(469, 1);
-            CardDetailsPanel.Name = "CardDetailsPanel";
-            CardDetailsPanel.Size = new Size(335, 537);
-            CardDetailsPanel.TabIndex = 3;
-            CardDetailsPanel.Paint += CardDetailsPanel_Paint;
+            CardPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            CardPanel3.BackColor = Color.FromArgb(238, 246, 247);
+            CardPanel3.Controls.Add(CardEditBtn);
+            CardPanel3.Controls.Add(CardDeleteBtn);
+            CardPanel3.Controls.Add(SecureNoteEditbtn);
+            CardPanel3.Controls.Add(SecureNoteDeletebtn);
+            CardPanel3.Location = new Point(-2, 493);
+            CardPanel3.Name = "CardPanel3";
+            CardPanel3.Size = new Size(940, 53);
+            CardPanel3.TabIndex = 2;
             // 
-            // CardDetailNameBox
+            // CardEditBtn
             // 
-            CardDetailNameBox.BackColor = SystemColors.Window;
-            CardDetailNameBox.BorderColor = Color.GhostWhite;
-            CardDetailNameBox.BorderFocusColor = Color.GhostWhite;
-            CardDetailNameBox.BorderRadius = 0;
-            CardDetailNameBox.BorderSize = 2;
-            CardDetailNameBox.Enabled = false;
-            CardDetailNameBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CardDetailNameBox.ForeColor = Color.DimGray;
-            CardDetailNameBox.Location = new Point(29, 32);
-            CardDetailNameBox.Multiline = false;
-            CardDetailNameBox.Name = "CardDetailNameBox";
-            CardDetailNameBox.Padding = new Padding(7);
-            CardDetailNameBox.PasswordChar = false;
-            CardDetailNameBox.PlaceholderColor = Color.DarkGray;
-            CardDetailNameBox.PlaceholderText = "";
-            CardDetailNameBox.Size = new Size(279, 32);
-            CardDetailNameBox.TabIndex = 2;
-            CardDetailNameBox.Texts = "";
-            CardDetailNameBox.UnderlinedStyle = false;
+            CardEditBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            CardEditBtn.BackColor = Color.Transparent;
+            CardEditBtn.BackgroundColor = Color.Transparent;
+            CardEditBtn.BorderColor = Color.FromArgb(252, 92, 52);
+            CardEditBtn.BorderRadius = 16;
+            CardEditBtn.BorderSize = 2;
+            CardEditBtn.FlatAppearance.BorderSize = 0;
+            CardEditBtn.FlatStyle = FlatStyle.Flat;
+            CardEditBtn.ForeColor = Color.Black;
+            CardEditBtn.Location = new Point(767, 2);
+            CardEditBtn.Name = "CardEditBtn";
+            CardEditBtn.Size = new Size(67, 37);
+            CardEditBtn.TabIndex = 4;
+            CardEditBtn.Text = "Edit";
+            CardEditBtn.TextColor = Color.Black;
+            CardEditBtn.UseVisualStyleBackColor = false;
+            CardEditBtn.Click += CardEditBtn_Click;
             // 
-            // CardHolderNameDetails
+            // CardDeleteBtn
             // 
-            CardHolderNameDetails.AutoSize = true;
-            CardHolderNameDetails.Location = new Point(29, 74);
-            CardHolderNameDetails.Name = "CardHolderNameDetails";
-            CardHolderNameDetails.Size = new Size(140, 21);
-            CardHolderNameDetails.TabIndex = 1;
-            CardHolderNameDetails.Text = "Card Holder Name";
+            CardDeleteBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            CardDeleteBtn.BackColor = Color.Transparent;
+            CardDeleteBtn.BackgroundColor = Color.Transparent;
+            CardDeleteBtn.BorderColor = Color.FromArgb(252, 92, 52);
+            CardDeleteBtn.BorderRadius = 16;
+            CardDeleteBtn.BorderSize = 2;
+            CardDeleteBtn.FlatAppearance.BorderSize = 0;
+            CardDeleteBtn.FlatStyle = FlatStyle.Flat;
+            CardDeleteBtn.ForeColor = Color.Black;
+            CardDeleteBtn.Location = new Point(838, 2);
+            CardDeleteBtn.Name = "CardDeleteBtn";
+            CardDeleteBtn.Size = new Size(68, 37);
+            CardDeleteBtn.TabIndex = 3;
+            CardDeleteBtn.Text = "Delete";
+            CardDeleteBtn.TextColor = Color.Black;
+            CardDeleteBtn.UseVisualStyleBackColor = false;
+            CardDeleteBtn.Click += CardDeleteBtn_Click;
             // 
-            // SecureNotepanel1
+            // SecureNoteEditbtn
             // 
-            SecureNotepanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SecureNotepanel1.AutoScroll = true;
-            SecureNotepanel1.BackColor = Color.FromArgb(238, 246, 247);
-            SecureNotepanel1.Location = new Point(2, 1);
-            SecureNotepanel1.Name = "SecureNotepanel1";
-            SecureNotepanel1.Size = new Size(467, 537);
-            SecureNotepanel1.TabIndex = 4;
+            SecureNoteEditbtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            SecureNoteEditbtn.BackColor = Color.Transparent;
+            SecureNoteEditbtn.BackgroundColor = Color.Transparent;
+            SecureNoteEditbtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SecureNoteEditbtn.BorderRadius = 16;
+            SecureNoteEditbtn.BorderSize = 2;
+            SecureNoteEditbtn.FlatAppearance.BorderSize = 0;
+            SecureNoteEditbtn.FlatStyle = FlatStyle.Flat;
+            SecureNoteEditbtn.ForeColor = Color.Black;
+            SecureNoteEditbtn.Location = new Point(1491, -42);
+            SecureNoteEditbtn.Name = "SecureNoteEditbtn";
+            SecureNoteEditbtn.Size = new Size(69, 37);
+            SecureNoteEditbtn.TabIndex = 2;
+            SecureNoteEditbtn.Text = "Edit";
+            SecureNoteEditbtn.TextColor = Color.Black;
+            SecureNoteEditbtn.UseVisualStyleBackColor = false;
             // 
-            // CardDetailsName
+            // SecureNoteDeletebtn
             // 
-            CardDetailsName.AutoSize = true;
-            CardDetailsName.Location = new Point(29, 8);
-            CardDetailsName.Name = "CardDetailsName";
-            CardDetailsName.Size = new Size(52, 21);
-            CardDetailsName.TabIndex = 4;
-            CardDetailsName.Text = "Name";
-            CardDetailsName.Click += CardDetailsName_Click;
+            SecureNoteDeletebtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            SecureNoteDeletebtn.BackColor = Color.Transparent;
+            SecureNoteDeletebtn.BackgroundColor = Color.Transparent;
+            SecureNoteDeletebtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SecureNoteDeletebtn.BorderRadius = 16;
+            SecureNoteDeletebtn.BorderSize = 2;
+            SecureNoteDeletebtn.FlatAppearance.BorderSize = 0;
+            SecureNoteDeletebtn.FlatStyle = FlatStyle.Flat;
+            SecureNoteDeletebtn.ForeColor = Color.Black;
+            SecureNoteDeletebtn.Location = new Point(1566, -42);
+            SecureNoteDeletebtn.Name = "SecureNoteDeletebtn";
+            SecureNoteDeletebtn.Size = new Size(68, 37);
+            SecureNoteDeletebtn.TabIndex = 1;
+            SecureNoteDeletebtn.Text = "Delete";
+            SecureNoteDeletebtn.TextColor = Color.Black;
+            SecureNoteDeletebtn.UseVisualStyleBackColor = false;
             // 
-            // CardHolderNameTextBox
+            // CardPanel1
             // 
-            CardHolderNameTextBox.BackColor = SystemColors.Window;
-            CardHolderNameTextBox.BorderColor = Color.GhostWhite;
-            CardHolderNameTextBox.BorderFocusColor = Color.GhostWhite;
-            CardHolderNameTextBox.BorderRadius = 0;
-            CardHolderNameTextBox.BorderSize = 2;
-            CardHolderNameTextBox.Enabled = false;
-            CardHolderNameTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CardHolderNameTextBox.ForeColor = Color.DimGray;
-            CardHolderNameTextBox.Location = new Point(29, 98);
-            CardHolderNameTextBox.Multiline = false;
-            CardHolderNameTextBox.Name = "CardHolderNameTextBox";
-            CardHolderNameTextBox.Padding = new Padding(7);
-            CardHolderNameTextBox.PasswordChar = false;
-            CardHolderNameTextBox.PlaceholderColor = Color.DarkGray;
-            CardHolderNameTextBox.PlaceholderText = "";
-            CardHolderNameTextBox.Size = new Size(279, 32);
-            CardHolderNameTextBox.TabIndex = 5;
-            CardHolderNameTextBox.Texts = "";
-            CardHolderNameTextBox.UnderlinedStyle = false;
+            CardPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            CardPanel1.Controls.Add(CardSearchBox);
+            CardPanel1.Location = new Point(-2, 1);
+            CardPanel1.Name = "CardPanel1";
+            CardPanel1.Size = new Size(859, 51);
+            CardPanel1.TabIndex = 3;
             // 
-            // BrandDetailsBox
+            // CardSearchBox
             // 
-            BrandDetailsBox.BackColor = SystemColors.Window;
-            BrandDetailsBox.BorderColor = Color.GhostWhite;
-            BrandDetailsBox.BorderFocusColor = Color.GhostWhite;
-            BrandDetailsBox.BorderRadius = 0;
-            BrandDetailsBox.BorderSize = 2;
-            BrandDetailsBox.Enabled = false;
-            BrandDetailsBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BrandDetailsBox.ForeColor = Color.DimGray;
-            BrandDetailsBox.Location = new Point(29, 232);
-            BrandDetailsBox.Multiline = false;
-            BrandDetailsBox.Name = "BrandDetailsBox";
-            BrandDetailsBox.Padding = new Padding(7);
-            BrandDetailsBox.PasswordChar = false;
-            BrandDetailsBox.PlaceholderColor = Color.DarkGray;
-            BrandDetailsBox.PlaceholderText = "";
-            BrandDetailsBox.Size = new Size(279, 32);
-            BrandDetailsBox.TabIndex = 9;
-            BrandDetailsBox.Texts = "";
-            BrandDetailsBox.UnderlinedStyle = false;
+            CardSearchBox.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            CardSearchBox.BackColor = Color.FromArgb(217, 217, 217);
+            CardSearchBox.BorderColor = Color.Transparent;
+            CardSearchBox.BorderFocusColor = Color.Transparent;
+            CardSearchBox.BorderRadius = 16;
+            CardSearchBox.BorderSize = 2;
+            CardSearchBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CardSearchBox.ForeColor = Color.DimGray;
+            CardSearchBox.Location = new Point(14, 10);
+            CardSearchBox.Multiline = false;
+            CardSearchBox.Name = "CardSearchBox";
+            CardSearchBox.Padding = new Padding(7);
+            CardSearchBox.PasswordChar = false;
+            CardSearchBox.PlaceholderColor = Color.DarkGray;
+            CardSearchBox.PlaceholderText = "";
+            CardSearchBox.Size = new Size(832, 32);
+            CardSearchBox.TabIndex = 0;
+            CardSearchBox.Texts = "";
+            CardSearchBox.UnderlinedStyle = false;
             // 
-            // CardNumberDetail
+            // CardAddBtn
             // 
-            CardNumberDetail.AutoSize = true;
-            CardNumberDetail.Location = new Point(29, 139);
-            CardNumberDetail.Name = "CardNumberDetail";
-            CardNumberDetail.Size = new Size(109, 21);
-            CardNumberDetail.TabIndex = 8;
-            CardNumberDetail.Text = "Card Number ";
+            CardAddBtn.BackColor = Color.Transparent;
+            CardAddBtn.BackgroundColor = Color.Transparent;
+            CardAddBtn.BorderColor = Color.FromArgb(252, 92, 52);
+            CardAddBtn.BorderRadius = 16;
+            CardAddBtn.BorderSize = 2;
+            CardAddBtn.FlatAppearance.BorderSize = 0;
+            CardAddBtn.FlatStyle = FlatStyle.Flat;
+            CardAddBtn.ForeColor = Color.Black;
+            CardAddBtn.Location = new Point(868, 11);
+            CardAddBtn.Name = "CardAddBtn";
+            CardAddBtn.Size = new Size(57, 32);
+            CardAddBtn.TabIndex = 6;
+            CardAddBtn.Text = "ADD";
+            CardAddBtn.TextColor = Color.Black;
+            CardAddBtn.UseVisualStyleBackColor = false;
+            CardAddBtn.Click += CardAddBtn_Click;
             // 
-            // CardNumberDetailBox
+            // CarddataGridView
             // 
-            CardNumberDetailBox.BackColor = SystemColors.Window;
-            CardNumberDetailBox.BorderColor = Color.GhostWhite;
-            CardNumberDetailBox.BorderFocusColor = Color.GhostWhite;
-            CardNumberDetailBox.BorderRadius = 0;
-            CardNumberDetailBox.BorderSize = 2;
-            CardNumberDetailBox.Enabled = false;
-            CardNumberDetailBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CardNumberDetailBox.ForeColor = Color.DimGray;
-            CardNumberDetailBox.Location = new Point(29, 163);
-            CardNumberDetailBox.Multiline = false;
-            CardNumberDetailBox.Name = "CardNumberDetailBox";
-            CardNumberDetailBox.Padding = new Padding(7);
-            CardNumberDetailBox.PasswordChar = false;
-            CardNumberDetailBox.PlaceholderColor = Color.DarkGray;
-            CardNumberDetailBox.PlaceholderText = "";
-            CardNumberDetailBox.Size = new Size(279, 32);
-            CardNumberDetailBox.TabIndex = 7;
-            CardNumberDetailBox.Texts = "";
-            CardNumberDetailBox.UnderlinedStyle = false;
+            CarddataGridView.AllowUserToAddRows = false;
+            CarddataGridView.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            CarddataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            CarddataGridView.BackgroundColor = Color.FromArgb(238, 246, 247);
+            CarddataGridView.BorderStyle = BorderStyle.None;
+            CarddataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            CarddataGridView.Columns.AddRange(new DataGridViewColumn[] { CardNameBoxColumn, CardHolderBoxColumn, CardNumberColumn, BrandColumn, ExMonthColumn, ExYearColumn, SecurityCodeColumn });
+            CarddataGridView.GridColor = SystemColors.ScrollBar;
+            CarddataGridView.Location = new Point(12, 67);
+            CarddataGridView.Name = "CarddataGridView";
+            CarddataGridView.RowHeadersVisible = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(217, 217, 217);
+            CarddataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            CarddataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            CarddataGridView.Size = new Size(913, 425);
+            CarddataGridView.TabIndex = 7;
+            CarddataGridView.CellContentClick += CarddataGridView_CellContentClick;
             // 
-            // BrandDetails
+            // CardNameBoxColumn
             // 
-            BrandDetails.AutoSize = true;
-            BrandDetails.Location = new Point(29, 208);
-            BrandDetails.Name = "BrandDetails";
-            BrandDetails.Size = new Size(51, 21);
-            BrandDetails.TabIndex = 6;
-            BrandDetails.Text = "Brand";
+            CardNameBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            CardNameBoxColumn.FillWeight = 30F;
+            CardNameBoxColumn.HeaderText = "Name";
+            CardNameBoxColumn.Name = "CardNameBoxColumn";
             // 
-            // ExYearDetailBox
+            // CardHolderBoxColumn
             // 
-            ExYearDetailBox.BackColor = SystemColors.Window;
-            ExYearDetailBox.BorderColor = Color.GhostWhite;
-            ExYearDetailBox.BorderFocusColor = Color.GhostWhite;
-            ExYearDetailBox.BorderRadius = 0;
-            ExYearDetailBox.BorderSize = 2;
-            ExYearDetailBox.Enabled = false;
-            ExYearDetailBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ExYearDetailBox.ForeColor = Color.DimGray;
-            ExYearDetailBox.Location = new Point(29, 373);
-            ExYearDetailBox.Multiline = false;
-            ExYearDetailBox.Name = "ExYearDetailBox";
-            ExYearDetailBox.Padding = new Padding(7);
-            ExYearDetailBox.PasswordChar = false;
-            ExYearDetailBox.PlaceholderColor = Color.DarkGray;
-            ExYearDetailBox.PlaceholderText = "";
-            ExYearDetailBox.Size = new Size(279, 32);
-            ExYearDetailBox.TabIndex = 13;
-            ExYearDetailBox.Texts = "";
-            ExYearDetailBox.UnderlinedStyle = false;
+            CardHolderBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            CardHolderBoxColumn.FillWeight = 65F;
+            CardHolderBoxColumn.HeaderText = "Card Holder Name";
+            CardHolderBoxColumn.Name = "CardHolderBoxColumn";
+            CardHolderBoxColumn.Width = 126;
             // 
-            // ExMonthDetails
+            // CardNumberColumn
             // 
-            ExMonthDetails.AutoSize = true;
-            ExMonthDetails.Location = new Point(29, 280);
-            ExMonthDetails.Name = "ExMonthDetails";
-            ExMonthDetails.Size = new Size(129, 21);
-            ExMonthDetails.TabIndex = 12;
-            ExMonthDetails.Text = "Expiration Month";
-            ExMonthDetails.Click += ExMonthDetails_Click;
+            CardNumberColumn.FillWeight = 2.32163739F;
+            CardNumberColumn.HeaderText = "Card Number";
+            CardNumberColumn.Name = "CardNumberColumn";
             // 
-            // ExYearDetailsBox
+            // BrandColumn
             // 
-            ExYearDetailsBox.BackColor = SystemColors.Window;
-            ExYearDetailsBox.BorderColor = Color.GhostWhite;
-            ExYearDetailsBox.BorderFocusColor = Color.GhostWhite;
-            ExYearDetailsBox.BorderRadius = 0;
-            ExYearDetailsBox.BorderSize = 2;
-            ExYearDetailsBox.Enabled = false;
-            ExYearDetailsBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ExYearDetailsBox.ForeColor = Color.DimGray;
-            ExYearDetailsBox.Location = new Point(29, 304);
-            ExYearDetailsBox.Multiline = false;
-            ExYearDetailsBox.Name = "ExYearDetailsBox";
-            ExYearDetailsBox.Padding = new Padding(7);
-            ExYearDetailsBox.PasswordChar = false;
-            ExYearDetailsBox.PlaceholderColor = Color.DarkGray;
-            ExYearDetailsBox.PlaceholderText = "";
-            ExYearDetailsBox.Size = new Size(279, 32);
-            ExYearDetailsBox.TabIndex = 11;
-            ExYearDetailsBox.Texts = "";
-            ExYearDetailsBox.UnderlinedStyle = false;
+            BrandColumn.FillWeight = 1F;
+            BrandColumn.HeaderText = "Brand";
+            BrandColumn.Name = "BrandColumn";
             // 
-            // ExYearDetails
+            // ExMonthColumn
             // 
-            ExYearDetails.AutoSize = true;
-            ExYearDetails.Location = new Point(29, 349);
-            ExYearDetails.Name = "ExYearDetails";
-            ExYearDetails.Size = new Size(113, 21);
-            ExYearDetails.TabIndex = 10;
-            ExYearDetails.Text = "Expiration Year";
+            ExMonthColumn.FillWeight = 2.32163739F;
+            ExMonthColumn.HeaderText = "Expiration Month";
+            ExMonthColumn.Name = "ExMonthColumn";
             // 
-            // SecurityCodeDetails
+            // ExYearColumn
             // 
-            SecurityCodeDetails.AutoSize = true;
-            SecurityCodeDetails.Location = new Point(29, 416);
-            SecurityCodeDetails.Name = "SecurityCodeDetails";
-            SecurityCodeDetails.Size = new Size(106, 21);
-            SecurityCodeDetails.TabIndex = 16;
-            SecurityCodeDetails.Text = "Security Code";
+            ExYearColumn.FillWeight = 2.32163739F;
+            ExYearColumn.HeaderText = "Expiration Year";
+            ExYearColumn.Name = "ExYearColumn";
             // 
-            // SecurityCodeDetailsBox
+            // SecurityCodeColumn
             // 
-            SecurityCodeDetailsBox.BackColor = SystemColors.Window;
-            SecurityCodeDetailsBox.BorderColor = Color.GhostWhite;
-            SecurityCodeDetailsBox.BorderFocusColor = Color.GhostWhite;
-            SecurityCodeDetailsBox.BorderRadius = 0;
-            SecurityCodeDetailsBox.BorderSize = 2;
-            SecurityCodeDetailsBox.Enabled = false;
-            SecurityCodeDetailsBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SecurityCodeDetailsBox.ForeColor = Color.DimGray;
-            SecurityCodeDetailsBox.Location = new Point(29, 440);
-            SecurityCodeDetailsBox.Multiline = false;
-            SecurityCodeDetailsBox.Name = "SecurityCodeDetailsBox";
-            SecurityCodeDetailsBox.Padding = new Padding(7);
-            SecurityCodeDetailsBox.PasswordChar = false;
-            SecurityCodeDetailsBox.PlaceholderColor = Color.DarkGray;
-            SecurityCodeDetailsBox.PlaceholderText = "";
-            SecurityCodeDetailsBox.Size = new Size(279, 32);
-            SecurityCodeDetailsBox.TabIndex = 15;
-            SecurityCodeDetailsBox.Texts = "";
-            SecurityCodeDetailsBox.UnderlinedStyle = false;
+            SecurityCodeColumn.FillWeight = 2.32163739F;
+            SecurityCodeColumn.HeaderText = "Security Code";
+            SecurityCodeColumn.Name = "SecurityCodeColumn";
+            // 
+            // NoItemsLabel
+            // 
+            NoItemsLabel.AutoSize = true;
+            NoItemsLabel.Location = new Point(359, 260);
+            NoItemsLabel.Name = "NoItemsLabel";
+            NoItemsLabel.Size = new Size(133, 21);
+            NoItemsLabel.TabIndex = 8;
+            NoItemsLabel.Text = "No Item Available";
+            NoItemsLabel.Visible = false;
             // 
             // CardForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(806, 537);
-            Controls.Add(SecureNotepanel1);
-            Controls.Add(CardDetailsPanel);
+            BackColor = Color.FromArgb(238, 246, 247);
+            ClientSize = new Size(937, 545);
+            Controls.Add(NoItemsLabel);
+            Controls.Add(CarddataGridView);
+            Controls.Add(CardAddBtn);
+            Controls.Add(CardPanel1);
+            Controls.Add(CardPanel3);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "CardForm";
             Text = "CardForm";
-            CardDetailsPanel.ResumeLayout(false);
-            CardDetailsPanel.PerformLayout();
+            CardPanel3.ResumeLayout(false);
+            CardPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)CarddataGridView).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        public Panel CardDetailsPanel;
-        public CustomControls.CustomTextBox CardDetailNameBox;
-        private Label CardHolderNameDetails;
-        public Panel SecureNotepanel1;
-        private Label CardDetailsName;
-        public CustomControls.CustomTextBox CardHolderNameTextBox;
-        private Label SecurityCodeDetails;
-        public CustomControls.CustomTextBox SecurityCodeDetailsBox;
-        public CustomControls.CustomTextBox ExYearDetailBox;
-        private Label ExMonthDetails;
-        public CustomControls.CustomTextBox ExYearDetailsBox;
-        private Label ExYearDetails;
-        public CustomControls.CustomTextBox BrandDetailsBox;
-        private Label CardNumberDetail;
-        public CustomControls.CustomTextBox CardNumberDetailBox;
-        private Label BrandDetails;
+        private Panel CardPanel3;
+        private CustomControls.CustomButton SecureNoteEditbtn;
+        private CustomControls.CustomButton SecureNoteDeletebtn;
+        private CustomControls.CustomButton CardDeleteBtn;
+        private CustomControls.CustomButton CardEditBtn;
+        private Panel CardPanel1;
+        private CustomControls.CustomTextBox CardSearchBox;
+        public CustomControls.CustomButton CardAddBtn;
+        public DataGridView CarddataGridView;
+        private DataGridViewTextBoxColumn CardNameBoxColumn;
+        private DataGridViewTextBoxColumn CardHolderBoxColumn;
+        private DataGridViewTextBoxColumn CardNumberColumn;
+        private DataGridViewTextBoxColumn BrandColumn;
+        private DataGridViewTextBoxColumn ExMonthColumn;
+        private DataGridViewTextBoxColumn ExYearColumn;
+        private DataGridViewTextBoxColumn SecurityCodeColumn;
+        public Label NoItemsLabel;
     }
 }
