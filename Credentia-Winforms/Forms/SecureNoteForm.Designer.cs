@@ -217,7 +217,6 @@
             Margin = new Padding(4);
             Name = "SecureNoteForm";
             Text = "SecureNoteForm";
-            Load += SecureNoteForm_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
