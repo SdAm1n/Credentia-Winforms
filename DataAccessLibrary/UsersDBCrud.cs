@@ -119,8 +119,8 @@ namespace DataAccessLibrary
 
             // Create Secure Notes Table
             sql = $"CREATE TABLE {userDatabase}.`secure_notes_table` (`Id` int NOT NULL AUTO_INCREMENT," +
-                $" `Name` varchar(300) NOT NULL,`SecureNote` text NOT NULL, PRIMARY KEY (`Id`)," +
-                $" UNIQUE KEY `Id_UNIQUE` (`Id`))";
+                $" `Name` varchar(300) NOT NULL,`SecureNote` BLOB NOT NULL, PRIMARY KEY (`Id`)," +
+                $" UNIQUE KEY `Id_UNIQUE` (`Id`), UNIQUE KEY `Name_UNIQUE` (`Name`))";
 
             db.SaveData(sql, new { }, _connectionString);
         }
@@ -206,6 +206,23 @@ namespace DataAccessLibrary
             string sql = $"UPDATE {userDatabase}.secure_notes_table SET Name = @Name, SecureNote = @SecureNote WHERE Id = @Id";
 
             db.SaveData(sql, new { Id = id, Name = name, SecureNote = secureNote }, _connectionString);
+        }
+
+        // Get id from secure_notes_table
+        public int GetSecureNoteId(string name, string userDatabase)
+        {
+            string sql = $"SELECT Id FROM {userDatabase}.secure_notes_table WHERE Name = @Name";
+
+            try
+            {
+                var data = db.LoadData<SecureNotesModel, dynamic>(sql, new { Name = name }, _connectionString).First();
+
+                return data.Id;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
     }
 }
