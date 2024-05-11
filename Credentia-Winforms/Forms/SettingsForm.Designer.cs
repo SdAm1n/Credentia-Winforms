@@ -108,5 +108,6 @@
         private Label ActiveUsernameLabel;
         private Label UsernameLabel;
         private Label UsernameDB;
+        private CustomControls.CustomTextBox ComboBox;
     }
 }

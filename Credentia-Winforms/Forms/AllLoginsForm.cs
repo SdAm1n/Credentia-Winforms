@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Credentia_Winforms.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,96 +13,78 @@ namespace Credentia_Winforms
 {
     public partial class AllLoginsForm : Form
     {
-        int flag = -1;
+
         public AllLoginsForm()
         {
             InitializeComponent();
-            LoginUpdateVisibility();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
+            UpdateVisibility();
 
         }
 
         private void AllLoginsForm_Load(object sender, EventArgs e)
         {
-            this.ControlBox = false;
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
         }
-
-        private void addButton_Click(object sender, EventArgs e)
+        private void AllloginsAddBtn_Click(object sender, EventArgs e)
         {
-            // To show AddItemAllLoginForm when Add button is clicked
-            AddItemAllLoginForm f2 = new AddItemAllLoginForm(this);
-            f2.ShowDialog();
-            LoginUpdateVisibility();
+            AllloginsAddForm alllogins = new AllloginsAddForm(this);
+            alllogins.Show();
+            alllogins.FormClosed += alllogins_FormClosed;
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void alllogins_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Delete")
+            UpdateVisibility();
+
+            // Select the last row (newly added row) after the Add Form is closed
+            AllloginsdataGridView.ClearSelection();
+            int lastIndex = AllloginsdataGridView.Rows.Count - 1;
+            if (lastIndex >= 0)
             {
-                // Remove the row corresponding to the clicked button
-                dataGridView1.Rows.RemoveAt(e.RowIndex);
-                LoginUpdateVisibility();
-            }
-
-            // Check if the click is on a button cell and if that button cell has "Update" as its value
-            else if (e.RowIndex >= 0 && dataGridView1.Columns[e.ColumnIndex] is DataGridViewButtonColumn && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Update")
-            {
-                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-
-                // Open the AddItemAllLoginForm form for update
-                AddItemAllLoginForm updateForm = new AddItemAllLoginForm(this);
-
-                // Set the values of email and password in the update form
-                updateForm.nameTextBox1.Texts = selectedRow.Cells["nameColumn"].Value.ToString();
-                updateForm.usernameTextBox1.Texts = selectedRow.Cells["UsernameColumn"].Value.ToString();
-                updateForm.passwordTextBox2.Texts = selectedRow.Cells["PasswordColumn"].Value.ToString();
-                updateForm.urlTextBox3.Texts = selectedRow.Cells["URLColumn"].Value.ToString();
-
-                // Set the Tag property to indicate update mode
-                updateForm.Tag = "Update";
-
-                // Show the update form as a dialog
-                DialogResult result = updateForm.ShowDialog();
-
-                if (result == DialogResult.OK)
-                {
-                    // Update the values in the selected row
-                    selectedRow.Cells["nameColumn"].Value = updateForm.nameTextBox1.Texts;
-                    selectedRow.Cells["UsernameColumn"].Value = updateForm.usernameTextBox1.Texts;
-                    selectedRow.Cells["PasswordColumn"].Value = updateForm.passwordTextBox2.Texts;
-                    selectedRow.Cells["URLColumn"].Value = updateForm.urlTextBox3.Texts;
-                }
-
-                LoginUpdateVisibility(); // Update visibility after updating a value
+                AllloginsdataGridView.Rows[lastIndex].Selected = true;
+                AllloginsdataGridView.FirstDisplayedScrollingRowIndex = lastIndex;
             }
         }
 
-        private void searchBox__TextChanged(object sender, EventArgs e)
+        private void AllloginsDeletebtn_Click(object sender, EventArgs e)
         {
+            // Selected row deleted
+            int rowIndex = AllloginsdataGridView.CurrentCell.RowIndex;
+            AllloginsdataGridView.Rows.RemoveAt(rowIndex);
 
+            UpdateVisibility();
         }
 
-        private void LoginUpdateVisibility()
+        private void AllloginsEditbtn_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count == 0)
+            // Open Update Form to Change the value of selected row
+            int rowIndex = AllloginsdataGridView.CurrentCell.RowIndex;
+            DataGridViewRow selectedRow = AllloginsdataGridView.Rows[rowIndex];
+
+            AllloginsUpdateForm upform = new AllloginsUpdateForm(selectedRow, AllloginsdataGridView);
+            upform.Show();
+        }
+        private void UpdateVisibility()
+        {
+            if (AllloginsdataGridView.Rows.Count == 0)
             {
-                // Hide DataGridView and show the message label
-                dataGridView1.Visible = false;
-                AllLoginNoItems.Visible = true;
+                // Hide DataGridView and buttons
+                AllloginsdataGridView.Visible = false;
+                AllloginsEditbtn.Visible = false;
+                AllloginsDeletebtn.Visible = false;
+
+                // Show message indicating no items available
+                NoItemsLabel.Visible = true;
             }
             else
             {
-                // Show DataGridView and hide the message label
-                dataGridView1.Visible = true;
-                AllLoginNoItems.Visible = false;
+                // Show DataGridView and buttons
+                AllloginsdataGridView.Visible = true;
+                AllloginsEditbtn.Visible = true;
+                AllloginsDeletebtn.Visible = true;
+
+                // Hide message indicating no items available
+                NoItemsLabel.Visible = false;
             }
         }
     }
