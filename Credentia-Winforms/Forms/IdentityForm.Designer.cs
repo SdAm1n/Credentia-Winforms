@@ -42,6 +42,7 @@
             SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
             IdentitydataGridView = new DataGridView();
+            IdentityNoItems = new Label();
             IdentityNameColumn = new DataGridViewTextBoxColumn();
             IdentityUserNameColumn = new DataGridViewTextBoxColumn();
             IdentityTittleColumn = new DataGridViewTextBoxColumn();
@@ -54,7 +55,8 @@
             AddressColumn = new DataGridViewTextBoxColumn();
             IdentityZipColumn = new DataGridViewTextBoxColumn();
             IdentityCountryColumn = new DataGridViewTextBoxColumn();
-            IdentityNoItems = new Label();
+            NIDColumn = new DataGridViewTextBoxColumn();
+            PassportColumn = new DataGridViewTextBoxColumn();
             CardPanel1.SuspendLayout();
             CardPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IdentitydataGridView).BeginInit();
@@ -281,7 +283,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             IdentitydataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             IdentitydataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            IdentitydataGridView.Columns.AddRange(new DataGridViewColumn[] { IdentityNameColumn, IdentityUserNameColumn, IdentityTittleColumn, IdentityFirstNColumn, IdentityLastNColumn, IdentityCompanyColumn, IdentityLNColumn, IdentityEmailColumn, IdentityPhoneColumn, AddressColumn, IdentityZipColumn, IdentityCountryColumn });
+            IdentitydataGridView.Columns.AddRange(new DataGridViewColumn[] { IdentityNameColumn, IdentityUserNameColumn, IdentityTittleColumn, IdentityFirstNColumn, IdentityLastNColumn, IdentityCompanyColumn, IdentityLNColumn, IdentityEmailColumn, IdentityPhoneColumn, AddressColumn, IdentityZipColumn, IdentityCountryColumn, NIDColumn, PassportColumn });
             IdentitydataGridView.GridColor = SystemColors.ScrollBar;
             IdentitydataGridView.Location = new Point(0, 65);
             IdentitydataGridView.Name = "IdentitydataGridView";
@@ -293,6 +295,16 @@
             IdentitydataGridView.Size = new Size(940, 425);
             IdentitydataGridView.TabIndex = 8;
             IdentitydataGridView.CellContentClick += IdentitydataGridView_CellContentClick;
+            // 
+            // IdentityNoItems
+            // 
+            IdentityNoItems.AutoSize = true;
+            IdentityNoItems.Location = new Point(390, 247);
+            IdentityNoItems.Name = "IdentityNoItems";
+            IdentityNoItems.Size = new Size(133, 21);
+            IdentityNoItems.TabIndex = 9;
+            IdentityNoItems.Text = "No Item Available";
+            IdentityNoItems.Visible = false;
             // 
             // IdentityNameColumn
             // 
@@ -354,15 +366,15 @@
             IdentityCountryColumn.HeaderText = "Country";
             IdentityCountryColumn.Name = "IdentityCountryColumn";
             // 
-            // IdentityNoItems
+            // NIDColumn
             // 
-            IdentityNoItems.AutoSize = true;
-            IdentityNoItems.Location = new Point(390, 247);
-            IdentityNoItems.Name = "IdentityNoItems";
-            IdentityNoItems.Size = new Size(133, 21);
-            IdentityNoItems.TabIndex = 9;
-            IdentityNoItems.Text = "No Item Available";
-            IdentityNoItems.Visible = false;
+            NIDColumn.HeaderText = "NID no";
+            NIDColumn.Name = "NIDColumn";
+            // 
+            // PassportColumn
+            // 
+            PassportColumn.HeaderText = "Passport no";
+            PassportColumn.Name = "PassportColumn";
             // 
             // IdentityForm
             // 
@@ -400,6 +412,7 @@
         private CustomControls.CustomButton IdentityEditbtn;
         private CustomControls.CustomButton IdentityDeletebtn;
         public DataGridView IdentitydataGridView;
+        public Label IdentityNoItems;
         private DataGridViewTextBoxColumn IdentityNameColumn;
         private DataGridViewTextBoxColumn IdentityUserNameColumn;
         private DataGridViewTextBoxColumn IdentityTittleColumn;
@@ -412,6 +425,7 @@
         private DataGridViewTextBoxColumn AddressColumn;
         private DataGridViewTextBoxColumn IdentityZipColumn;
         private DataGridViewTextBoxColumn IdentityCountryColumn;
-        public Label IdentityNoItems;
+        private DataGridViewTextBoxColumn NIDColumn;
+        private DataGridViewTextBoxColumn PassportColumn;
     }
 }

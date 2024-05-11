@@ -34,6 +34,8 @@ namespace Credentia_Winforms.Forms
             IdentityUpAddressBox.Texts = selectedRow.Cells["AddressColumn"].Value.ToString();
             IdentityUpZipBox.Texts = selectedRow.Cells["IdentityZipColumn"].Value.ToString();
             IdentityUpCountryBox.Texts = selectedRow.Cells["IdentityCountryColumn"].Value.ToString();
+            IdentityNidUpBox.Texts = selectedRow.Cells["NIDColumn"].Value.ToString();
+            IdentityPassportUpBox.Texts = selectedRow.Cells["PassportColumn"].Value.ToString();
         }
 
         private void IdentityUpSubmitbtn_Click(object sender, EventArgs e)
@@ -51,6 +53,8 @@ namespace Credentia_Winforms.Forms
             selectedRow.Cells["AddressColumn"].Value = IdentityUpAddressBox.Texts;
             selectedRow.Cells["IdentityZipColumn"].Value = IdentityUpZipBox.Texts;
             selectedRow.Cells["IdentityCountryColumn"].Value = IdentityUpCountryBox.Texts;
+            selectedRow.Cells["NIDColumn"].Value = IdentityNidUpBox.Texts;
+            selectedRow.Cells["PassportColumn"].Value = IdentityPassportUpBox.Texts;
 
             // Update the DataGridView in SecureNoteForm
             dataGridView.Refresh(); // Refresh to reflect changes
