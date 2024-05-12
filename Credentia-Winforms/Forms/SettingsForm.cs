@@ -30,7 +30,6 @@ namespace Credentia_Winforms
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             ActiveUsernameLabel.Text = LoginForm.ActiveUser;
-            ActiveUserDBNameLabel.Text = LoginForm.ActiveUserDB;
 
            
         }
