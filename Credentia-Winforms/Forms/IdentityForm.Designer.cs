@@ -42,7 +42,6 @@
             SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
             IdentitydataGridView = new DataGridView();
-            IdentityNoItems = new Label();
             IdentityNameColumn = new DataGridViewTextBoxColumn();
             IdentityUserNameColumn = new DataGridViewTextBoxColumn();
             IdentityTittleColumn = new DataGridViewTextBoxColumn();
@@ -57,6 +56,7 @@
             IdentityCountryColumn = new DataGridViewTextBoxColumn();
             NIDColumn = new DataGridViewTextBoxColumn();
             PassportColumn = new DataGridViewTextBoxColumn();
+            IdentityNoItems = new Label();
             CardPanel1.SuspendLayout();
             CardPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IdentitydataGridView).BeginInit();
@@ -296,16 +296,6 @@
             IdentitydataGridView.TabIndex = 8;
             IdentitydataGridView.CellContentClick += IdentitydataGridView_CellContentClick;
             // 
-            // IdentityNoItems
-            // 
-            IdentityNoItems.AutoSize = true;
-            IdentityNoItems.Location = new Point(390, 247);
-            IdentityNoItems.Name = "IdentityNoItems";
-            IdentityNoItems.Size = new Size(133, 21);
-            IdentityNoItems.TabIndex = 9;
-            IdentityNoItems.Text = "No Item Available";
-            IdentityNoItems.Visible = false;
-            // 
             // IdentityNameColumn
             // 
             IdentityNameColumn.HeaderText = "Name";
@@ -375,6 +365,16 @@
             // 
             PassportColumn.HeaderText = "Passport no";
             PassportColumn.Name = "PassportColumn";
+            // 
+            // IdentityNoItems
+            // 
+            IdentityNoItems.AutoSize = true;
+            IdentityNoItems.Location = new Point(390, 247);
+            IdentityNoItems.Name = "IdentityNoItems";
+            IdentityNoItems.Size = new Size(133, 21);
+            IdentityNoItems.TabIndex = 9;
+            IdentityNoItems.Text = "No Item Available";
+            IdentityNoItems.Visible = false;
             // 
             // IdentityForm
             // 

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             AllloginsPanel1 = new Panel();
             AllloginsSearchBox = new CustomControls.CustomTextBox();
             CardSearchBox = new CustomControls.CustomTextBox();
@@ -72,7 +72,7 @@
             AllloginsSearchBox.BorderSize = 2;
             AllloginsSearchBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AllloginsSearchBox.ForeColor = Color.DimGray;
-            AllloginsSearchBox.Location = new Point(196, 9);
+            AllloginsSearchBox.Location = new Point(220, 11);
             AllloginsSearchBox.Multiline = false;
             AllloginsSearchBox.Name = "AllloginsSearchBox";
             AllloginsSearchBox.Padding = new Padding(7);
@@ -134,20 +134,20 @@
             AllloginsdataGridView.BorderStyle = BorderStyle.None;
             AllloginsdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             AllloginsdataGridView.Columns.AddRange(new DataGridViewColumn[] { AllloginsNameColumn, AllloginsUsernameColumn, AllloginsPasswordColumn, AllloginsURLColumn });
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            AllloginsdataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            AllloginsdataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             AllloginsdataGridView.GridColor = SystemColors.ScrollBar;
             AllloginsdataGridView.Location = new Point(12, 60);
             AllloginsdataGridView.Name = "AllloginsdataGridView";
             AllloginsdataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(217, 217, 217);
-            AllloginsdataGridView.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(217, 217, 217);
+            AllloginsdataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             AllloginsdataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             AllloginsdataGridView.Size = new Size(913, 425);
             AllloginsdataGridView.TabIndex = 8;
@@ -314,7 +314,7 @@
             // NoItemsLabel
             // 
             NoItemsLabel.AutoSize = true;
-            NoItemsLabel.Location = new Point(402, 262);
+            NoItemsLabel.Location = new Point(390, 247);
             NoItemsLabel.Name = "NoItemsLabel";
             NoItemsLabel.Size = new Size(133, 21);
             NoItemsLabel.TabIndex = 10;

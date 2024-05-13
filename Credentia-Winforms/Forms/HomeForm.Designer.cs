@@ -173,6 +173,7 @@
             sidebarLayout.Name = "sidebarLayout";
             sidebarLayout.Size = new Size(251, 630);
             sidebarLayout.TabIndex = 3;
+            sidebarLayout.Paint += sidebarLayout_Paint;
             // 
             // panel1
             // 

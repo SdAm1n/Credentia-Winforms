@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Credentia_Winforms
-{ 
+{
 
     public partial class HomeForm : Form
     {
@@ -20,6 +20,9 @@ namespace Credentia_Winforms
         SecureNoteForm secureNoteForm;
         PasswordGeneratorForm passwordGeneratorForm;
         SettingsForm settingsForm;
+
+        // Currently selected menu button
+        private Button selectedMenuButton;
 
         // Constructor
         public HomeForm()
@@ -90,6 +93,7 @@ namespace Credentia_Winforms
         // All Menu Button Clicks and Page Routes
         private void LoginsMenuBtn_Click(object sender, EventArgs e)
         {
+            ActivateMenuButton(LoginsMenuBtn);
             if (allLoginsForm == null)
             {
                 allLoginsForm = new AllLoginsForm();
@@ -112,6 +116,7 @@ namespace Credentia_Winforms
 
         private void CardMenuBtn_Click(object sender, EventArgs e)
         {
+            ActivateMenuButton(CardMenuBtn);
             if (cardForm == null)
             {
                 cardForm = new CardForm();
@@ -134,6 +139,7 @@ namespace Credentia_Winforms
 
         private void IdentityMenuBtn_Click(object sender, EventArgs e)
         {
+            ActivateMenuButton(IdentityMenuBtn);
             if (identityForm == null)
             {
                 identityForm = new IdentityForm();
@@ -156,6 +162,7 @@ namespace Credentia_Winforms
 
         private void SecureNoteMenuBtn_Click(object sender, EventArgs e)
         {
+            ActivateMenuButton(SecureNoteMenuBtn);
             if (secureNoteForm == null)
             {
                 secureNoteForm = new SecureNoteForm();
@@ -178,6 +185,7 @@ namespace Credentia_Winforms
 
         private void PasswordGeneratorMenuBtn_Click(object sender, EventArgs e)
         {
+            ActivateMenuButton(PasswordGeneratorMenuBtn);
             if (passwordGeneratorForm == null)
             {
                 passwordGeneratorForm = new PasswordGeneratorForm();
@@ -200,6 +208,7 @@ namespace Credentia_Winforms
 
         private void SettingsMenuBtn_Click(object sender, EventArgs e)
         {
+            ActivateMenuButton(SettingsMenuBtn);
             if (settingsForm == null)
             {
                 settingsForm = new SettingsForm();
@@ -226,6 +235,23 @@ namespace Credentia_Winforms
             LoginForm loginForm = new LoginForm();
             this.Hide();
             loginForm.Show();
+        }
+
+        private void sidebarLayout_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        // Function to activate menu button
+        private void ActivateMenuButton(Button button)
+        {
+            // Deactivate previously selected button
+            if (selectedMenuButton != null)
+            {
+                selectedMenuButton.BackColor = Color.Transparent; // Or any other color you prefer
+            }
+            // Activate the clicked button
+            selectedMenuButton = button;
+            selectedMenuButton.BackColor = Color.LightGray; // Or any other color you prefer
         }
     }
 }

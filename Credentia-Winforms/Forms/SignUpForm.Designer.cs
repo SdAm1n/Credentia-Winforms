@@ -32,7 +32,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
             DockPanel1 = new Panel();
-            LogoPictureBox = new PictureBox();
             DockPanel2 = new Panel();
             SignUpBtn = new CustomControls.CustomButton();
             CancelBtn = new CustomControls.CustomButton();
@@ -48,15 +47,16 @@
             PasswordErrorProvider = new ErrorProvider(components);
             EmailErrorProvider = new ErrorProvider(components);
             ConfirmPasswordErrorProvider = new ErrorProvider(components);
+            pictureBox1 = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             DockPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)LogoPictureBox).BeginInit();
             DockPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)UsernameErrorProvider).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PasswordErrorProvider).BeginInit();
             ((System.ComponentModel.ISupportInitialize)EmailErrorProvider).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ConfirmPasswordErrorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -85,23 +85,12 @@
             // 
             // DockPanel1
             // 
-            DockPanel1.Controls.Add(LogoPictureBox);
+            DockPanel1.Controls.Add(pictureBox1);
             DockPanel1.Dock = DockStyle.Fill;
             DockPanel1.Location = new Point(0, 0);
             DockPanel1.Name = "DockPanel1";
             DockPanel1.Size = new Size(405, 624);
             DockPanel1.TabIndex = 0;
-            // 
-            // LogoPictureBox
-            // 
-            LogoPictureBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            LogoPictureBox.Image = Properties.Resources.logo_no_background;
-            LogoPictureBox.Location = new Point(24, 186);
-            LogoPictureBox.Name = "LogoPictureBox";
-            LogoPictureBox.Size = new Size(378, 230);
-            LogoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            LogoPictureBox.TabIndex = 0;
-            LogoPictureBox.TabStop = false;
             // 
             // DockPanel2
             // 
@@ -299,6 +288,17 @@
             // 
             ConfirmPasswordErrorProvider.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.Image = Properties.Resources.logo_no_background;
+            pictureBox1.Location = new Point(52, 145);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(353, 230);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
             // SignUpForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -314,13 +314,13 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             DockPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)LogoPictureBox).EndInit();
             DockPanel2.ResumeLayout(false);
             DockPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)UsernameErrorProvider).EndInit();
             ((System.ComponentModel.ISupportInitialize)PasswordErrorProvider).EndInit();
             ((System.ComponentModel.ISupportInitialize)EmailErrorProvider).EndInit();
             ((System.ComponentModel.ISupportInitialize)ConfirmPasswordErrorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -329,7 +329,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
         private Panel DockPanel1;
-        private PictureBox LogoPictureBox;
         private Panel DockPanel2;
         private CustomControls.CustomButton CancelBtn;
         private CustomControls.CustomTextBox PasswordTextBox;
@@ -345,5 +344,6 @@
         private ErrorProvider PasswordErrorProvider;
         private ErrorProvider EmailErrorProvider;
         private ErrorProvider ConfirmPasswordErrorProvider;
+        private PictureBox pictureBox1;
     }
 }

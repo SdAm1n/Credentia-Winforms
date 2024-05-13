@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             textPassword = new CustomControls.CustomTextBox();
-            OptionPanel = new Panel();
-            label3 = new Label();
-            panel4 = new Panel();
+            PGGenerateBtn = new CustomControls.CustomButton();
+            PGCopybtn = new CustomControls.CustomButton();
+            panel3 = new Panel();
             panel2 = new Panel();
             label2 = new Label();
             length = new Label();
@@ -41,15 +40,12 @@
             chkIncludeUppercase = new CheckBox();
             chkIncludeLowercase = new CheckBox();
             chkIncludeSymbols = new CheckBox();
-            timer1 = new System.Windows.Forms.Timer(components);
-            CancelPanel = new Panel();
-            PGGenerateBtn = new CustomControls.CustomButton();
-            PGCopybtn = new CustomControls.CustomButton();
-            OptionPanel.SuspendLayout();
-            panel4.SuspendLayout();
+            OptionPanel = new Panel();
+            panel4 = new Panel();
+            panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownlength).BeginInit();
-            CancelPanel.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // textPassword
@@ -62,7 +58,7 @@
             textPassword.Enabled = false;
             textPassword.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textPassword.ForeColor = Color.DimGray;
-            textPassword.Location = new Point(159, 30);
+            textPassword.Location = new Point(39, 12);
             textPassword.Multiline = false;
             textPassword.Name = "textPassword";
             textPassword.Padding = new Padding(7);
@@ -74,39 +70,57 @@
             textPassword.Texts = "";
             textPassword.UnderlinedStyle = false;
             // 
-            // OptionPanel
+            // PGGenerateBtn
             // 
-            OptionPanel.BackColor = Color.FromArgb(238, 246, 247);
-            OptionPanel.Controls.Add(label3);
-            OptionPanel.Controls.Add(panel4);
-            OptionPanel.Location = new Point(159, 92);
-            OptionPanel.MaximumSize = new Size(452, 400);
-            OptionPanel.MinimumSize = new Size(452, 47);
-            OptionPanel.Name = "OptionPanel";
-            OptionPanel.Size = new Size(452, 400);
-            OptionPanel.TabIndex = 2;
+            PGGenerateBtn.BackColor = Color.Transparent;
+            PGGenerateBtn.BackgroundColor = Color.Transparent;
+            PGGenerateBtn.BorderColor = Color.FromArgb(252, 92, 52);
+            PGGenerateBtn.BorderRadius = 16;
+            PGGenerateBtn.BorderSize = 2;
+            PGGenerateBtn.FlatAppearance.BorderSize = 0;
+            PGGenerateBtn.FlatStyle = FlatStyle.Flat;
+            PGGenerateBtn.ForeColor = Color.Black;
+            PGGenerateBtn.Location = new Point(253, 379);
+            PGGenerateBtn.Name = "PGGenerateBtn";
+            PGGenerateBtn.Size = new Size(81, 32);
+            PGGenerateBtn.TabIndex = 8;
+            PGGenerateBtn.Text = "Generate";
+            PGGenerateBtn.TextColor = Color.Black;
+            PGGenerateBtn.UseVisualStyleBackColor = false;
+            PGGenerateBtn.Click += PGGenerateBtn_Click;
             // 
-            // label3
+            // PGCopybtn
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(15, 14);
-            label3.Name = "label3";
-            label3.Size = new Size(65, 21);
-            label3.TabIndex = 7;
-            label3.Text = "Options";
+            PGCopybtn.BackColor = Color.Transparent;
+            PGCopybtn.BackgroundColor = Color.Transparent;
+            PGCopybtn.BorderColor = Color.FromArgb(252, 92, 52);
+            PGCopybtn.BorderRadius = 16;
+            PGCopybtn.BorderSize = 2;
+            PGCopybtn.FlatAppearance.BorderSize = 0;
+            PGCopybtn.FlatStyle = FlatStyle.Flat;
+            PGCopybtn.ForeColor = Color.Black;
+            PGCopybtn.Location = new Point(454, 12);
+            PGCopybtn.Name = "PGCopybtn";
+            PGCopybtn.Size = new Size(81, 32);
+            PGCopybtn.TabIndex = 8;
+            PGCopybtn.Text = "Copy";
+            PGCopybtn.TextColor = Color.Black;
+            PGCopybtn.UseVisualStyleBackColor = false;
+            PGCopybtn.Click += PGCopybtn_Click;
             // 
-            // panel4
+            // panel3
             // 
-            panel4.BackColor = Color.FromArgb(238, 246, 247);
-            panel4.Controls.Add(panel2);
-            panel4.Location = new Point(0, 47);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(452, 353);
-            panel4.TabIndex = 3;
+            panel3.Controls.Add(textPassword);
+            panel3.Controls.Add(PGCopybtn);
+            panel3.Location = new Point(110, 22);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(567, 57);
+            panel3.TabIndex = 9;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(217, 217, 217);
+            panel2.Controls.Add(PGGenerateBtn);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(length);
             panel2.Controls.Add(numericUpDownlength);
@@ -114,9 +128,9 @@
             panel2.Controls.Add(chkIncludeUppercase);
             panel2.Controls.Add(chkIncludeLowercase);
             panel2.Controls.Add(chkIncludeSymbols);
-            panel2.Location = new Point(0, 3);
+            panel2.Location = new Point(113, 96);
             panel2.Name = "panel2";
-            panel2.Size = new Size(452, 350);
+            panel2.Size = new Size(566, 457);
             panel2.TabIndex = 0;
             // 
             // label2
@@ -186,57 +200,25 @@
             chkIncludeSymbols.Text = "!@#$%^&*";
             chkIncludeSymbols.UseVisualStyleBackColor = true;
             // 
-            // timer1
+            // OptionPanel
             // 
-            timer1.Interval = 15;
-            timer1.Tick += timer1_Tick;
+            OptionPanel.BackColor = Color.FromArgb(238, 246, 247);
+            OptionPanel.Location = new Point(113, 96);
+            OptionPanel.Name = "OptionPanel";
+            OptionPanel.Size = new Size(566, 457);
+            OptionPanel.TabIndex = 2;
             // 
-            // CancelPanel
+            // panel4
             // 
-            CancelPanel.Controls.Add(PGGenerateBtn);
-            CancelPanel.Location = new Point(159, 525);
-            CancelPanel.Name = "CancelPanel";
-            CancelPanel.Size = new Size(452, 38);
-            CancelPanel.TabIndex = 3;
-            CancelPanel.Paint += CancelPanel_Paint;
-            // 
-            // PGGenerateBtn
-            // 
-            PGGenerateBtn.BackColor = Color.Transparent;
-            PGGenerateBtn.BackgroundColor = Color.Transparent;
-            PGGenerateBtn.BorderColor = Color.FromArgb(252, 92, 52);
-            PGGenerateBtn.BorderRadius = 16;
-            PGGenerateBtn.BorderSize = 2;
-            PGGenerateBtn.FlatAppearance.BorderSize = 0;
-            PGGenerateBtn.FlatStyle = FlatStyle.Flat;
-            PGGenerateBtn.ForeColor = Color.Black;
-            PGGenerateBtn.Location = new Point(356, 3);
-            PGGenerateBtn.Name = "PGGenerateBtn";
-            PGGenerateBtn.Size = new Size(81, 32);
-            PGGenerateBtn.TabIndex = 8;
-            PGGenerateBtn.Text = "Generate";
-            PGGenerateBtn.TextColor = Color.Black;
-            PGGenerateBtn.UseVisualStyleBackColor = false;
-            PGGenerateBtn.Click += PGGenerateBtn_Click;
-            // 
-            // PGCopybtn
-            // 
-            PGCopybtn.BackColor = Color.Transparent;
-            PGCopybtn.BackgroundColor = Color.Transparent;
-            PGCopybtn.BorderColor = Color.FromArgb(252, 92, 52);
-            PGCopybtn.BorderRadius = 16;
-            PGCopybtn.BorderSize = 2;
-            PGCopybtn.FlatAppearance.BorderSize = 0;
-            PGCopybtn.FlatStyle = FlatStyle.Flat;
-            PGCopybtn.ForeColor = Color.Black;
-            PGCopybtn.Location = new Point(530, 30);
-            PGCopybtn.Name = "PGCopybtn";
-            PGCopybtn.Size = new Size(81, 32);
-            PGCopybtn.TabIndex = 8;
-            PGCopybtn.Text = "Copy";
-            PGCopybtn.TextColor = Color.Black;
-            PGCopybtn.UseVisualStyleBackColor = false;
-            PGCopybtn.Click += PGCopybtn_Click;
+            panel4.Anchor = AnchorStyles.None;
+            panel4.BackgroundImageLayout = ImageLayout.None;
+            panel4.Controls.Add(panel2);
+            panel4.Controls.Add(panel3);
+            panel4.Controls.Add(OptionPanel);
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(796, 600);
+            panel4.TabIndex = 4;
             // 
             // PasswordGeneratorForm
             // 
@@ -244,22 +226,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(238, 246, 247);
             ClientSize = new Size(796, 600);
-            Controls.Add(PGCopybtn);
-            Controls.Add(CancelPanel);
-            Controls.Add(OptionPanel);
-            Controls.Add(textPassword);
+            Controls.Add(panel4);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "PasswordGeneratorForm";
             Text = "PasswordGeneratorForm";
-            OptionPanel.ResumeLayout(false);
-            OptionPanel.PerformLayout();
-            panel4.ResumeLayout(false);
+            panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownlength).EndInit();
-            CancelPanel.ResumeLayout(false);
+            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -269,21 +246,19 @@
         private Panel panel1;
         private RadioButton radioButton1;
         private Label label1;
-        private Panel OptionPanel;
-        private Panel panel4;
-        private System.Windows.Forms.Timer timer1;
-        private Panel panel2;
         private Panel panel6;
-        private Panel CancelPanel;
+        public CustomControls.CustomButton PGGenerateBtn;
+        public CustomControls.CustomButton PGCopybtn;
+        private Panel panel3;
+        private Panel panel2;
+        private Label label2;
+        private Label length;
+        private NumericUpDown numericUpDownlength;
+        private CheckBox chkIncludeNumbers;
         private CheckBox chkIncludeUppercase;
         private CheckBox chkIncludeLowercase;
         private CheckBox chkIncludeSymbols;
-        private CheckBox chkIncludeNumbers;
-        public CustomControls.CustomButton PGGenerateBtn;
-        private NumericUpDown numericUpDownlength;
-        private Label length;
-        public CustomControls.CustomButton PGCopybtn;
-        private Label label2;
-        private Label label3;
+        private Panel OptionPanel;
+        private Panel panel4;
     }
 }

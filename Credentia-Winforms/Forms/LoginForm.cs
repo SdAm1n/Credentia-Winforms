@@ -148,5 +148,10 @@ namespace Credentia_Winforms
 
             return output;
         }
+
+        private void DockPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

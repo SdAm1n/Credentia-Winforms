@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
             SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
@@ -99,9 +99,9 @@
             // 
             panel2.Controls.Add(SecureNoteAddBtn);
             panel2.Controls.Add(customTextBox1);
-            panel2.Location = new Point(1, 0);
+            panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(779, 50);
+            panel2.Size = new Size(744, 51);
             panel2.TabIndex = 2;
             panel2.Paint += panel2_Paint;
             // 
@@ -116,7 +116,7 @@
             SecureNoteAddBtn.FlatAppearance.BorderSize = 0;
             SecureNoteAddBtn.FlatStyle = FlatStyle.Flat;
             SecureNoteAddBtn.ForeColor = Color.Black;
-            SecureNoteAddBtn.Location = new Point(457, 10);
+            SecureNoteAddBtn.Location = new Point(665, 11);
             SecureNoteAddBtn.Name = "SecureNoteAddBtn";
             SecureNoteAddBtn.Size = new Size(57, 32);
             SecureNoteAddBtn.TabIndex = 5;
@@ -134,14 +134,14 @@
             customTextBox1.BorderSize = 2;
             customTextBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             customTextBox1.ForeColor = Color.DimGray;
-            customTextBox1.Location = new Point(3, 10);
+            customTextBox1.Location = new Point(220, 11);
             customTextBox1.Multiline = false;
             customTextBox1.Name = "customTextBox1";
             customTextBox1.Padding = new Padding(7);
             customTextBox1.PasswordChar = false;
             customTextBox1.PlaceholderColor = Color.DarkGray;
             customTextBox1.PlaceholderText = "";
-            customTextBox1.Size = new Size(448, 32);
+            customTextBox1.Size = new Size(353, 32);
             customTextBox1.TabIndex = 0;
             customTextBox1.Texts = "";
             customTextBox1.UnderlinedStyle = false;
@@ -160,8 +160,8 @@
             dataGridView2.Location = new Point(12, 72);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(217, 217, 217);
-            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(217, 217, 217);
+            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(901, 423);
             dataGridView2.TabIndex = 3;
@@ -182,7 +182,7 @@
             // SCNoItemsLabel
             // 
             SCNoItemsLabel.AutoSize = true;
-            SCNoItemsLabel.Location = new Point(395, 251);
+            SCNoItemsLabel.Location = new Point(390, 247);
             SCNoItemsLabel.Name = "SCNoItemsLabel";
             SCNoItemsLabel.Size = new Size(133, 21);
             SCNoItemsLabel.TabIndex = 9;
