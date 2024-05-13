@@ -32,7 +32,7 @@ namespace Credentia_Winforms.Forms
         private void IdentityAddSubmitbtn_Click(object sender, EventArgs e)
         {
             // Add a new row to the DataGridView
-            fgrid4.IdentitydataGridView.Rows.Add(IdentityAddNameBox.Texts,IdentityAddTittleBox.Texts,IdentityFNAddBox.Texts, IdentityLNAddBox.Texts, IdentityUNAddTextBox.Texts, CardAddCompanyBox.Texts, IdentityAddLCNBox.Texts, IdentityAddEmailBox.Texts, IdentityAddPhoneBox.Texts, IdentityAddAddressBox.Texts, IdentityAddZipBox.Texts, IdentityAddCountryBox.Texts);
+            fgrid4.IdentitydataGridView.Rows.Add(IdentityAddNameBox.Texts,IdentityAddTittleBox.Texts,IdentityFNAddBox.Texts, IdentityLNAddBox.Texts, IdentityUNAddTextBox.Texts, CardAddCompanyBox.Texts, IdentityAddLCNBox.Texts, IdentityAddEmailBox.Texts, IdentityAddPhoneBox.Texts, IdentityAddAddressBox.Texts, IdentityAddZipBox.Texts, IdentityAddCountryBox.Texts, IdentityAddNidBox.Texts, IdentityAddPassportBox.Texts);
 
             // Close the form and return DialogResult.OK to indicate success
             DialogResult = DialogResult.OK;

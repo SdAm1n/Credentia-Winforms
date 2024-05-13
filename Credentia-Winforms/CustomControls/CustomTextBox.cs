@@ -38,6 +38,7 @@ namespace Credentia_Winforms.CustomControls
         {
             //Created by designer
             InitializeComponent();
+
         }
 
         #region -> Properties

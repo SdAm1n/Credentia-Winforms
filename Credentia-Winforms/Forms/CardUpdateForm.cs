@@ -18,6 +18,11 @@ namespace Credentia_Winforms.Forms
         public CardUpdateForm(DataGridViewRow selectedRow, DataGridView dataGridView)
         {
             InitializeComponent();
+            // Populate CardBrandAddComboBox with specific items
+            CardBrandUpComboBox.Items.Add("Item 1");
+            CardBrandUpComboBox.Items.Add("Item 2");
+            CardBrandUpComboBox.Items.Add("Item 3");
+            CardBrandUpComboBox.Items.Add("Item 4");
             //Select Row to update from datagrid
             this.selectedRow = selectedRow;
             this.dataGridView = dataGridView;
@@ -26,7 +31,7 @@ namespace Credentia_Winforms.Forms
             CardUpNameBox.Texts = selectedRow.Cells["CardNameBoxColumn"].Value.ToString();
             CardUpHolderNameBox1.Texts = selectedRow.Cells["CardHolderBoxColumn"].Value.ToString();
             CardNumberUpBox.Texts = selectedRow.Cells["CardNumberColumn"].Value.ToString();
-            CardBrandUpBox.Texts = selectedRow.Cells["BrandColumn"].Value.ToString();
+            CardBrandUpComboBox.Text = selectedRow.Cells["BrandColumn"].Value.ToString();
             ExMnUpTextBox.Texts = selectedRow.Cells["ExMonthColumn"].Value.ToString();
             CardUpExYrBox.Texts = selectedRow.Cells["ExYearColumn"].Value.ToString();
             CardUpSecurityCode.Texts = selectedRow.Cells["SecurityCodeColumn"].Value.ToString();
@@ -39,7 +44,7 @@ namespace Credentia_Winforms.Forms
             selectedRow.Cells["CardNameBoxColumn"].Value = CardUpNameBox.Texts;
             selectedRow.Cells["CardHolderBoxColumn"].Value = CardUpHolderNameBox1.Texts;
             selectedRow.Cells["CardNumberColumn"].Value = CardNumberUpBox.Texts;
-            selectedRow.Cells["BrandColumn"].Value = CardBrandUpBox.Texts;
+            selectedRow.Cells["BrandColumn"].Value = CardBrandUpComboBox.Text;
             selectedRow.Cells["ExMonthColumn"].Value = ExMnUpTextBox.Texts;
             selectedRow.Cells["ExYearColumn"].Value = CardUpExYrBox.Texts;
             selectedRow.Cells["SecurityCodeColumn"].Value = CardUpSecurityCode.Texts;

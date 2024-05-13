@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Credentia_Winforms.CustomControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,16 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Credentia_Winforms
 {
     public partial class SettingsForm : Form
     {
+        
 
         public SettingsForm()
         {
             InitializeComponent();
-
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -27,7 +30,10 @@ namespace Credentia_Winforms
         private void SettingsForm_Load(object sender, EventArgs e)
         {
             ActiveUsernameLabel.Text = LoginForm.ActiveUser;
-            ActiveUserDBNameLabel.Text = LoginForm.ActiveUserDB;
+
+           
         }
+
+     
     }
 }

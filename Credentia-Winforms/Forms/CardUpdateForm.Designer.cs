@@ -36,7 +36,6 @@
             CardUpExMnthname = new Label();
             CardBrandUpName = new Label();
             ExMnUpTextBox = new CustomControls.CustomTextBox();
-            CardBrandUpBox = new CustomControls.CustomTextBox();
             CardNumberUpName = new Label();
             CardNumberUpBox = new CustomControls.CustomTextBox();
             CardHolderUpName = new Label();
@@ -44,11 +43,13 @@
             CardUpSubmitbtn = new CustomControls.CustomButton();
             CardUpName = new Label();
             CardUpNameBox = new CustomControls.CustomTextBox();
+            CardBrandUpComboBox = new ComboBox();
             CardUpdatePanel.SuspendLayout();
             SuspendLayout();
             // 
             // CardUpdatePanel
             // 
+            CardUpdatePanel.Controls.Add(CardBrandUpComboBox);
             CardUpdatePanel.Controls.Add(CardUpSecurityCodeBox);
             CardUpdatePanel.Controls.Add(CardUpExYrName);
             CardUpdatePanel.Controls.Add(CardUpExYrBox);
@@ -56,7 +57,6 @@
             CardUpdatePanel.Controls.Add(CardUpExMnthname);
             CardUpdatePanel.Controls.Add(CardBrandUpName);
             CardUpdatePanel.Controls.Add(ExMnUpTextBox);
-            CardUpdatePanel.Controls.Add(CardBrandUpBox);
             CardUpdatePanel.Controls.Add(CardNumberUpName);
             CardUpdatePanel.Controls.Add(CardNumberUpBox);
             CardUpdatePanel.Controls.Add(CardHolderUpName);
@@ -168,27 +168,6 @@
             ExMnUpTextBox.Texts = "";
             ExMnUpTextBox.UnderlinedStyle = false;
             // 
-            // CardBrandUpBox
-            // 
-            CardBrandUpBox.BackColor = SystemColors.Window;
-            CardBrandUpBox.BorderColor = Color.MediumSlateBlue;
-            CardBrandUpBox.BorderFocusColor = Color.HotPink;
-            CardBrandUpBox.BorderRadius = 10;
-            CardBrandUpBox.BorderSize = 2;
-            CardBrandUpBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CardBrandUpBox.ForeColor = Color.DimGray;
-            CardBrandUpBox.Location = new Point(246, 220);
-            CardBrandUpBox.Multiline = false;
-            CardBrandUpBox.Name = "CardBrandUpBox";
-            CardBrandUpBox.Padding = new Padding(7);
-            CardBrandUpBox.PasswordChar = false;
-            CardBrandUpBox.PlaceholderColor = Color.DarkGray;
-            CardBrandUpBox.PlaceholderText = "";
-            CardBrandUpBox.Size = new Size(250, 32);
-            CardBrandUpBox.TabIndex = 13;
-            CardBrandUpBox.Texts = "";
-            CardBrandUpBox.UnderlinedStyle = false;
-            // 
             // CardNumberUpName
             // 
             CardNumberUpName.AutoSize = true;
@@ -298,6 +277,14 @@
             CardUpNameBox.Texts = "";
             CardUpNameBox.UnderlinedStyle = false;
             // 
+            // CardBrandUpComboBox
+            // 
+            CardBrandUpComboBox.FormattingEnabled = true;
+            CardBrandUpComboBox.Location = new Point(246, 232);
+            CardBrandUpComboBox.Name = "CardBrandUpComboBox";
+            CardBrandUpComboBox.Size = new Size(250, 23);
+            CardBrandUpComboBox.TabIndex = 23;
+            // 
             // CardUpdateForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -321,7 +308,6 @@
         public Label CardUpExMnthname;
         public Label CardBrandUpName;
         public CustomControls.CustomTextBox ExMnUpTextBox;
-        public CustomControls.CustomTextBox CardBrandUpBox;
         public Label CardNumberUpName;
         public CustomControls.CustomTextBox CardNumberUpBox;
         public Label CardHolderUpName;
@@ -329,5 +315,6 @@
         public CustomControls.CustomButton CardUpSubmitbtn;
         public Label CardUpName;
         public CustomControls.CustomTextBox CardUpNameBox;
+        private ComboBox CardBrandUpComboBox;
     }
 }

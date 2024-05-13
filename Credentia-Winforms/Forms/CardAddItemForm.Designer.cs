@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SeureNoteAddItemPanel = new Panel();
+            CardAddNameBox1 = new CustomControls.CustomTextBox();
+            CardAddFormName = new Label();
+            SecureNoteNoteName = new Label();
+            SecureNoteSubmitbtn = new CustomControls.CustomButton();
             panel1 = new Panel();
+            CardBrandAddComboBox = new ComboBox();
             CardAddSecurityCodeBox = new Label();
             CardAddExYrName = new Label();
             CardAddExYrBox = new CustomControls.CustomTextBox();
             CardAddSecurityCode = new CustomControls.CustomTextBox();
+            CardAddExMnthname = new Label();
             CardBrandAddName = new Label();
             ExMnAddTextBox = new CustomControls.CustomTextBox();
-            CardBrandAddBox = new CustomControls.CustomTextBox();
             CardNumberAddName = new Label();
             CardNumberAddBox = new CustomControls.CustomTextBox();
             CardHolderAddName = new Label();
@@ -44,30 +48,71 @@
             CardAddSubmitbtn = new CustomControls.CustomButton();
             CardAddName = new Label();
             CardAddNameBox = new CustomControls.CustomTextBox();
-            SecureNoteSubmitbtn = new CustomControls.CustomButton();
-            SecureNoteNoteName = new Label();
-            CardAddFormName = new Label();
-            CardAddNameBox1 = new CustomControls.CustomTextBox();
-            CardAddExMnthname = new Label();
-            SeureNoteAddItemPanel.SuspendLayout();
+            SeureNoteAddItemPanel = new Panel();
             panel1.SuspendLayout();
+            SeureNoteAddItemPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // SeureNoteAddItemPanel
+            // CardAddNameBox1
             // 
-            SeureNoteAddItemPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SeureNoteAddItemPanel.Controls.Add(panel1);
-            SeureNoteAddItemPanel.Controls.Add(SecureNoteSubmitbtn);
-            SeureNoteAddItemPanel.Controls.Add(SecureNoteNoteName);
-            SeureNoteAddItemPanel.Controls.Add(CardAddFormName);
-            SeureNoteAddItemPanel.Controls.Add(CardAddNameBox1);
-            SeureNoteAddItemPanel.Location = new Point(0, -1);
-            SeureNoteAddItemPanel.Name = "SeureNoteAddItemPanel";
-            SeureNoteAddItemPanel.Size = new Size(838, 515);
-            SeureNoteAddItemPanel.TabIndex = 2;
+            CardAddNameBox1.BackColor = SystemColors.Window;
+            CardAddNameBox1.BorderColor = Color.MediumSlateBlue;
+            CardAddNameBox1.BorderFocusColor = Color.HotPink;
+            CardAddNameBox1.BorderRadius = 10;
+            CardAddNameBox1.BorderSize = 2;
+            CardAddNameBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CardAddNameBox1.ForeColor = Color.DimGray;
+            CardAddNameBox1.Location = new Point(188, 34);
+            CardAddNameBox1.Multiline = false;
+            CardAddNameBox1.Name = "CardAddNameBox1";
+            CardAddNameBox1.Padding = new Padding(7);
+            CardAddNameBox1.PasswordChar = false;
+            CardAddNameBox1.PlaceholderColor = Color.DarkGray;
+            CardAddNameBox1.PlaceholderText = "";
+            CardAddNameBox1.Size = new Size(250, 32);
+            CardAddNameBox1.TabIndex = 0;
+            CardAddNameBox1.Texts = "";
+            CardAddNameBox1.UnderlinedStyle = false;
+            // 
+            // CardAddFormName
+            // 
+            CardAddFormName.AutoSize = true;
+            CardAddFormName.Location = new Point(188, 7);
+            CardAddFormName.Name = "CardAddFormName";
+            CardAddFormName.Size = new Size(39, 15);
+            CardAddFormName.TabIndex = 1;
+            CardAddFormName.Text = "Name";
+            // 
+            // SecureNoteNoteName
+            // 
+            SecureNoteNoteName.AutoSize = true;
+            SecureNoteNoteName.Location = new Point(188, 87);
+            SecureNoteNoteName.Name = "SecureNoteNoteName";
+            SecureNoteNoteName.Size = new Size(71, 15);
+            SecureNoteNoteName.TabIndex = 3;
+            SecureNoteNoteName.Text = "Secure Note";
+            // 
+            // SecureNoteSubmitbtn
+            // 
+            SecureNoteSubmitbtn.BackColor = Color.MediumSlateBlue;
+            SecureNoteSubmitbtn.BackgroundColor = Color.MediumSlateBlue;
+            SecureNoteSubmitbtn.BorderColor = Color.PaleVioletRed;
+            SecureNoteSubmitbtn.BorderRadius = 10;
+            SecureNoteSubmitbtn.BorderSize = 0;
+            SecureNoteSubmitbtn.FlatAppearance.BorderSize = 0;
+            SecureNoteSubmitbtn.FlatStyle = FlatStyle.Flat;
+            SecureNoteSubmitbtn.ForeColor = Color.White;
+            SecureNoteSubmitbtn.Location = new Point(188, 374);
+            SecureNoteSubmitbtn.Name = "SecureNoteSubmitbtn";
+            SecureNoteSubmitbtn.Size = new Size(150, 40);
+            SecureNoteSubmitbtn.TabIndex = 8;
+            SecureNoteSubmitbtn.Text = "Submit";
+            SecureNoteSubmitbtn.TextColor = Color.White;
+            SecureNoteSubmitbtn.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
+            panel1.Controls.Add(CardBrandAddComboBox);
             panel1.Controls.Add(CardAddSecurityCodeBox);
             panel1.Controls.Add(CardAddExYrName);
             panel1.Controls.Add(CardAddExYrBox);
@@ -75,7 +120,6 @@
             panel1.Controls.Add(CardAddExMnthname);
             panel1.Controls.Add(CardBrandAddName);
             panel1.Controls.Add(ExMnAddTextBox);
-            panel1.Controls.Add(CardBrandAddBox);
             panel1.Controls.Add(CardNumberAddName);
             panel1.Controls.Add(CardNumberAddBox);
             panel1.Controls.Add(CardHolderAddName);
@@ -87,6 +131,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(838, 515);
             panel1.TabIndex = 9;
+            // 
+            // CardBrandAddComboBox
+            // 
+            CardBrandAddComboBox.BackColor = SystemColors.ButtonHighlight;
+            CardBrandAddComboBox.FormattingEnabled = true;
+            CardBrandAddComboBox.Location = new Point(246, 229);
+            CardBrandAddComboBox.Name = "CardBrandAddComboBox";
+            CardBrandAddComboBox.Size = new Size(250, 23);
+            CardBrandAddComboBox.TabIndex = 22;
+            CardBrandAddComboBox.SelectedIndexChanged += CardBrandAddComboBox_SelectedIndexChanged;
             // 
             // CardAddSecurityCodeBox
             // 
@@ -148,6 +202,16 @@
             CardAddSecurityCode.Texts = "";
             CardAddSecurityCode.UnderlinedStyle = false;
             // 
+            // CardAddExMnthname
+            // 
+            CardAddExMnthname.AutoSize = true;
+            CardAddExMnthname.Location = new Point(257, 270);
+            CardAddExMnthname.Name = "CardAddExMnthname";
+            CardAddExMnthname.Size = new Size(99, 15);
+            CardAddExMnthname.TabIndex = 16;
+            CardAddExMnthname.Text = "Expiration Month";
+            CardAddExMnthname.Click += CardAddExMnthname_Click;
+            // 
             // CardBrandAddName
             // 
             CardBrandAddName.AutoSize = true;
@@ -178,27 +242,6 @@
             ExMnAddTextBox.TabIndex = 14;
             ExMnAddTextBox.Texts = "";
             ExMnAddTextBox.UnderlinedStyle = false;
-            // 
-            // CardBrandAddBox
-            // 
-            CardBrandAddBox.BackColor = SystemColors.Window;
-            CardBrandAddBox.BorderColor = Color.MediumSlateBlue;
-            CardBrandAddBox.BorderFocusColor = Color.HotPink;
-            CardBrandAddBox.BorderRadius = 10;
-            CardBrandAddBox.BorderSize = 2;
-            CardBrandAddBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CardBrandAddBox.ForeColor = Color.DimGray;
-            CardBrandAddBox.Location = new Point(246, 220);
-            CardBrandAddBox.Multiline = false;
-            CardBrandAddBox.Name = "CardBrandAddBox";
-            CardBrandAddBox.Padding = new Padding(7);
-            CardBrandAddBox.PasswordChar = false;
-            CardBrandAddBox.PlaceholderColor = Color.DarkGray;
-            CardBrandAddBox.PlaceholderText = "";
-            CardBrandAddBox.Size = new Size(250, 32);
-            CardBrandAddBox.TabIndex = 13;
-            CardBrandAddBox.Texts = "";
-            CardBrandAddBox.UnderlinedStyle = false;
             // 
             // CardNumberAddName
             // 
@@ -311,72 +354,18 @@
             CardAddNameBox.Texts = "";
             CardAddNameBox.UnderlinedStyle = false;
             // 
-            // SecureNoteSubmitbtn
+            // SeureNoteAddItemPanel
             // 
-            SecureNoteSubmitbtn.BackColor = Color.MediumSlateBlue;
-            SecureNoteSubmitbtn.BackgroundColor = Color.MediumSlateBlue;
-            SecureNoteSubmitbtn.BorderColor = Color.PaleVioletRed;
-            SecureNoteSubmitbtn.BorderRadius = 10;
-            SecureNoteSubmitbtn.BorderSize = 0;
-            SecureNoteSubmitbtn.FlatAppearance.BorderSize = 0;
-            SecureNoteSubmitbtn.FlatStyle = FlatStyle.Flat;
-            SecureNoteSubmitbtn.ForeColor = Color.White;
-            SecureNoteSubmitbtn.Location = new Point(188, 374);
-            SecureNoteSubmitbtn.Name = "SecureNoteSubmitbtn";
-            SecureNoteSubmitbtn.Size = new Size(150, 40);
-            SecureNoteSubmitbtn.TabIndex = 8;
-            SecureNoteSubmitbtn.Text = "Submit";
-            SecureNoteSubmitbtn.TextColor = Color.White;
-            SecureNoteSubmitbtn.UseVisualStyleBackColor = false;
-            // 
-            // SecureNoteNoteName
-            // 
-            SecureNoteNoteName.AutoSize = true;
-            SecureNoteNoteName.Location = new Point(188, 87);
-            SecureNoteNoteName.Name = "SecureNoteNoteName";
-            SecureNoteNoteName.Size = new Size(71, 15);
-            SecureNoteNoteName.TabIndex = 3;
-            SecureNoteNoteName.Text = "Secure Note";
-            // 
-            // CardAddFormName
-            // 
-            CardAddFormName.AutoSize = true;
-            CardAddFormName.Location = new Point(188, 7);
-            CardAddFormName.Name = "CardAddFormName";
-            CardAddFormName.Size = new Size(39, 15);
-            CardAddFormName.TabIndex = 1;
-            CardAddFormName.Text = "Name";
-            // 
-            // CardAddNameBox1
-            // 
-            CardAddNameBox1.BackColor = SystemColors.Window;
-            CardAddNameBox1.BorderColor = Color.MediumSlateBlue;
-            CardAddNameBox1.BorderFocusColor = Color.HotPink;
-            CardAddNameBox1.BorderRadius = 10;
-            CardAddNameBox1.BorderSize = 2;
-            CardAddNameBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CardAddNameBox1.ForeColor = Color.DimGray;
-            CardAddNameBox1.Location = new Point(188, 34);
-            CardAddNameBox1.Multiline = false;
-            CardAddNameBox1.Name = "CardAddNameBox1";
-            CardAddNameBox1.Padding = new Padding(7);
-            CardAddNameBox1.PasswordChar = false;
-            CardAddNameBox1.PlaceholderColor = Color.DarkGray;
-            CardAddNameBox1.PlaceholderText = "";
-            CardAddNameBox1.Size = new Size(250, 32);
-            CardAddNameBox1.TabIndex = 0;
-            CardAddNameBox1.Texts = "";
-            CardAddNameBox1.UnderlinedStyle = false;
-            // 
-            // CardAddExMnthname
-            // 
-            CardAddExMnthname.AutoSize = true;
-            CardAddExMnthname.Location = new Point(257, 270);
-            CardAddExMnthname.Name = "CardAddExMnthname";
-            CardAddExMnthname.Size = new Size(99, 15);
-            CardAddExMnthname.TabIndex = 16;
-            CardAddExMnthname.Text = "Expiration Month";
-            CardAddExMnthname.Click += CardAddExMnthname_Click;
+            SeureNoteAddItemPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            SeureNoteAddItemPanel.Controls.Add(panel1);
+            SeureNoteAddItemPanel.Controls.Add(SecureNoteSubmitbtn);
+            SeureNoteAddItemPanel.Controls.Add(SecureNoteNoteName);
+            SeureNoteAddItemPanel.Controls.Add(CardAddFormName);
+            SeureNoteAddItemPanel.Controls.Add(CardAddNameBox1);
+            SeureNoteAddItemPanel.Location = new Point(0, -1);
+            SeureNoteAddItemPanel.Name = "SeureNoteAddItemPanel";
+            SeureNoteAddItemPanel.Size = new Size(838, 515);
+            SeureNoteAddItemPanel.TabIndex = 2;
             // 
             // CardAddItemForm
             // 
@@ -386,35 +375,35 @@
             Controls.Add(SeureNoteAddItemPanel);
             Name = "CardAddItemForm";
             Text = "CardAddItemForm";
-            SeureNoteAddItemPanel.ResumeLayout(false);
-            SeureNoteAddItemPanel.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            SeureNoteAddItemPanel.ResumeLayout(false);
+            SeureNoteAddItemPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel SeureNoteAddItemPanel;
-        private Panel panel1;
-        public CustomControls.CustomButton CardAddSubmitbtn;
-        public Label CardAddName;
-        public CustomControls.CustomTextBox CardAddNameBox;
-        public CustomControls.CustomButton SecureNoteSubmitbtn;
-        public Label SecureNoteNoteName;
-        public Label CardAddFormName;
         public CustomControls.CustomTextBox CardAddNameBox1;
-        public CustomControls.CustomTextBox CardAddHolderNameBox1;
-        public CustomControls.CustomTextBox CardNumberAddBox;
-        public Label CardHolderAddName;
-        public Label CardNumberAddName;
-        public CustomControls.CustomTextBox CardBrandAddBox;
-        public CustomControls.CustomTextBox ExMnAddTextBox;
-        public Label CardBrandAddName;
+        public Label CardAddFormName;
+        public Label SecureNoteNoteName;
+        public CustomControls.CustomButton SecureNoteSubmitbtn;
+        private Panel panel1;
+        private ComboBox CardBrandAddComboBox;
         public Label CardAddSecurityCodeBox;
         public Label CardAddExYrName;
         public CustomControls.CustomTextBox CardAddExYrBox;
         public CustomControls.CustomTextBox CardAddSecurityCode;
         public Label CardAddExMnthname;
+        public Label CardBrandAddName;
+        public CustomControls.CustomTextBox ExMnAddTextBox;
+        public Label CardNumberAddName;
+        public CustomControls.CustomTextBox CardNumberAddBox;
+        public Label CardHolderAddName;
+        public CustomControls.CustomTextBox CardAddHolderNameBox1;
+        public CustomControls.CustomButton CardAddSubmitbtn;
+        public Label CardAddName;
+        public CustomControls.CustomTextBox CardAddNameBox;
+        private Panel SeureNoteAddItemPanel;
     }
 }

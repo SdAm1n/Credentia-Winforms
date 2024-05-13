@@ -54,11 +54,19 @@
             IdentityUpSubmitbtn = new CustomControls.CustomButton();
             IdentityUpName = new Label();
             IdentityUpNameBox = new CustomControls.CustomTextBox();
+            IdentityNidUpBox = new CustomControls.CustomTextBox();
+            IdentityPassportUpBox = new CustomControls.CustomTextBox();
+            IdentityNidup = new Label();
+            IdentityPassportUp = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(IdentityPassportUp);
+            panel1.Controls.Add(IdentityNidup);
+            panel1.Controls.Add(IdentityPassportUpBox);
+            panel1.Controls.Add(IdentityNidUpBox);
             panel1.Controls.Add(IdentityUpCountry);
             panel1.Controls.Add(IdentityUpZip);
             panel1.Controls.Add(IdentityUpCountryBox);
@@ -84,15 +92,15 @@
             panel1.Controls.Add(IdentityUpSubmitbtn);
             panel1.Controls.Add(IdentityUpName);
             panel1.Controls.Add(IdentityUpNameBox);
-            panel1.Location = new Point(-19, -1);
+            panel1.Location = new Point(-3, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(971, 624);
+            panel1.Size = new Size(955, 571);
             panel1.TabIndex = 11;
             // 
             // IdentityUpCountry
             // 
             IdentityUpCountry.AutoSize = true;
-            IdentityUpCountry.Location = new Point(267, 531);
+            IdentityUpCountry.Location = new Point(542, 345);
             IdentityUpCountry.Name = "IdentityUpCountry";
             IdentityUpCountry.Size = new Size(50, 15);
             IdentityUpCountry.TabIndex = 35;
@@ -101,7 +109,7 @@
             // IdentityUpZip
             // 
             IdentityUpZip.AutoSize = true;
-            IdentityUpZip.Location = new Point(267, 483);
+            IdentityUpZip.Location = new Point(100, 345);
             IdentityUpZip.Name = "IdentityUpZip";
             IdentityUpZip.Size = new Size(24, 15);
             IdentityUpZip.TabIndex = 31;
@@ -116,7 +124,7 @@
             IdentityUpCountryBox.BorderSize = 2;
             IdentityUpCountryBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityUpCountryBox.ForeColor = Color.DimGray;
-            IdentityUpCountryBox.Location = new Point(366, 523);
+            IdentityUpCountryBox.Location = new Point(614, 333);
             IdentityUpCountryBox.Multiline = false;
             IdentityUpCountryBox.Name = "IdentityUpCountryBox";
             IdentityUpCountryBox.Padding = new Padding(7);
@@ -137,7 +145,7 @@
             IdentityUpZipBox.BorderSize = 2;
             IdentityUpZipBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityUpZipBox.ForeColor = Color.DimGray;
-            IdentityUpZipBox.Location = new Point(366, 474);
+            IdentityUpZipBox.Location = new Point(199, 333);
             IdentityUpZipBox.Multiline = false;
             IdentityUpZipBox.Name = "IdentityUpZipBox";
             IdentityUpZipBox.Padding = new Padding(7);
@@ -152,7 +160,7 @@
             // IdentityUpAddress
             // 
             IdentityUpAddress.AutoSize = true;
-            IdentityUpAddress.Location = new Point(267, 438);
+            IdentityUpAddress.Location = new Point(542, 265);
             IdentityUpAddress.Name = "IdentityUpAddress";
             IdentityUpAddress.Size = new Size(49, 15);
             IdentityUpAddress.TabIndex = 28;
@@ -168,7 +176,7 @@
             IdentityUpAddressBox.BorderSize = 2;
             IdentityUpAddressBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityUpAddressBox.ForeColor = Color.DimGray;
-            IdentityUpAddressBox.Location = new Point(366, 428);
+            IdentityUpAddressBox.Location = new Point(614, 253);
             IdentityUpAddressBox.Multiline = false;
             IdentityUpAddressBox.Name = "IdentityUpAddressBox";
             IdentityUpAddressBox.Padding = new Padding(7);
@@ -183,7 +191,7 @@
             // IdentityUpPhone
             // 
             IdentityUpPhone.AutoSize = true;
-            IdentityUpPhone.Location = new Point(267, 398);
+            IdentityUpPhone.Location = new Point(100, 265);
             IdentityUpPhone.Name = "IdentityUpPhone";
             IdentityUpPhone.Size = new Size(41, 15);
             IdentityUpPhone.TabIndex = 26;
@@ -198,7 +206,7 @@
             IdentityUpPhoneBox.BorderSize = 2;
             IdentityUpPhoneBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityUpPhoneBox.ForeColor = Color.DimGray;
-            IdentityUpPhoneBox.Location = new Point(366, 390);
+            IdentityUpPhoneBox.Location = new Point(199, 253);
             IdentityUpPhoneBox.Multiline = false;
             IdentityUpPhoneBox.Name = "IdentityUpPhoneBox";
             IdentityUpPhoneBox.Padding = new Padding(7);
@@ -213,7 +221,7 @@
             // IdentityUpEmail
             // 
             IdentityUpEmail.AutoSize = true;
-            IdentityUpEmail.Location = new Point(267, 355);
+            IdentityUpEmail.Location = new Point(542, 200);
             IdentityUpEmail.Name = "IdentityUpEmail";
             IdentityUpEmail.Size = new Size(36, 15);
             IdentityUpEmail.TabIndex = 24;
@@ -228,7 +236,7 @@
             IdentityUpEmailBox.BorderSize = 2;
             IdentityUpEmailBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityUpEmailBox.ForeColor = Color.DimGray;
-            IdentityUpEmailBox.Location = new Point(366, 344);
+            IdentityUpEmailBox.Location = new Point(614, 189);
             IdentityUpEmailBox.Multiline = false;
             IdentityUpEmailBox.Name = "IdentityUpEmailBox";
             IdentityUpEmailBox.Padding = new Padding(7);
@@ -243,7 +251,7 @@
             // IdentityUpLCNName
             // 
             IdentityUpLCNName.AutoSize = true;
-            IdentityUpLCNName.Location = new Point(267, 302);
+            IdentityUpLCNName.Location = new Point(100, 200);
             IdentityUpLCNName.Name = "IdentityUpLCNName";
             IdentityUpLCNName.Size = new Size(93, 15);
             IdentityUpLCNName.TabIndex = 22;
@@ -252,7 +260,7 @@
             // IdentityUNUpName
             // 
             IdentityUNUpName.AutoSize = true;
-            IdentityUNUpName.Location = new Point(267, 198);
+            IdentityUNUpName.Location = new Point(100, 134);
             IdentityUNUpName.Name = "IdentityUNUpName";
             IdentityUNUpName.Size = new Size(60, 15);
             IdentityUNUpName.TabIndex = 21;
@@ -261,7 +269,7 @@
             // IdentityUpCompanyName
             // 
             IdentityUpCompanyName.AutoSize = true;
-            IdentityUpCompanyName.Location = new Point(267, 245);
+            IdentityUpCompanyName.Location = new Point(542, 134);
             IdentityUpCompanyName.Name = "IdentityUpCompanyName";
             IdentityUpCompanyName.Size = new Size(59, 15);
             IdentityUpCompanyName.TabIndex = 19;
@@ -276,7 +284,7 @@
             IdentityUpCompanyBox.BorderSize = 2;
             IdentityUpCompanyBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityUpCompanyBox.ForeColor = Color.DimGray;
-            IdentityUpCompanyBox.Location = new Point(366, 240);
+            IdentityUpCompanyBox.Location = new Point(614, 128);
             IdentityUpCompanyBox.Multiline = false;
             IdentityUpCompanyBox.Name = "IdentityUpCompanyBox";
             IdentityUpCompanyBox.Padding = new Padding(7);
@@ -297,7 +305,7 @@
             IdentityUpLCNBox.BorderSize = 2;
             IdentityUpLCNBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityUpLCNBox.ForeColor = Color.DimGray;
-            IdentityUpLCNBox.Location = new Point(366, 295);
+            IdentityUpLCNBox.Location = new Point(199, 189);
             IdentityUpLCNBox.Multiline = false;
             IdentityUpLCNBox.Name = "IdentityUpLCNBox";
             IdentityUpLCNBox.Padding = new Padding(7);
@@ -312,7 +320,7 @@
             // IdentityLNUpName
             // 
             IdentityLNUpName.AutoSize = true;
-            IdentityLNUpName.Location = new Point(267, 150);
+            IdentityLNUpName.Location = new Point(542, 78);
             IdentityLNUpName.Name = "IdentityLNUpName";
             IdentityLNUpName.Size = new Size(63, 15);
             IdentityLNUpName.TabIndex = 15;
@@ -327,7 +335,7 @@
             IdentityUNUpTextBox.BorderSize = 2;
             IdentityUNUpTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityUNUpTextBox.ForeColor = Color.DimGray;
-            IdentityUNUpTextBox.Location = new Point(366, 190);
+            IdentityUNUpTextBox.Location = new Point(199, 128);
             IdentityUNUpTextBox.Multiline = false;
             IdentityUNUpTextBox.Name = "IdentityUNUpTextBox";
             IdentityUNUpTextBox.Padding = new Padding(7);
@@ -348,7 +356,7 @@
             IdentityLNUpBox.BorderSize = 2;
             IdentityLNUpBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityLNUpBox.ForeColor = Color.DimGray;
-            IdentityLNUpBox.Location = new Point(366, 141);
+            IdentityLNUpBox.Location = new Point(614, 67);
             IdentityLNUpBox.Multiline = false;
             IdentityLNUpBox.Name = "IdentityLNUpBox";
             IdentityLNUpBox.Padding = new Padding(7);
@@ -363,7 +371,7 @@
             // IdentityFNUpName
             // 
             IdentityFNUpName.AutoSize = true;
-            IdentityFNUpName.Location = new Point(267, 105);
+            IdentityFNUpName.Location = new Point(100, 78);
             IdentityFNUpName.Name = "IdentityFNUpName";
             IdentityFNUpName.Size = new Size(64, 15);
             IdentityFNUpName.TabIndex = 12;
@@ -379,7 +387,7 @@
             IdentityFNUpBox.BorderSize = 2;
             IdentityFNUpBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityFNUpBox.ForeColor = Color.DimGray;
-            IdentityFNUpBox.Location = new Point(366, 95);
+            IdentityFNUpBox.Location = new Point(199, 67);
             IdentityFNUpBox.Multiline = false;
             IdentityFNUpBox.Name = "IdentityFNUpBox";
             IdentityFNUpBox.Padding = new Padding(7);
@@ -394,7 +402,7 @@
             // IdentityUpAddName
             // 
             IdentityUpAddName.AutoSize = true;
-            IdentityUpAddName.Location = new Point(267, 65);
+            IdentityUpAddName.Location = new Point(542, 22);
             IdentityUpAddName.Name = "IdentityUpAddName";
             IdentityUpAddName.Size = new Size(33, 15);
             IdentityUpAddName.TabIndex = 10;
@@ -409,7 +417,7 @@
             IdentityUpTittleBox.BorderSize = 2;
             IdentityUpTittleBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityUpTittleBox.ForeColor = Color.DimGray;
-            IdentityUpTittleBox.Location = new Point(366, 57);
+            IdentityUpTittleBox.Location = new Point(614, 13);
             IdentityUpTittleBox.Multiline = false;
             IdentityUpTittleBox.Name = "IdentityUpTittleBox";
             IdentityUpTittleBox.Padding = new Padding(7);
@@ -431,7 +439,7 @@
             IdentityUpSubmitbtn.FlatAppearance.BorderSize = 0;
             IdentityUpSubmitbtn.FlatStyle = FlatStyle.Flat;
             IdentityUpSubmitbtn.ForeColor = Color.White;
-            IdentityUpSubmitbtn.Location = new Point(443, 573);
+            IdentityUpSubmitbtn.Location = new Point(445, 497);
             IdentityUpSubmitbtn.Name = "IdentityUpSubmitbtn";
             IdentityUpSubmitbtn.Size = new Size(79, 28);
             IdentityUpSubmitbtn.TabIndex = 8;
@@ -443,7 +451,7 @@
             // IdentityUpName
             // 
             IdentityUpName.AutoSize = true;
-            IdentityUpName.Location = new Point(267, 22);
+            IdentityUpName.Location = new Point(100, 22);
             IdentityUpName.Name = "IdentityUpName";
             IdentityUpName.Size = new Size(39, 15);
             IdentityUpName.TabIndex = 1;
@@ -458,7 +466,7 @@
             IdentityUpNameBox.BorderSize = 2;
             IdentityUpNameBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             IdentityUpNameBox.ForeColor = Color.DimGray;
-            IdentityUpNameBox.Location = new Point(366, 11);
+            IdentityUpNameBox.Location = new Point(199, 13);
             IdentityUpNameBox.Multiline = false;
             IdentityUpNameBox.Name = "IdentityUpNameBox";
             IdentityUpNameBox.Padding = new Padding(7);
@@ -470,11 +478,71 @@
             IdentityUpNameBox.Texts = "";
             IdentityUpNameBox.UnderlinedStyle = false;
             // 
+            // IdentityNidUpBox
+            // 
+            IdentityNidUpBox.BackColor = SystemColors.Window;
+            IdentityNidUpBox.BorderColor = Color.MediumSlateBlue;
+            IdentityNidUpBox.BorderFocusColor = Color.HotPink;
+            IdentityNidUpBox.BorderRadius = 10;
+            IdentityNidUpBox.BorderSize = 2;
+            IdentityNidUpBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IdentityNidUpBox.ForeColor = Color.DimGray;
+            IdentityNidUpBox.Location = new Point(199, 417);
+            IdentityNidUpBox.Multiline = false;
+            IdentityNidUpBox.Name = "IdentityNidUpBox";
+            IdentityNidUpBox.Padding = new Padding(7);
+            IdentityNidUpBox.PasswordChar = false;
+            IdentityNidUpBox.PlaceholderColor = Color.DarkGray;
+            IdentityNidUpBox.PlaceholderText = "";
+            IdentityNidUpBox.Size = new Size(250, 32);
+            IdentityNidUpBox.TabIndex = 36;
+            IdentityNidUpBox.Texts = "";
+            IdentityNidUpBox.UnderlinedStyle = false;
+            // 
+            // IdentityPassportUpBox
+            // 
+            IdentityPassportUpBox.BackColor = SystemColors.Window;
+            IdentityPassportUpBox.BorderColor = Color.MediumSlateBlue;
+            IdentityPassportUpBox.BorderFocusColor = Color.HotPink;
+            IdentityPassportUpBox.BorderRadius = 10;
+            IdentityPassportUpBox.BorderSize = 2;
+            IdentityPassportUpBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IdentityPassportUpBox.ForeColor = Color.DimGray;
+            IdentityPassportUpBox.Location = new Point(614, 417);
+            IdentityPassportUpBox.Multiline = false;
+            IdentityPassportUpBox.Name = "IdentityPassportUpBox";
+            IdentityPassportUpBox.Padding = new Padding(7);
+            IdentityPassportUpBox.PasswordChar = false;
+            IdentityPassportUpBox.PlaceholderColor = Color.DarkGray;
+            IdentityPassportUpBox.PlaceholderText = "";
+            IdentityPassportUpBox.Size = new Size(250, 32);
+            IdentityPassportUpBox.TabIndex = 37;
+            IdentityPassportUpBox.Texts = "";
+            IdentityPassportUpBox.UnderlinedStyle = false;
+            // 
+            // IdentityNidup
+            // 
+            IdentityNidup.AutoSize = true;
+            IdentityNidup.Location = new Point(100, 425);
+            IdentityNidup.Name = "IdentityNidup";
+            IdentityNidup.Size = new Size(43, 15);
+            IdentityNidup.TabIndex = 38;
+            IdentityNidup.Text = "Nid no";
+            // 
+            // IdentityPassportUp
+            // 
+            IdentityPassportUp.AutoSize = true;
+            IdentityPassportUp.Location = new Point(542, 425);
+            IdentityPassportUp.Name = "IdentityPassportUp";
+            IdentityPassportUp.Size = new Size(69, 15);
+            IdentityPassportUp.TabIndex = 39;
+            IdentityPassportUp.Text = "Passport no";
+            // 
             // IdentityUpdateForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(932, 623);
+            ClientSize = new Size(932, 567);
             Controls.Add(panel1);
             Name = "IdentityUpdateForm";
             Text = "IdentityUpdateForm";
@@ -511,5 +579,9 @@
         public CustomControls.CustomButton IdentityUpSubmitbtn;
         public Label IdentityUpName;
         public CustomControls.CustomTextBox IdentityUpNameBox;
+        public Label IdentityPassportUp;
+        public Label IdentityNidup;
+        public CustomControls.CustomTextBox IdentityPassportUpBox;
+        public CustomControls.CustomTextBox IdentityNidUpBox;
     }
 }
