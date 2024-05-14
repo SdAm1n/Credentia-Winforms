@@ -15,7 +15,7 @@ namespace Credentia_Winforms
 {
     public partial class SignUpForm : Form
     {
-        
+
         private string Password_Regex = "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$";
         private string email_regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
 
@@ -86,7 +86,7 @@ namespace Credentia_Winforms
             UsersDBCrud sql = new UsersDBCrud(GetConnectionString());
 
             // Create Users database if doesn't exist
-           CreateUsersDB(sql);
+            CreateUsersDB(sql);
         }
 
         private void UsernameTextBox_Leave(object sender, EventArgs e)
@@ -124,13 +124,13 @@ namespace Credentia_Winforms
 
         private void ConfirmPasswordTextBox_Leave(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(ConfirmPasswordTextBox.Texts) == true)
+            if (string.IsNullOrEmpty(ConfirmPasswordTextBox.Texts) == true)
             {
                 ConfirmPasswordErrorProvider.SetError(ConfirmPasswordTextBox, "Confirm Password is required");
             }
             else
             {
-                if(ConfirmPasswordTextBox.Texts != PasswordTextBox.Texts)
+                if (ConfirmPasswordTextBox.Texts != PasswordTextBox.Texts)
                 {
                     ConfirmPasswordErrorProvider.SetError(ConfirmPasswordTextBox, "Password does not match");
                 }
@@ -143,13 +143,13 @@ namespace Credentia_Winforms
 
         private void EmailTextBox_Leave(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(EmailTextBox.Texts) == true)
+            if (string.IsNullOrEmpty(EmailTextBox.Texts) == true)
             {
                 EmailErrorProvider.SetError(EmailTextBox, "Email is required");
             }
             else
             {
-                if(System.Text.RegularExpressions.Regex.IsMatch(EmailTextBox.Texts, email_regex) == false)
+                if (System.Text.RegularExpressions.Regex.IsMatch(EmailTextBox.Texts, email_regex) == false)
                 {
                     EmailErrorProvider.SetError(EmailTextBox, "Email is not valid");
                 }
@@ -193,7 +193,7 @@ namespace Credentia_Winforms
         {
 
             var hashedMasterPassword = MasterPasswordHelper.HashMasterPassword(masterPassword);
- 
+
             string userDatabase = $"{username}_credentia_db";
 
             sql.CreateUser(username, hashedMasterPassword, email, userDatabase);
@@ -216,6 +216,11 @@ namespace Credentia_Winforms
             output = config.GetConnectionString(connectionStringName);
 
             return output;
+        }
+
+        private void LogoPictureBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

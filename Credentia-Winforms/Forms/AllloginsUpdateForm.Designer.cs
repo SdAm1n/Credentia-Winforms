@@ -200,9 +200,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(822, 476);
+            ClientSize = new Size(814, 411);
             Controls.Add(AllloginsUppanel);
             Name = "AllloginsUpdateForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AllloginsUpdateForm";
             AllloginsUppanel.ResumeLayout(false);
             AllloginsUppanel.PerformLayout();

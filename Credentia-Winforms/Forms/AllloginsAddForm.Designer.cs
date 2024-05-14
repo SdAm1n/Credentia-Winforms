@@ -202,9 +202,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(822, 476);
+            ClientSize = new Size(814, 411);
             Controls.Add(AllloginsAddpanel);
             Name = "AllloginsAddForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AllloginsAddForm";
             AllloginsAddpanel.ResumeLayout(false);
             AllloginsAddpanel.PerformLayout();

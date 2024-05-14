@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             CardPanel3 = new Panel();
             CardEditBtn = new CustomControls.CustomButton();
             CardDeleteBtn = new CustomControls.CustomButton();
@@ -75,7 +75,7 @@
             CardEditBtn.FlatAppearance.BorderSize = 0;
             CardEditBtn.FlatStyle = FlatStyle.Flat;
             CardEditBtn.ForeColor = Color.Black;
-            CardEditBtn.Location = new Point(767, 2);
+            CardEditBtn.Location = new Point(780, 5);
             CardEditBtn.Name = "CardEditBtn";
             CardEditBtn.Size = new Size(67, 37);
             CardEditBtn.TabIndex = 4;
@@ -95,7 +95,7 @@
             CardDeleteBtn.FlatAppearance.BorderSize = 0;
             CardDeleteBtn.FlatStyle = FlatStyle.Flat;
             CardDeleteBtn.ForeColor = Color.Black;
-            CardDeleteBtn.Location = new Point(838, 2);
+            CardDeleteBtn.Location = new Point(853, 5);
             CardDeleteBtn.Name = "CardDeleteBtn";
             CardDeleteBtn.Size = new Size(68, 37);
             CardDeleteBtn.TabIndex = 3;
@@ -146,7 +146,7 @@
             // 
             CardPanel1.Controls.Add(CardSearchBox);
             CardPanel1.Controls.Add(CardAddBtn);
-            CardPanel1.Location = new Point(-2, 1);
+            CardPanel1.Location = new Point(0, 0);
             CardPanel1.Name = "CardPanel1";
             CardPanel1.Size = new Size(744, 51);
             CardPanel1.TabIndex = 3;
@@ -205,8 +205,8 @@
             CarddataGridView.Location = new Point(12, 67);
             CarddataGridView.Name = "CarddataGridView";
             CarddataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(217, 217, 217);
-            CarddataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(217, 217, 217);
+            CarddataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
             CarddataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CarddataGridView.Size = new Size(913, 425);
             CarddataGridView.TabIndex = 7;
@@ -260,7 +260,7 @@
             // NoItemsLabel
             // 
             NoItemsLabel.AutoSize = true;
-            NoItemsLabel.Location = new Point(359, 260);
+            NoItemsLabel.Location = new Point(390, 247);
             NoItemsLabel.Name = "NoItemsLabel";
             NoItemsLabel.Size = new Size(133, 21);
             NoItemsLabel.TabIndex = 8;

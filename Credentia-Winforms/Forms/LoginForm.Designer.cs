@@ -91,7 +91,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.logo_no_background;
-            pictureBox1.Location = new Point(49, 190);
+            pictureBox1.Location = new Point(52, 145);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(353, 230);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -114,6 +114,7 @@
             DockPanel2.Name = "DockPanel2";
             DockPanel2.Size = new Size(612, 485);
             DockPanel2.TabIndex = 1;
+            DockPanel2.Paint += DockPanel2_Paint;
             // 
             // ShowPasswordLabel
             // 
