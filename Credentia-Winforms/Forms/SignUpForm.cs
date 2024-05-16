@@ -205,17 +205,7 @@ namespace Credentia_Winforms
         // Getting the connection string from the appsettings.json file
         private static string GetConnectionString(string connectionStringName = "Default")
         {
-            string output = "";
-
-            var builder = new ConfigurationBuilder()
-                          .SetBasePath(Directory.GetCurrentDirectory())
-                          .AddJsonFile("appsettings.json");
-
-            var config = builder.Build();
-
-            output = config.GetConnectionString(connectionStringName);
-
-            return output;
+            return DBConnectionHelper.GetConnectionString(connectionStringName);
         }
 
         private void LogoPictureBox_Click(object sender, EventArgs e)
