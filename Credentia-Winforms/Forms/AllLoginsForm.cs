@@ -1,4 +1,7 @@
 ﻿using Credentia_Winforms.Forms;
+using DataAccessLibrary.Helpers;
+using DataAccessLibrary.Models;
+using DataAccessLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +16,16 @@ namespace Credentia_Winforms
 {
     public partial class AllLoginsForm : Form
     {
+        public string ActiveUserDB = LoginForm.ActiveUserDB;
 
         public AllLoginsForm()
         {
             InitializeComponent();
+
+            // Bind the DataGridView to the Secure Notes Table on Form Load
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            BindGridView(sql);
+
             UpdateVisibility();
 
         }
@@ -50,6 +59,19 @@ namespace Credentia_Winforms
         {
             // Selected row deleted
             int rowIndex = AllloginsdataGridView.CurrentCell.RowIndex;
+            
+            
+            // Get the selected row
+            DataGridViewRow selectedRow = AllloginsdataGridView.Rows[rowIndex];
+
+            // Get id from logins_table by name and username
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            int id = GetId(sql, selectedRow.Cells["AllloginsNameColumn"].Value.ToString(), selectedRow.Cells["AllloginsUsernameColumn"].Value.ToString(), ActiveUserDB);
+
+            // Delete the Login from the user's database's logins_table
+            DeleteLogin(sql, id, ActiveUserDB);
+
+            // Remove the selected row from the DataGridView
             AllloginsdataGridView.Rows.RemoveAt(rowIndex);
 
             UpdateVisibility();
@@ -86,6 +108,55 @@ namespace Credentia_Winforms
                 // Hide message indicating no items available
                 NoItemsLabel.Visible = false;
             }
+        }
+
+
+        // Bind the DataGridView to the All Logins Table
+        void BindGridView(UsersDBCrud sql)
+        {
+            AllloginsdataGridView.Rows.Clear();
+            List<LoginsModel> logins = sql.GetLogins(ActiveUserDB);
+
+            try
+            {
+                foreach (LoginsModel loginsModel in logins)
+                {
+                    string decryptedPassword = AesHelper.Decrypt(loginsModel.Password);
+
+                    AllloginsdataGridView.Rows.Add(loginsModel.Name, loginsModel.Username, decryptedPassword, loginsModel.URL);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
+
+
+        // -------------------- Database Operations -------------------------- //
+
+        // Get id from logins_table
+        private static int GetId(UsersDBCrud sql, string name, string username, string userDatabase)
+        {
+            // Get the id of the Login from the user's database's logins_table
+            int id = sql.GetLoginId(name, username, userDatabase);
+
+            return id;
+        }
+
+
+        // Delete a Login from the logins_table
+        private static void DeleteLogin(UsersDBCrud sql, int id, string userDatabase)
+        {
+            sql.DeleteLogin(id, userDatabase);
+        }
+
+        // Getting the connection string from the appsettings.json file
+        private static string GetConnectionString(string connectionStringName = "Default")
+        {
+            return DBConnectionHelper.GetConnectionString(connectionStringName);
         }
     }
 }

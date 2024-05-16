@@ -65,6 +65,7 @@ namespace Credentia_Winforms.Forms
 
         }
 
+        // Bind the DataGridView to the Secure Notes Table
         void BindGridView(UsersDBCrud sql)
         {
             fgrid1.dataGridView2.Rows.Clear();

@@ -70,7 +70,7 @@
             AllloginsAddSubmitbtn.Location = new Point(336, 375);
             AllloginsAddSubmitbtn.Name = "AllloginsAddSubmitbtn";
             AllloginsAddSubmitbtn.Size = new Size(79, 28);
-            AllloginsAddSubmitbtn.TabIndex = 23;
+            AllloginsAddSubmitbtn.TabIndex = 4;
             AllloginsAddSubmitbtn.Text = "Submit";
             AllloginsAddSubmitbtn.TextColor = Color.White;
             AllloginsAddSubmitbtn.UseVisualStyleBackColor = false;
@@ -121,7 +121,7 @@
             AllloginsAddPasswordBox.PlaceholderColor = Color.DarkGray;
             AllloginsAddPasswordBox.PlaceholderText = "";
             AllloginsAddPasswordBox.Size = new Size(250, 32);
-            AllloginsAddPasswordBox.TabIndex = 18;
+            AllloginsAddPasswordBox.TabIndex = 2;
             AllloginsAddPasswordBox.Texts = "";
             AllloginsAddPasswordBox.UnderlinedStyle = false;
             // 
@@ -142,7 +142,7 @@
             AllloginsAddURlBox.PlaceholderColor = Color.DarkGray;
             AllloginsAddURlBox.PlaceholderText = "";
             AllloginsAddURlBox.Size = new Size(250, 32);
-            AllloginsAddURlBox.TabIndex = 17;
+            AllloginsAddURlBox.TabIndex = 3;
             AllloginsAddURlBox.Texts = "";
             AllloginsAddURlBox.UnderlinedStyle = false;
             AllloginsAddURlBox._TextChanged += AllloginsAddURlBox__TextChanged;
@@ -173,7 +173,7 @@
             AllloginsAddUsernameBox.PlaceholderColor = Color.DarkGray;
             AllloginsAddUsernameBox.PlaceholderText = "";
             AllloginsAddUsernameBox.Size = new Size(250, 32);
-            AllloginsAddUsernameBox.TabIndex = 14;
+            AllloginsAddUsernameBox.TabIndex = 1;
             AllloginsAddUsernameBox.Texts = "";
             AllloginsAddUsernameBox.UnderlinedStyle = false;
             // 

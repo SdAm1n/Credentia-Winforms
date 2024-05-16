@@ -70,7 +70,7 @@
             AllloginsUpSubmitbtn.Location = new Point(336, 375);
             AllloginsUpSubmitbtn.Name = "AllloginsUpSubmitbtn";
             AllloginsUpSubmitbtn.Size = new Size(79, 28);
-            AllloginsUpSubmitbtn.TabIndex = 23;
+            AllloginsUpSubmitbtn.TabIndex = 4;
             AllloginsUpSubmitbtn.Text = "Submit";
             AllloginsUpSubmitbtn.TextColor = Color.White;
             AllloginsUpSubmitbtn.UseVisualStyleBackColor = false;
@@ -120,7 +120,7 @@
             AllloginsUpdatePasswordBox.PlaceholderColor = Color.DarkGray;
             AllloginsUpdatePasswordBox.PlaceholderText = "";
             AllloginsUpdatePasswordBox.Size = new Size(250, 32);
-            AllloginsUpdatePasswordBox.TabIndex = 18;
+            AllloginsUpdatePasswordBox.TabIndex = 2;
             AllloginsUpdatePasswordBox.Texts = "";
             AllloginsUpdatePasswordBox.UnderlinedStyle = false;
             // 
@@ -141,7 +141,7 @@
             AllloginsUpdateURlBox.PlaceholderColor = Color.DarkGray;
             AllloginsUpdateURlBox.PlaceholderText = "";
             AllloginsUpdateURlBox.Size = new Size(250, 32);
-            AllloginsUpdateURlBox.TabIndex = 17;
+            AllloginsUpdateURlBox.TabIndex = 3;
             AllloginsUpdateURlBox.Texts = "";
             AllloginsUpdateURlBox.UnderlinedStyle = false;
             // 
@@ -171,7 +171,7 @@
             AllloginsUpdateUsernameBox.PlaceholderColor = Color.DarkGray;
             AllloginsUpdateUsernameBox.PlaceholderText = "";
             AllloginsUpdateUsernameBox.Size = new Size(250, 32);
-            AllloginsUpdateUsernameBox.TabIndex = 14;
+            AllloginsUpdateUsernameBox.TabIndex = 1;
             AllloginsUpdateUsernameBox.Texts = "";
             AllloginsUpdateUsernameBox.UnderlinedStyle = false;
             // 
