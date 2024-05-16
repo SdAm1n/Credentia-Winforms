@@ -32,14 +32,14 @@
             SettingsDeletebtn = new CustomControls.CustomButton();
             customTextBox6 = new CustomControls.CustomTextBox();
             label6 = new Label();
-            customTextBox5 = new CustomControls.CustomTextBox();
+            DeleteMPTextBox = new CustomControls.CustomTextBox();
             SettingsConfirmbtn = new CustomControls.CustomButton();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
-            customTextBox4 = new CustomControls.CustomTextBox();
-            customTextBox3 = new CustomControls.CustomTextBox();
-            textPassword = new CustomControls.CustomTextBox();
+            ConfirmPasswordTextBox = new CustomControls.CustomTextBox();
+            NewPasswordTextBox = new CustomControls.CustomTextBox();
+            CurrentPasswordTextBox = new CustomControls.CustomTextBox();
             label2 = new Label();
             label1 = new Label();
             customTextBox2 = new CustomControls.CustomTextBox();
@@ -56,14 +56,14 @@
             SettingsPanel.Controls.Add(SettingsDeletebtn);
             SettingsPanel.Controls.Add(customTextBox6);
             SettingsPanel.Controls.Add(label6);
-            SettingsPanel.Controls.Add(customTextBox5);
+            SettingsPanel.Controls.Add(DeleteMPTextBox);
             SettingsPanel.Controls.Add(SettingsConfirmbtn);
             SettingsPanel.Controls.Add(label5);
             SettingsPanel.Controls.Add(label4);
             SettingsPanel.Controls.Add(label3);
-            SettingsPanel.Controls.Add(customTextBox4);
-            SettingsPanel.Controls.Add(customTextBox3);
-            SettingsPanel.Controls.Add(textPassword);
+            SettingsPanel.Controls.Add(ConfirmPasswordTextBox);
+            SettingsPanel.Controls.Add(NewPasswordTextBox);
+            SettingsPanel.Controls.Add(CurrentPasswordTextBox);
             SettingsPanel.Controls.Add(label2);
             SettingsPanel.Controls.Add(label1);
             SettingsPanel.Controls.Add(customTextBox2);
@@ -92,6 +92,7 @@
             SettingsDeletebtn.Text = "Delete";
             SettingsDeletebtn.TextColor = Color.Black;
             SettingsDeletebtn.UseVisualStyleBackColor = false;
+            SettingsDeletebtn.Click += SettingsDeletebtn_Click;
             // 
             // customTextBox6
             // 
@@ -125,26 +126,26 @@
             label6.TabIndex = 15;
             label6.Text = "Master Password";
             // 
-            // customTextBox5
+            // DeleteMPTextBox
             // 
-            customTextBox5.BackColor = Color.FromArgb(217, 217, 217);
-            customTextBox5.BorderColor = Color.Transparent;
-            customTextBox5.BorderFocusColor = Color.HotPink;
-            customTextBox5.BorderRadius = 16;
-            customTextBox5.BorderSize = 2;
-            customTextBox5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customTextBox5.ForeColor = Color.DimGray;
-            customTextBox5.Location = new Point(290, 445);
-            customTextBox5.Multiline = false;
-            customTextBox5.Name = "customTextBox5";
-            customTextBox5.Padding = new Padding(7);
-            customTextBox5.PasswordChar = false;
-            customTextBox5.PlaceholderColor = Color.DarkGray;
-            customTextBox5.PlaceholderText = "";
-            customTextBox5.Size = new Size(290, 32);
-            customTextBox5.TabIndex = 14;
-            customTextBox5.Texts = "";
-            customTextBox5.UnderlinedStyle = false;
+            DeleteMPTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            DeleteMPTextBox.BorderColor = Color.Transparent;
+            DeleteMPTextBox.BorderFocusColor = Color.HotPink;
+            DeleteMPTextBox.BorderRadius = 16;
+            DeleteMPTextBox.BorderSize = 2;
+            DeleteMPTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeleteMPTextBox.ForeColor = Color.DimGray;
+            DeleteMPTextBox.Location = new Point(290, 445);
+            DeleteMPTextBox.Multiline = false;
+            DeleteMPTextBox.Name = "DeleteMPTextBox";
+            DeleteMPTextBox.Padding = new Padding(7);
+            DeleteMPTextBox.PasswordChar = false;
+            DeleteMPTextBox.PlaceholderColor = Color.DarkGray;
+            DeleteMPTextBox.PlaceholderText = "";
+            DeleteMPTextBox.Size = new Size(290, 32);
+            DeleteMPTextBox.TabIndex = 14;
+            DeleteMPTextBox.Texts = "";
+            DeleteMPTextBox.UnderlinedStyle = false;
             // 
             // SettingsConfirmbtn
             // 
@@ -163,6 +164,7 @@
             SettingsConfirmbtn.Text = "Confirm";
             SettingsConfirmbtn.TextColor = Color.Black;
             SettingsConfirmbtn.UseVisualStyleBackColor = false;
+            SettingsConfirmbtn.Click += SettingsConfirmbtn_Click;
             // 
             // label5
             // 
@@ -191,68 +193,68 @@
             label3.TabIndex = 10;
             label3.Text = "Current Password";
             // 
-            // customTextBox4
+            // ConfirmPasswordTextBox
             // 
-            customTextBox4.BackColor = Color.FromArgb(217, 217, 217);
-            customTextBox4.BorderColor = Color.Transparent;
-            customTextBox4.BorderFocusColor = Color.HotPink;
-            customTextBox4.BorderRadius = 16;
-            customTextBox4.BorderSize = 2;
-            customTextBox4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customTextBox4.ForeColor = Color.DimGray;
-            customTextBox4.Location = new Point(290, 225);
-            customTextBox4.Multiline = false;
-            customTextBox4.Name = "customTextBox4";
-            customTextBox4.Padding = new Padding(7);
-            customTextBox4.PasswordChar = false;
-            customTextBox4.PlaceholderColor = Color.DarkGray;
-            customTextBox4.PlaceholderText = "";
-            customTextBox4.Size = new Size(290, 32);
-            customTextBox4.TabIndex = 9;
-            customTextBox4.Texts = "";
-            customTextBox4.UnderlinedStyle = false;
+            ConfirmPasswordTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            ConfirmPasswordTextBox.BorderColor = Color.Transparent;
+            ConfirmPasswordTextBox.BorderFocusColor = Color.HotPink;
+            ConfirmPasswordTextBox.BorderRadius = 16;
+            ConfirmPasswordTextBox.BorderSize = 2;
+            ConfirmPasswordTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ConfirmPasswordTextBox.ForeColor = Color.DimGray;
+            ConfirmPasswordTextBox.Location = new Point(290, 225);
+            ConfirmPasswordTextBox.Multiline = false;
+            ConfirmPasswordTextBox.Name = "ConfirmPasswordTextBox";
+            ConfirmPasswordTextBox.Padding = new Padding(7);
+            ConfirmPasswordTextBox.PasswordChar = false;
+            ConfirmPasswordTextBox.PlaceholderColor = Color.DarkGray;
+            ConfirmPasswordTextBox.PlaceholderText = "";
+            ConfirmPasswordTextBox.Size = new Size(290, 32);
+            ConfirmPasswordTextBox.TabIndex = 9;
+            ConfirmPasswordTextBox.Texts = "";
+            ConfirmPasswordTextBox.UnderlinedStyle = false;
             // 
-            // customTextBox3
+            // NewPasswordTextBox
             // 
-            customTextBox3.BackColor = Color.FromArgb(217, 217, 217);
-            customTextBox3.BorderColor = Color.Transparent;
-            customTextBox3.BorderFocusColor = Color.HotPink;
-            customTextBox3.BorderRadius = 16;
-            customTextBox3.BorderSize = 2;
-            customTextBox3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customTextBox3.ForeColor = Color.DimGray;
-            customTextBox3.Location = new Point(290, 180);
-            customTextBox3.Multiline = false;
-            customTextBox3.Name = "customTextBox3";
-            customTextBox3.Padding = new Padding(7);
-            customTextBox3.PasswordChar = false;
-            customTextBox3.PlaceholderColor = Color.DarkGray;
-            customTextBox3.PlaceholderText = "";
-            customTextBox3.Size = new Size(290, 32);
-            customTextBox3.TabIndex = 8;
-            customTextBox3.Texts = "";
-            customTextBox3.UnderlinedStyle = false;
+            NewPasswordTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            NewPasswordTextBox.BorderColor = Color.Transparent;
+            NewPasswordTextBox.BorderFocusColor = Color.HotPink;
+            NewPasswordTextBox.BorderRadius = 16;
+            NewPasswordTextBox.BorderSize = 2;
+            NewPasswordTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NewPasswordTextBox.ForeColor = Color.DimGray;
+            NewPasswordTextBox.Location = new Point(290, 180);
+            NewPasswordTextBox.Multiline = false;
+            NewPasswordTextBox.Name = "NewPasswordTextBox";
+            NewPasswordTextBox.Padding = new Padding(7);
+            NewPasswordTextBox.PasswordChar = false;
+            NewPasswordTextBox.PlaceholderColor = Color.DarkGray;
+            NewPasswordTextBox.PlaceholderText = "";
+            NewPasswordTextBox.Size = new Size(290, 32);
+            NewPasswordTextBox.TabIndex = 8;
+            NewPasswordTextBox.Texts = "";
+            NewPasswordTextBox.UnderlinedStyle = false;
             // 
-            // textPassword
+            // CurrentPasswordTextBox
             // 
-            textPassword.BackColor = Color.FromArgb(217, 217, 217);
-            textPassword.BorderColor = Color.Transparent;
-            textPassword.BorderFocusColor = Color.HotPink;
-            textPassword.BorderRadius = 16;
-            textPassword.BorderSize = 2;
-            textPassword.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textPassword.ForeColor = Color.DimGray;
-            textPassword.Location = new Point(290, 130);
-            textPassword.Multiline = false;
-            textPassword.Name = "textPassword";
-            textPassword.Padding = new Padding(7);
-            textPassword.PasswordChar = false;
-            textPassword.PlaceholderColor = Color.DarkGray;
-            textPassword.PlaceholderText = "";
-            textPassword.Size = new Size(290, 32);
-            textPassword.TabIndex = 7;
-            textPassword.Texts = "";
-            textPassword.UnderlinedStyle = false;
+            CurrentPasswordTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            CurrentPasswordTextBox.BorderColor = Color.Transparent;
+            CurrentPasswordTextBox.BorderFocusColor = Color.HotPink;
+            CurrentPasswordTextBox.BorderRadius = 16;
+            CurrentPasswordTextBox.BorderSize = 2;
+            CurrentPasswordTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CurrentPasswordTextBox.ForeColor = Color.DimGray;
+            CurrentPasswordTextBox.Location = new Point(290, 130);
+            CurrentPasswordTextBox.Multiline = false;
+            CurrentPasswordTextBox.Name = "CurrentPasswordTextBox";
+            CurrentPasswordTextBox.Padding = new Padding(7);
+            CurrentPasswordTextBox.PasswordChar = false;
+            CurrentPasswordTextBox.PlaceholderColor = Color.DarkGray;
+            CurrentPasswordTextBox.PlaceholderText = "";
+            CurrentPasswordTextBox.Size = new Size(290, 32);
+            CurrentPasswordTextBox.TabIndex = 7;
+            CurrentPasswordTextBox.Texts = "";
+            CurrentPasswordTextBox.UnderlinedStyle = false;
             // 
             // label2
             // 
@@ -361,16 +363,16 @@
         private CustomControls.CustomTextBox customTextBox1;
         private Label label2;
         private Label label1;
-        private CustomControls.CustomTextBox customTextBox3;
-        private CustomControls.CustomTextBox textPassword;
+        private CustomControls.CustomTextBox NewPasswordTextBox;
+        private CustomControls.CustomTextBox CurrentPasswordTextBox;
         private Label label5;
         private Label label4;
         private Label label3;
-        private CustomControls.CustomTextBox customTextBox4;
+        private CustomControls.CustomTextBox ConfirmPasswordTextBox;
         public CustomControls.CustomButton SettingsConfirmbtn;
         private CustomControls.CustomTextBox customTextBox6;
         private Label label6;
-        private CustomControls.CustomTextBox customTextBox5;
+        private CustomControls.CustomTextBox DeleteMPTextBox;
         public CustomControls.CustomButton SettingsDeletebtn;
     }
 }
