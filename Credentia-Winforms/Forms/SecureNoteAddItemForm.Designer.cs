@@ -138,6 +138,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(SeureNoteAddItemPanel);
             Name = "SecureNoteAddItemForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SecureNoteAddItemForm";
             SeureNoteAddItemPanel.ResumeLayout(false);
             SeureNoteAddItemPanel.PerformLayout();

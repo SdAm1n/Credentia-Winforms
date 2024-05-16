@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            IdentityPassportUp = new Label();
+            IdentityNidup = new Label();
+            IdentityPassportUpBox = new CustomControls.CustomTextBox();
+            IdentityNidUpBox = new CustomControls.CustomTextBox();
             IdentityUpCountry = new Label();
             IdentityUpZip = new Label();
             IdentityUpCountryBox = new CustomControls.CustomTextBox();
@@ -54,10 +58,6 @@
             IdentityUpSubmitbtn = new CustomControls.CustomButton();
             IdentityUpName = new Label();
             IdentityUpNameBox = new CustomControls.CustomTextBox();
-            IdentityNidUpBox = new CustomControls.CustomTextBox();
-            IdentityPassportUpBox = new CustomControls.CustomTextBox();
-            IdentityNidup = new Label();
-            IdentityPassportUp = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -96,6 +96,66 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(955, 571);
             panel1.TabIndex = 11;
+            // 
+            // IdentityPassportUp
+            // 
+            IdentityPassportUp.AutoSize = true;
+            IdentityPassportUp.Location = new Point(542, 425);
+            IdentityPassportUp.Name = "IdentityPassportUp";
+            IdentityPassportUp.Size = new Size(69, 15);
+            IdentityPassportUp.TabIndex = 39;
+            IdentityPassportUp.Text = "Passport no";
+            // 
+            // IdentityNidup
+            // 
+            IdentityNidup.AutoSize = true;
+            IdentityNidup.Location = new Point(100, 425);
+            IdentityNidup.Name = "IdentityNidup";
+            IdentityNidup.Size = new Size(43, 15);
+            IdentityNidup.TabIndex = 38;
+            IdentityNidup.Text = "Nid no";
+            // 
+            // IdentityPassportUpBox
+            // 
+            IdentityPassportUpBox.BackColor = SystemColors.Window;
+            IdentityPassportUpBox.BorderColor = Color.MediumSlateBlue;
+            IdentityPassportUpBox.BorderFocusColor = Color.HotPink;
+            IdentityPassportUpBox.BorderRadius = 10;
+            IdentityPassportUpBox.BorderSize = 2;
+            IdentityPassportUpBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IdentityPassportUpBox.ForeColor = Color.DimGray;
+            IdentityPassportUpBox.Location = new Point(614, 417);
+            IdentityPassportUpBox.Multiline = false;
+            IdentityPassportUpBox.Name = "IdentityPassportUpBox";
+            IdentityPassportUpBox.Padding = new Padding(7);
+            IdentityPassportUpBox.PasswordChar = false;
+            IdentityPassportUpBox.PlaceholderColor = Color.DarkGray;
+            IdentityPassportUpBox.PlaceholderText = "";
+            IdentityPassportUpBox.Size = new Size(250, 32);
+            IdentityPassportUpBox.TabIndex = 37;
+            IdentityPassportUpBox.Texts = "";
+            IdentityPassportUpBox.UnderlinedStyle = false;
+            // 
+            // IdentityNidUpBox
+            // 
+            IdentityNidUpBox.BackColor = SystemColors.Window;
+            IdentityNidUpBox.BorderColor = Color.MediumSlateBlue;
+            IdentityNidUpBox.BorderFocusColor = Color.HotPink;
+            IdentityNidUpBox.BorderRadius = 10;
+            IdentityNidUpBox.BorderSize = 2;
+            IdentityNidUpBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            IdentityNidUpBox.ForeColor = Color.DimGray;
+            IdentityNidUpBox.Location = new Point(199, 417);
+            IdentityNidUpBox.Multiline = false;
+            IdentityNidUpBox.Name = "IdentityNidUpBox";
+            IdentityNidUpBox.Padding = new Padding(7);
+            IdentityNidUpBox.PasswordChar = false;
+            IdentityNidUpBox.PlaceholderColor = Color.DarkGray;
+            IdentityNidUpBox.PlaceholderText = "";
+            IdentityNidUpBox.Size = new Size(250, 32);
+            IdentityNidUpBox.TabIndex = 36;
+            IdentityNidUpBox.Texts = "";
+            IdentityNidUpBox.UnderlinedStyle = false;
             // 
             // IdentityUpCountry
             // 
@@ -478,66 +538,6 @@
             IdentityUpNameBox.Texts = "";
             IdentityUpNameBox.UnderlinedStyle = false;
             // 
-            // IdentityNidUpBox
-            // 
-            IdentityNidUpBox.BackColor = SystemColors.Window;
-            IdentityNidUpBox.BorderColor = Color.MediumSlateBlue;
-            IdentityNidUpBox.BorderFocusColor = Color.HotPink;
-            IdentityNidUpBox.BorderRadius = 10;
-            IdentityNidUpBox.BorderSize = 2;
-            IdentityNidUpBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            IdentityNidUpBox.ForeColor = Color.DimGray;
-            IdentityNidUpBox.Location = new Point(199, 417);
-            IdentityNidUpBox.Multiline = false;
-            IdentityNidUpBox.Name = "IdentityNidUpBox";
-            IdentityNidUpBox.Padding = new Padding(7);
-            IdentityNidUpBox.PasswordChar = false;
-            IdentityNidUpBox.PlaceholderColor = Color.DarkGray;
-            IdentityNidUpBox.PlaceholderText = "";
-            IdentityNidUpBox.Size = new Size(250, 32);
-            IdentityNidUpBox.TabIndex = 36;
-            IdentityNidUpBox.Texts = "";
-            IdentityNidUpBox.UnderlinedStyle = false;
-            // 
-            // IdentityPassportUpBox
-            // 
-            IdentityPassportUpBox.BackColor = SystemColors.Window;
-            IdentityPassportUpBox.BorderColor = Color.MediumSlateBlue;
-            IdentityPassportUpBox.BorderFocusColor = Color.HotPink;
-            IdentityPassportUpBox.BorderRadius = 10;
-            IdentityPassportUpBox.BorderSize = 2;
-            IdentityPassportUpBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            IdentityPassportUpBox.ForeColor = Color.DimGray;
-            IdentityPassportUpBox.Location = new Point(614, 417);
-            IdentityPassportUpBox.Multiline = false;
-            IdentityPassportUpBox.Name = "IdentityPassportUpBox";
-            IdentityPassportUpBox.Padding = new Padding(7);
-            IdentityPassportUpBox.PasswordChar = false;
-            IdentityPassportUpBox.PlaceholderColor = Color.DarkGray;
-            IdentityPassportUpBox.PlaceholderText = "";
-            IdentityPassportUpBox.Size = new Size(250, 32);
-            IdentityPassportUpBox.TabIndex = 37;
-            IdentityPassportUpBox.Texts = "";
-            IdentityPassportUpBox.UnderlinedStyle = false;
-            // 
-            // IdentityNidup
-            // 
-            IdentityNidup.AutoSize = true;
-            IdentityNidup.Location = new Point(100, 425);
-            IdentityNidup.Name = "IdentityNidup";
-            IdentityNidup.Size = new Size(43, 15);
-            IdentityNidup.TabIndex = 38;
-            IdentityNidup.Text = "Nid no";
-            // 
-            // IdentityPassportUp
-            // 
-            IdentityPassportUp.AutoSize = true;
-            IdentityPassportUp.Location = new Point(542, 425);
-            IdentityPassportUp.Name = "IdentityPassportUp";
-            IdentityPassportUp.Size = new Size(69, 15);
-            IdentityPassportUp.TabIndex = 39;
-            IdentityPassportUp.Text = "Passport no";
-            // 
             // IdentityUpdateForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -545,6 +545,7 @@
             ClientSize = new Size(932, 567);
             Controls.Add(panel1);
             Name = "IdentityUpdateForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "IdentityUpdateForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

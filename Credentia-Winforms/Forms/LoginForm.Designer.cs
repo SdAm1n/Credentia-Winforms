@@ -165,26 +165,27 @@
             // 
             LoginBtn.BackColor = Color.Transparent;
             LoginBtn.BackgroundColor = Color.Transparent;
-            LoginBtn.BorderColor = Color.Crimson;
+            LoginBtn.BorderColor = Color.FromArgb(251, 79, 54);
             LoginBtn.BorderRadius = 20;
             LoginBtn.BorderSize = 2;
             LoginBtn.FlatAppearance.BorderSize = 0;
             LoginBtn.FlatStyle = FlatStyle.Flat;
-            LoginBtn.ForeColor = Color.Black;
+            LoginBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LoginBtn.ForeColor = Color.FromArgb(251, 79, 54);
             LoginBtn.Location = new Point(251, 299);
             LoginBtn.Name = "LoginBtn";
             LoginBtn.Size = new Size(150, 40);
             LoginBtn.TabIndex = 2;
             LoginBtn.Text = "Login";
-            LoginBtn.TextColor = Color.Black;
+            LoginBtn.TextColor = Color.FromArgb(251, 79, 54);
             LoginBtn.UseVisualStyleBackColor = false;
             LoginBtn.Click += LoginBtn_Click;
             // 
             // PasswordTextBox
             // 
-            PasswordTextBox.BackColor = SystemColors.Window;
-            PasswordTextBox.BorderColor = Color.Crimson;
-            PasswordTextBox.BorderFocusColor = Color.HotPink;
+            PasswordTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            PasswordTextBox.BorderColor = Color.FromArgb(217, 217, 217);
+            PasswordTextBox.BorderFocusColor = Color.FromArgb(217, 217, 217);
             PasswordTextBox.BorderRadius = 10;
             PasswordTextBox.BorderSize = 2;
             PasswordTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -204,9 +205,9 @@
             // 
             // UsernameTextBox
             // 
-            UsernameTextBox.BackColor = SystemColors.Window;
-            UsernameTextBox.BorderColor = Color.Crimson;
-            UsernameTextBox.BorderFocusColor = Color.HotPink;
+            UsernameTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            UsernameTextBox.BorderColor = Color.FromArgb(217, 217, 217);
+            UsernameTextBox.BorderFocusColor = Color.FromArgb(217, 217, 217);
             UsernameTextBox.BorderRadius = 10;
             UsernameTextBox.BorderSize = 2;
             UsernameTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
