@@ -62,7 +62,7 @@ namespace Credentia_Winforms
         {
             string MasterPassword = DeleteMPTextBox.Texts;
 
-            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={LoginForm.ActiveUserDB};");
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + "Database=users;");
 
             // Verify Master Password
             try
@@ -74,7 +74,7 @@ namespace Credentia_Winforms
                 if (verified)
                 {
                     // Delete the user
-                    DeleteUser(sql, LoginForm.ActiveUser, MasterPassword);
+                    DeleteUser(sql, LoginForm.ActiveUser, storedMasterPassword);
 
                     // Close all the forms and open the login form
                     MessageBox.Show("User Deleted Successfully. Close The Application");
@@ -104,7 +104,7 @@ namespace Credentia_Winforms
         // Delete a user database
         private static void DeleteUserDB(string userDatabase)
         {
-            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={userDatabase};");
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + "Database=users;");
 
             // Delete a user database
             sql.DeleteDatabase(userDatabase);
