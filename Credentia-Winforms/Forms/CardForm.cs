@@ -1,4 +1,7 @@
 ﻿using Credentia_Winforms.Forms;
+using DataAccessLibrary;
+using DataAccessLibrary.Helpers;
+using DataAccessLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +16,15 @@ namespace Credentia_Winforms
 {
     public partial class CardForm : Form
     {
+        public string ActiveUserDB = LoginForm.ActiveUserDB;
         public CardForm()
         {
             InitializeComponent();
+
+            // Bind the DataGridView to the Secure Notes Table on Form Load
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            BindGridView(sql);
+
             UpdateVisibility();
         }
 
@@ -100,6 +109,33 @@ namespace Credentia_Winforms
         private void CarddataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        void BindGridView(UsersDBCrud sql)
+        {
+            CarddataGridView.Rows.Clear();
+
+            List<CardsModel> cards = sql.GetCards(ActiveUserDB);
+
+            foreach (CardsModel card in cards)
+            {
+                // Decrypt the Card Number, Expiration Month, Expiration Year, and CVV
+                string decryptedCardNumber = AesHelper.Decrypt(card.CardNumber);
+                string decryptedExpirationMonth = AesHelper.Decrypt(card.ExpirationMonth);
+                string decryptedExpirationYear = AesHelper.Decrypt(card.ExpirationYear);
+                string decryptedCVV = AesHelper.Decrypt(card.SecurityCode);
+
+                CarddataGridView.Rows.Add(card.Name, card.CardholderName, decryptedCardNumber, card.Brand, decryptedExpirationMonth, decryptedExpirationYear, decryptedCVV);
+
+            }
+        }
+
+        // ----------------------- DATABASE -----------------------//
+
+        // Getting the connection string from the appsettings.json file
+        private static string GetConnectionString(string connectionStringName = "Default")
+        {
+            return DBConnectionHelper.GetConnectionString(connectionStringName);
         }
     }
 }
