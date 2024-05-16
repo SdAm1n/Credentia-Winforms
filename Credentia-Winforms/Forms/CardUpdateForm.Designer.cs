@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             CardUpdatePanel = new Panel();
+            CardBrandUpComboBox = new ComboBox();
             CardUpSecurityCodeBox = new Label();
             CardUpExYrName = new Label();
             CardUpExYrBox = new CustomControls.CustomTextBox();
@@ -43,7 +44,6 @@
             CardUpSubmitbtn = new CustomControls.CustomButton();
             CardUpName = new Label();
             CardUpNameBox = new CustomControls.CustomTextBox();
-            CardBrandUpComboBox = new ComboBox();
             CardUpdatePanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,6 +68,14 @@
             CardUpdatePanel.Name = "CardUpdatePanel";
             CardUpdatePanel.Size = new Size(832, 500);
             CardUpdatePanel.TabIndex = 10;
+            // 
+            // CardBrandUpComboBox
+            // 
+            CardBrandUpComboBox.FormattingEnabled = true;
+            CardBrandUpComboBox.Location = new Point(246, 232);
+            CardBrandUpComboBox.Name = "CardBrandUpComboBox";
+            CardBrandUpComboBox.Size = new Size(250, 23);
+            CardBrandUpComboBox.TabIndex = 23;
             // 
             // CardUpSecurityCodeBox
             // 
@@ -277,14 +285,6 @@
             CardUpNameBox.Texts = "";
             CardUpNameBox.UnderlinedStyle = false;
             // 
-            // CardBrandUpComboBox
-            // 
-            CardBrandUpComboBox.FormattingEnabled = true;
-            CardBrandUpComboBox.Location = new Point(246, 232);
-            CardBrandUpComboBox.Name = "CardBrandUpComboBox";
-            CardBrandUpComboBox.Size = new Size(250, 23);
-            CardBrandUpComboBox.TabIndex = 23;
-            // 
             // CardUpdateForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -292,6 +292,7 @@
             ClientSize = new Size(821, 495);
             Controls.Add(CardUpdatePanel);
             Name = "CardUpdateForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CardUpdateForm";
             CardUpdatePanel.ResumeLayout(false);
             CardUpdatePanel.PerformLayout();

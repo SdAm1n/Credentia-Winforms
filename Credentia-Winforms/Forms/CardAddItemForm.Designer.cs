@@ -374,6 +374,7 @@
             ClientSize = new Size(837, 514);
             Controls.Add(SeureNoteAddItemPanel);
             Name = "CardAddItemForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CardAddItemForm";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
