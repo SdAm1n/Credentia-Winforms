@@ -32,6 +32,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
             DockPanel1 = new Panel();
+            pictureBox1 = new PictureBox();
             DockPanel2 = new Panel();
             SignUpBtn = new CustomControls.CustomButton();
             CancelBtn = new CustomControls.CustomButton();
@@ -47,16 +48,15 @@
             PasswordErrorProvider = new ErrorProvider(components);
             EmailErrorProvider = new ErrorProvider(components);
             ConfirmPasswordErrorProvider = new ErrorProvider(components);
-            pictureBox1 = new PictureBox();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             DockPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             DockPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)UsernameErrorProvider).BeginInit();
             ((System.ComponentModel.ISupportInitialize)PasswordErrorProvider).BeginInit();
             ((System.ComponentModel.ISupportInitialize)EmailErrorProvider).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ConfirmPasswordErrorProvider).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -92,6 +92,17 @@
             DockPanel1.Size = new Size(405, 624);
             DockPanel1.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.Image = Properties.Resources.logo_no_background;
+            pictureBox1.Location = new Point(52, 145);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(353, 230);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
             // DockPanel2
             // 
             DockPanel2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -114,18 +125,19 @@
             // 
             SignUpBtn.BackColor = Color.Transparent;
             SignUpBtn.BackgroundColor = Color.Transparent;
-            SignUpBtn.BorderColor = Color.Crimson;
+            SignUpBtn.BorderColor = Color.FromArgb(251, 79, 54);
             SignUpBtn.BorderRadius = 20;
             SignUpBtn.BorderSize = 2;
             SignUpBtn.FlatAppearance.BorderSize = 0;
             SignUpBtn.FlatStyle = FlatStyle.Flat;
-            SignUpBtn.ForeColor = Color.Black;
+            SignUpBtn.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SignUpBtn.ForeColor = Color.FromArgb(251, 79, 54);
             SignUpBtn.Location = new Point(271, 364);
             SignUpBtn.Name = "SignUpBtn";
             SignUpBtn.Size = new Size(150, 40);
             SignUpBtn.TabIndex = 4;
             SignUpBtn.Text = "Sign Up";
-            SignUpBtn.TextColor = Color.Black;
+            SignUpBtn.TextColor = Color.FromArgb(251, 79, 54);
             SignUpBtn.UseVisualStyleBackColor = false;
             SignUpBtn.Click += SignUpBtn_Click;
             // 
@@ -133,26 +145,27 @@
             // 
             CancelBtn.BackColor = Color.Transparent;
             CancelBtn.BackgroundColor = Color.Transparent;
-            CancelBtn.BorderColor = Color.Crimson;
+            CancelBtn.BorderColor = Color.FromArgb(251, 79, 54);
             CancelBtn.BorderRadius = 20;
             CancelBtn.BorderSize = 2;
             CancelBtn.FlatAppearance.BorderSize = 0;
             CancelBtn.FlatStyle = FlatStyle.Flat;
-            CancelBtn.ForeColor = Color.Black;
+            CancelBtn.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CancelBtn.ForeColor = Color.FromArgb(251, 79, 54);
             CancelBtn.Location = new Point(271, 434);
             CancelBtn.Name = "CancelBtn";
             CancelBtn.Size = new Size(150, 40);
             CancelBtn.TabIndex = 5;
             CancelBtn.Text = "Cancel";
-            CancelBtn.TextColor = Color.Black;
+            CancelBtn.TextColor = Color.FromArgb(251, 79, 54);
             CancelBtn.UseVisualStyleBackColor = false;
             CancelBtn.Click += CancelBtn_Click;
             // 
             // EmailTextBox
             // 
-            EmailTextBox.BackColor = SystemColors.Window;
-            EmailTextBox.BorderColor = Color.Crimson;
-            EmailTextBox.BorderFocusColor = Color.HotPink;
+            EmailTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            EmailTextBox.BorderColor = Color.FromArgb(217, 217, 217);
+            EmailTextBox.BorderFocusColor = Color.FromArgb(217, 217, 217);
             EmailTextBox.BorderRadius = 10;
             EmailTextBox.BorderSize = 2;
             EmailTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -172,9 +185,9 @@
             // 
             // PasswordTextBox
             // 
-            PasswordTextBox.BackColor = SystemColors.Window;
-            PasswordTextBox.BorderColor = Color.Crimson;
-            PasswordTextBox.BorderFocusColor = Color.HotPink;
+            PasswordTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            PasswordTextBox.BorderColor = Color.FromArgb(217, 217, 217);
+            PasswordTextBox.BorderFocusColor = Color.FromArgb(217, 217, 217);
             PasswordTextBox.BorderRadius = 10;
             PasswordTextBox.BorderSize = 2;
             PasswordTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -194,9 +207,9 @@
             // 
             // ConfirmPasswordTextBox
             // 
-            ConfirmPasswordTextBox.BackColor = SystemColors.Window;
-            ConfirmPasswordTextBox.BorderColor = Color.Crimson;
-            ConfirmPasswordTextBox.BorderFocusColor = Color.HotPink;
+            ConfirmPasswordTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            ConfirmPasswordTextBox.BorderColor = Color.FromArgb(217, 217, 217);
+            ConfirmPasswordTextBox.BorderFocusColor = Color.FromArgb(217, 217, 217);
             ConfirmPasswordTextBox.BorderRadius = 10;
             ConfirmPasswordTextBox.BorderSize = 2;
             ConfirmPasswordTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -216,9 +229,9 @@
             // 
             // UsernameTextBox
             // 
-            UsernameTextBox.BackColor = SystemColors.Window;
-            UsernameTextBox.BorderColor = Color.Crimson;
-            UsernameTextBox.BorderFocusColor = Color.HotPink;
+            UsernameTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            UsernameTextBox.BorderColor = Color.FromArgb(217, 217, 217);
+            UsernameTextBox.BorderFocusColor = Color.FromArgb(217, 217, 217);
             UsernameTextBox.BorderRadius = 10;
             UsernameTextBox.BorderSize = 2;
             UsernameTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -288,17 +301,6 @@
             // 
             ConfirmPasswordErrorProvider.ContainerControl = this;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.Image = Properties.Resources.logo_no_background;
-            pictureBox1.Location = new Point(52, 145);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(353, 230);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
             // SignUpForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -314,13 +316,13 @@
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             DockPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             DockPanel2.ResumeLayout(false);
             DockPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)UsernameErrorProvider).EndInit();
             ((System.ComponentModel.ISupportInitialize)PasswordErrorProvider).EndInit();
             ((System.ComponentModel.ISupportInitialize)EmailErrorProvider).EndInit();
             ((System.ComponentModel.ISupportInitialize)ConfirmPasswordErrorProvider).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
