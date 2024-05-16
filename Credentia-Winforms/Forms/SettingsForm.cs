@@ -1,4 +1,6 @@
 ﻿using Credentia_Winforms.CustomControls;
+using DataAccessLibrary;
+using DataAccessLibrary.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,16 +16,11 @@ namespace Credentia_Winforms
 {
     public partial class SettingsForm : Form
     {
-        
+
 
         public SettingsForm()
         {
             InitializeComponent();
-           
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -31,9 +28,15 @@ namespace Credentia_Winforms
         {
             ActiveUsernameLabel.Text = LoginForm.ActiveUser;
 
-           
         }
 
-     
+        // ----------------- DATABASE -----------------//
+
+
+        // Getting the connection string from the appsettings.json file
+        private static string GetConnectionString(string connectionStringName = "Default")
+        {
+            return DBConnectionHelper.GetConnectionString(connectionStringName);
+        }
     }
 }

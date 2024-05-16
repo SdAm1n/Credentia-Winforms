@@ -44,7 +44,6 @@
             label1 = new Label();
             customTextBox2 = new CustomControls.CustomTextBox();
             customTextBox1 = new CustomControls.CustomTextBox();
-            STpassword = new Label();
             STusername = new Label();
             ActiveUsernameLabel = new Label();
             SettingsPanel.SuspendLayout();
@@ -69,7 +68,6 @@
             SettingsPanel.Controls.Add(label1);
             SettingsPanel.Controls.Add(customTextBox2);
             SettingsPanel.Controls.Add(customTextBox1);
-            SettingsPanel.Controls.Add(STpassword);
             SettingsPanel.Controls.Add(STusername);
             SettingsPanel.Controls.Add(ActiveUsernameLabel);
             SettingsPanel.Location = new Point(0, 0);
@@ -318,19 +316,10 @@
             customTextBox1.Texts = "";
             customTextBox1.UnderlinedStyle = false;
             // 
-            // STpassword
-            // 
-            STpassword.AutoSize = true;
-            STpassword.Location = new Point(213, 42);
-            STpassword.Name = "STpassword";
-            STpassword.Size = new Size(79, 21);
-            STpassword.TabIndex = 2;
-            STpassword.Text = "Password:";
-            // 
             // STusername
             // 
             STusername.AutoSize = true;
-            STusername.Location = new Point(213, 9);
+            STusername.Location = new Point(221, 36);
             STusername.Name = "STusername";
             STusername.Size = new Size(84, 21);
             STusername.TabIndex = 1;
@@ -339,7 +328,7 @@
             // ActiveUsernameLabel
             // 
             ActiveUsernameLabel.AutoSize = true;
-            ActiveUsernameLabel.Location = new Point(303, 9);
+            ActiveUsernameLabel.Location = new Point(311, 36);
             ActiveUsernameLabel.Name = "ActiveUsernameLabel";
             ActiveUsernameLabel.Size = new Size(127, 21);
             ActiveUsernameLabel.TabIndex = 0;
@@ -368,7 +357,6 @@
         private Panel SettingsPanel;
         private Label ActiveUsernameLabel;
         private Label STusername;
-        private Label STpassword;
         private CustomControls.CustomTextBox customTextBox2;
         private CustomControls.CustomTextBox customTextBox1;
         private Label label2;
