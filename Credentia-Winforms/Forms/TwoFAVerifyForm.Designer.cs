@@ -1,6 +1,6 @@
 ﻿namespace Credentia_Winforms.Forms
 {
-    partial class _2FAForm
+    partial class TwoFAVerifyForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,9 +33,9 @@
             DockPanel1 = new Panel();
             pictureBox1 = new PictureBox();
             DockPanel2 = new Panel();
-            CodeLabel = new Label();
+            VerifyBtn = new CustomControls.CustomButton();
             CodeTextBox = new CustomControls.CustomTextBox();
-            CodeSubmitbtn = new CustomControls.CustomButton();
+            CodeLabel = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             DockPanel1.SuspendLayout();
@@ -92,7 +92,7 @@
             // DockPanel2
             // 
             DockPanel2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            DockPanel2.Controls.Add(CodeSubmitbtn);
+            DockPanel2.Controls.Add(VerifyBtn);
             DockPanel2.Controls.Add(CodeTextBox);
             DockPanel2.Controls.Add(CodeLabel);
             DockPanel2.Location = new Point(414, 72);
@@ -100,15 +100,25 @@
             DockPanel2.Size = new Size(612, 485);
             DockPanel2.TabIndex = 1;
             // 
-            // CodeLabel
+            // VerifyBtn
             // 
-            CodeLabel.AutoSize = true;
-            CodeLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            CodeLabel.Location = new Point(133, 198);
-            CodeLabel.Name = "CodeLabel";
-            CodeLabel.Size = new Size(46, 21);
-            CodeLabel.TabIndex = 0;
-            CodeLabel.Text = "Code";
+            VerifyBtn.BackColor = Color.FromArgb(238, 246, 247);
+            VerifyBtn.BackgroundColor = Color.FromArgb(238, 246, 247);
+            VerifyBtn.BorderColor = Color.FromArgb(251, 79, 54);
+            VerifyBtn.BorderRadius = 20;
+            VerifyBtn.BorderSize = 2;
+            VerifyBtn.FlatAppearance.BorderSize = 0;
+            VerifyBtn.FlatStyle = FlatStyle.Flat;
+            VerifyBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            VerifyBtn.ForeColor = Color.FromArgb(251, 79, 54);
+            VerifyBtn.Location = new Point(248, 280);
+            VerifyBtn.Name = "VerifyBtn";
+            VerifyBtn.Size = new Size(141, 40);
+            VerifyBtn.TabIndex = 5;
+            VerifyBtn.Text = "Verify";
+            VerifyBtn.TextColor = Color.FromArgb(251, 79, 54);
+            VerifyBtn.UseVisualStyleBackColor = false;
+            VerifyBtn.Click += VerifyBtn_Click;
             // 
             // CodeTextBox
             // 
@@ -131,33 +141,24 @@
             CodeTextBox.Texts = "";
             CodeTextBox.UnderlinedStyle = false;
             // 
-            // CodeSubmitbtn
+            // CodeLabel
             // 
-            CodeSubmitbtn.BackColor = Color.FromArgb(238, 246, 247);
-            CodeSubmitbtn.BackgroundColor = Color.FromArgb(238, 246, 247);
-            CodeSubmitbtn.BorderColor = Color.FromArgb(251, 79, 54);
-            CodeSubmitbtn.BorderRadius = 20;
-            CodeSubmitbtn.BorderSize = 2;
-            CodeSubmitbtn.FlatAppearance.BorderSize = 0;
-            CodeSubmitbtn.FlatStyle = FlatStyle.Flat;
-            CodeSubmitbtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CodeSubmitbtn.ForeColor = Color.FromArgb(251, 79, 54);
-            CodeSubmitbtn.Location = new Point(248, 280);
-            CodeSubmitbtn.Name = "CodeSubmitbtn";
-            CodeSubmitbtn.Size = new Size(141, 40);
-            CodeSubmitbtn.TabIndex = 5;
-            CodeSubmitbtn.Text = "Submit";
-            CodeSubmitbtn.TextColor = Color.FromArgb(251, 79, 54);
-            CodeSubmitbtn.UseVisualStyleBackColor = false;
+            CodeLabel.AutoSize = true;
+            CodeLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CodeLabel.Location = new Point(133, 198);
+            CodeLabel.Name = "CodeLabel";
+            CodeLabel.Size = new Size(46, 21);
+            CodeLabel.TabIndex = 0;
+            CodeLabel.Text = "Code";
             // 
-            // _2FAForm
+            // TwoFAVerifyForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1029, 630);
             Controls.Add(tableLayoutPanel1);
-            Name = "_2FAForm";
-            Text = "_2FAForm";
+            Name = "TwoFAVerifyForm";
+            Text = "TwoFAVerifyForm";
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             DockPanel1.ResumeLayout(false);
@@ -175,7 +176,7 @@
         private PictureBox pictureBox1;
         private Panel DockPanel2;
         private Label CodeLabel;
-        private CustomControls.CustomButton CodeSubmitbtn;
+        private CustomControls.CustomButton VerifyBtn;
         private CustomControls.CustomTextBox CodeTextBox;
     }
 }

@@ -1,3 +1,4 @@
+using Credentia_Winforms.Forms;
 using DataAccessLibrary;
 using DataAccessLibrary.Helpers;
 using Microsoft.Extensions.Configuration;
@@ -54,9 +55,15 @@ namespace Credentia_Winforms
                 {
                     ActiveUser = username;
                     ActiveUserDB = username + "_credentia_db";
-                    HomeForm homeForm = new HomeForm();
+
+                    // redirect to TwoFAVerifyForm
+                    TwoFAVerifyForm twoFAVerifyForm = new TwoFAVerifyForm();
                     this.Hide();
-                    homeForm.Show();
+                    twoFAVerifyForm.Show();
+
+                    //HomeForm homeForm = new HomeForm();
+                    //this.Hide();
+                    //homeForm.Show();
                 }
                 else
                 {

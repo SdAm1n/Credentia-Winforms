@@ -18,7 +18,7 @@ namespace Credentia_Winforms
 {
     public partial class SecureNoteForm : Form
     {
-        SecureNoteForm fgrid1;
+
         public string ActiveUserDB = LoginForm.ActiveUserDB;
 
         public SecureNoteForm()
@@ -134,6 +134,28 @@ namespace Credentia_Winforms
 
         }
 
+        void BindGridView(UsersDBCrud sql)
+        {
+            dataGridView2.Rows.Clear();
+
+            // Bind the DataGridView to the Secure Notes Table
+            List<SecureNotesModel> Notes = sql.GetSecureNotes(ActiveUserDB);
+
+            try
+            {
+                foreach (SecureNotesModel note in Notes)
+                {
+                    string decrypted = AesHelper.Decrypt(note.SecureNote);
+                    dataGridView2.Rows.Add(note.Name, decrypted);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
         // ----------------- Database Operations ----------------- //
 
 
@@ -153,25 +175,6 @@ namespace Credentia_Winforms
         }
 
 
-        void BindGridView(UsersDBCrud sql)
-        {
-            // Bind the DataGridView to the Secure Notes Table
-            List<SecureNotesModel> secureNotes = sql.GetSecureNotes(ActiveUserDB);
-
-            try
-            {
-                foreach (SecureNotesModel note in secureNotes)
-                {
-                    string decrypted = AesHelper.Decrypt(note.SecureNote);
-                    dataGridView2.Rows.Add(note.Name, decrypted);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
 
         // Getting the connection string from the appsettings.json file
         private static string GetConnectionString(string connectionStringName = "Default")

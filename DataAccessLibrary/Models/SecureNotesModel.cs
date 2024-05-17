@@ -13,10 +13,6 @@ namespace DataAccessLibrary.Models
         public string Name { get; set; }
 
         public byte[] SecureNote { get; set; }
-        
-        //// Aes Key, IV and Data Identifier
-        //public byte[] KeyData { get; set; }
-        //public byte[] IVData { get; set; }
-        //public string Identifier { get; set; }
+
     }
 }

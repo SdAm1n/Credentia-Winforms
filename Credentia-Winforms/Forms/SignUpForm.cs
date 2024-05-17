@@ -10,11 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Credentia_Winforms.Forms;
 
 namespace Credentia_Winforms
 {
     public partial class SignUpForm : Form
     {
+        public static string? createdUser;
+        public static string? createdUserDB;
 
         private string Password_Regex = "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$";
         private string email_regex = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
@@ -56,11 +59,13 @@ namespace Credentia_Winforms
                     // Create a new user in the Users database's user_table
                     CreateUser(sql, username, masterPassword, email);
 
+                    createdUser = username;
+                    createdUserDB = $"{username}_credentia_db";
 
-                    // Redirect to the Login Form
-                    LoginForm loginForm = new LoginForm();
+                    // Redirect to TwoFA Setup Page
+                    TwoFASetupForm twoFASetupForm = new TwoFASetupForm();
                     this.Hide();
-                    loginForm.Show();
+                    twoFASetupForm.Show();
                 }
                 else
                 {

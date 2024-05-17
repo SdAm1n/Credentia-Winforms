@@ -125,6 +125,13 @@ namespace DataAccessLibrary
                 $" UNIQUE KEY `Id_UNIQUE` (`Id`))";
 
             db.SaveData(sql, new { }, _connectionString);
+
+            // Create user_cred Table with aes key, iv and sercretKey for 2FA
+            sql = $"CREATE TABLE {userDatabase}.`user_cred` (`Id` int NOT NULL AUTO_INCREMENT," +
+                $" `aesKey` BLOB DEFAULT NULL, `aesIV` BLOB DEFAULT NULL, `secretKey` BLOB NOT NULL," +
+                $" PRIMARY KEY (`Id`), UNIQUE KEY `Id_UNIQUE` (`Id`))";
+
+            db.SaveData(sql, new { }, _connectionString);
         }
 
         // Delete a user from the users database's user_table and delete the user's database using username and master password
@@ -475,5 +482,37 @@ namespace DataAccessLibrary
             }
         }
 
+        // ----------------- User Cred Table Operations ----------------- //
+
+        // Add secretKey to the user_cred table
+        public void AddSecretKey(string userDatabase, byte[] secretKey)
+        {
+            UserCredModel data = new UserCredModel
+            {
+                SecretKey = secretKey
+            };
+
+            string sql = $"INSERT INTO {userDatabase}.user_cred (secretKey) VALUES (@SecretKey);";
+
+            db.SaveData(sql, data, _connectionString);
+        }
+
+
+        // Get secretKey from user_cred table
+        public byte[] GetSecretKey(string userDatabase)
+        {
+            string sql = $"SELECT SecretKey FROM {userDatabase}.user_cred";
+
+            try
+            {
+                var data = db.LoadData<UserCredModel, dynamic>(sql, new { }, _connectionString).First();
+
+                return data.SecretKey;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
     }
 }
