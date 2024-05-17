@@ -23,10 +23,10 @@ namespace Credentia_Winforms.Forms
             this.fgrid = fg;
 
             // Populate CardBrandAddComboBox with specific items
-            CardBrandAddComboBox.Items.Add("Item 1");
-            CardBrandAddComboBox.Items.Add("Item 2");
-            CardBrandAddComboBox.Items.Add("Item 3");
-            CardBrandAddComboBox.Items.Add("Item 4");
+            CardBrandAddComboBox.Items.Add("Visa");
+            CardBrandAddComboBox.Items.Add("Mastercard");
+            CardBrandAddComboBox.Items.Add("American Express (Amex)");
+            CardBrandAddComboBox.Items.Add("UnionPay");
         }
 
 

@@ -68,6 +68,29 @@ namespace Credentia_Winforms
         {
             // Selected row deleted
             int rowIndex = CarddataGridView.CurrentCell.RowIndex;
+
+            // Get the selected row
+            DataGridViewRow selectedRow = CarddataGridView.Rows[rowIndex];
+
+            // get id from cards_table
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            int id = GetId(sql, selectedRow.Cells["CardNameBoxColumn"].Value.ToString(), 
+                selectedRow.Cells["BrandColumn"].Value.ToString(), ActiveUserDB);
+
+            try
+            {
+                // Delete the Card from the user's database's cards_table
+                DeleteCard(sql, id, ActiveUserDB);
+
+                MessageBox.Show("Card Deleted Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+
             CarddataGridView.Rows.RemoveAt(rowIndex);
             UpdateVisibility();
         }
@@ -131,6 +154,22 @@ namespace Credentia_Winforms
         }
 
         // ----------------------- DATABASE -----------------------//
+
+        // Get id from cards_table
+        private static int GetId(UsersDBCrud sql, string name, string brand, string userDatabase)
+        {
+            // Get the id of the Cards from the user's database's cards_table
+
+            int id = sql.GetCardId(name, brand, userDatabase);
+
+            return id;
+        }
+
+        // Delete a Card from the cards_table
+        private static void DeleteCard(UsersDBCrud sql, int id, string userDatabase)
+        {
+            sql.DeleteCard(id, userDatabase);
+        }
 
         // Getting the connection string from the appsettings.json file
         private static string GetConnectionString(string connectionStringName = "Default")
