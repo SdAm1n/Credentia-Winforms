@@ -15,7 +15,7 @@ namespace Credentia_Winforms.Forms
 {
     public partial class CardUpdateForm : Form
     {
-        private string ActiveUserDB = LoginForm.ActiveUserDB;
+        public string ActiveUserDB = LoginForm.ActiveUserDB;
 
         private DataGridViewRow selectedRow;
         private DataGridView dataGridView;

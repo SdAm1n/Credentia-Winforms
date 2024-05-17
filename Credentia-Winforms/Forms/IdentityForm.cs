@@ -1,4 +1,7 @@
 ﻿using Credentia_Winforms.Forms;
+using DataAccessLibrary.Helpers;
+using DataAccessLibrary.Models;
+using DataAccessLibrary;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +17,16 @@ namespace Credentia_Winforms
 {
     public partial class IdentityForm : Form
     {
+        public string ActiveUserDB = LoginForm.ActiveUserDB;
+
         public IdentityForm()
         {
             InitializeComponent();
+
+            // Bind the DataGridView to the Identities Table on Form Load
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            BindGridView(sql);
+
             IdentityUpdateVisibility();
         }
 
@@ -55,10 +65,31 @@ namespace Credentia_Winforms
             identityUpdateForm.Show();
         }
         private void IdentityDeletebtn_Click(object sender, EventArgs e)
-        {
+        { 
             // Selected row deleted
             int rowIndex = IdentitydataGridView.CurrentCell.RowIndex;
-            IdentitydataGridView.Rows.RemoveAt(rowIndex);
+
+            // Get the selected row
+            DataGridViewRow selectedRow = IdentitydataGridView.Rows[rowIndex];
+
+            // get id from identities_table by name
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            int id = GetId(sql, selectedRow.Cells["IdentityNameColumn"].Value.ToString(), ActiveUserDB);
+
+            // Delete the Identity from the user's database's identities_table
+            try
+            {
+                DeleteIdentity(sql, id, ActiveUserDB);
+
+                MessageBox.Show("Identity Deleted Successfully");
+
+                IdentitydataGridView.Rows.RemoveAt(rowIndex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             IdentityUpdateVisibility();
         }
         private void IdentityUpdateVisibility()
@@ -89,6 +120,56 @@ namespace Credentia_Winforms
 
         }
 
-       
+        // Binding the DataGridView to the Identities Table
+        private void BindGridView(UsersDBCrud sql)
+        {
+            // Clear the DataGridView
+            IdentitydataGridView.Rows.Clear();
+
+            // Get the Identities from the user's database's identities_table
+            List<IdentitiesModel> identities = sql.GetIdentities(ActiveUserDB);
+
+            // Add the Identities to the DataGridView
+            foreach (IdentitiesModel identity in identities)
+            {
+                // Decrypt the License Number, Phone, Address, Zip, and NID No
+                string decryptedLicenseNumber = AesHelper.Decrypt(identity.LicenseNumber);
+                string decryptedPhone = AesHelper.Decrypt(identity.Phone);
+                string decryptedAddress = AesHelper.Decrypt(identity.Address);
+                string decryptedZip = AesHelper.Decrypt(identity.Zip);
+                string decryptedNidNo = AesHelper.Decrypt(identity.NidNo);
+                string decryptedPassportNo = AesHelper.Decrypt(identity.PassportNo);
+
+                IdentitydataGridView.Rows.Add(identity.Name, identity.Title, identity.FirstName,
+                    identity.LastName, identity.Username, identity.Company, decryptedLicenseNumber,
+                    identity.Email, decryptedPhone, decryptedAddress, decryptedZip, identity.Country,
+                    decryptedNidNo, decryptedPassportNo);
+            }
+        }
+
+
+        // ---------------------------- DATABASE ---------------------------- //
+
+        // Get id from identities_table
+        private static int GetId(UsersDBCrud sql, string name, string userDatabase)
+        {
+            // Get the id of the Identity from the user's database's identities_table
+            int id = sql.GetIdentityId(name, userDatabase);
+
+            return id;
+        }
+
+        // Delete an Identity from the user's database's identities_table
+        private static void DeleteIdentity(UsersDBCrud sql, int id, string userDatabase)
+        {
+            sql.DeleteIdentity(id, userDatabase);
+        }
+
+        // Getting the connection string from the appsettings.json file
+        private static string GetConnectionString(string connectionStringName = "Default")
+        {
+            return DBConnectionHelper.GetConnectionString(connectionStringName);
+        }
+
     }
 }
