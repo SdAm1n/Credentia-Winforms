@@ -73,6 +73,7 @@
             CardAddNameBox1.TabIndex = 0;
             CardAddNameBox1.Texts = "";
             CardAddNameBox1.UnderlinedStyle = false;
+            CardAddNameBox1.UseWaitCursor = true;
             // 
             // CardAddFormName
             // 
@@ -82,6 +83,7 @@
             CardAddFormName.Size = new Size(39, 15);
             CardAddFormName.TabIndex = 1;
             CardAddFormName.Text = "Name";
+            CardAddFormName.UseWaitCursor = true;
             // 
             // SecureNoteNoteName
             // 
@@ -91,6 +93,7 @@
             SecureNoteNoteName.Size = new Size(71, 15);
             SecureNoteNoteName.TabIndex = 3;
             SecureNoteNoteName.Text = "Secure Note";
+            SecureNoteNoteName.UseWaitCursor = true;
             // 
             // SecureNoteSubmitbtn
             // 
@@ -109,6 +112,7 @@
             SecureNoteSubmitbtn.Text = "Submit";
             SecureNoteSubmitbtn.TextColor = Color.White;
             SecureNoteSubmitbtn.UseVisualStyleBackColor = false;
+            SecureNoteSubmitbtn.UseWaitCursor = true;
             // 
             // panel1
             // 
@@ -129,8 +133,9 @@
             panel1.Controls.Add(CardAddNameBox);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(838, 515);
+            panel1.Size = new Size(757, 503);
             panel1.TabIndex = 9;
+            panel1.UseWaitCursor = true;
             // 
             // CardBrandAddComboBox
             // 
@@ -140,6 +145,7 @@
             CardBrandAddComboBox.Name = "CardBrandAddComboBox";
             CardBrandAddComboBox.Size = new Size(250, 23);
             CardBrandAddComboBox.TabIndex = 22;
+            CardBrandAddComboBox.UseWaitCursor = true;
             CardBrandAddComboBox.SelectedIndexChanged += CardBrandAddComboBox_SelectedIndexChanged;
             // 
             // CardAddSecurityCodeBox
@@ -150,6 +156,7 @@
             CardAddSecurityCodeBox.Size = new Size(80, 15);
             CardAddSecurityCodeBox.TabIndex = 20;
             CardAddSecurityCodeBox.Text = "Security Code";
+            CardAddSecurityCodeBox.UseWaitCursor = true;
             // 
             // CardAddExYrName
             // 
@@ -159,6 +166,7 @@
             CardAddExYrName.Size = new Size(85, 15);
             CardAddExYrName.TabIndex = 19;
             CardAddExYrName.Text = "Expiration Year";
+            CardAddExYrName.UseWaitCursor = true;
             // 
             // CardAddExYrBox
             // 
@@ -180,6 +188,7 @@
             CardAddExYrBox.TabIndex = 18;
             CardAddExYrBox.Texts = "";
             CardAddExYrBox.UnderlinedStyle = false;
+            CardAddExYrBox.UseWaitCursor = true;
             // 
             // CardAddSecurityCode
             // 
@@ -201,6 +210,7 @@
             CardAddSecurityCode.TabIndex = 17;
             CardAddSecurityCode.Texts = "";
             CardAddSecurityCode.UnderlinedStyle = false;
+            CardAddSecurityCode.UseWaitCursor = true;
             // 
             // CardAddExMnthname
             // 
@@ -210,6 +220,7 @@
             CardAddExMnthname.Size = new Size(99, 15);
             CardAddExMnthname.TabIndex = 16;
             CardAddExMnthname.Text = "Expiration Month";
+            CardAddExMnthname.UseWaitCursor = true;
             CardAddExMnthname.Click += CardAddExMnthname_Click;
             // 
             // CardBrandAddName
@@ -220,6 +231,7 @@
             CardBrandAddName.Size = new Size(38, 15);
             CardBrandAddName.TabIndex = 15;
             CardBrandAddName.Text = "Brand";
+            CardBrandAddName.UseWaitCursor = true;
             CardBrandAddName.Click += CardBrandAddName_Click;
             // 
             // ExMnAddTextBox
@@ -242,6 +254,7 @@
             ExMnAddTextBox.TabIndex = 14;
             ExMnAddTextBox.Texts = "";
             ExMnAddTextBox.UnderlinedStyle = false;
+            ExMnAddTextBox.UseWaitCursor = true;
             // 
             // CardNumberAddName
             // 
@@ -251,6 +264,7 @@
             CardNumberAddName.Size = new Size(79, 15);
             CardNumberAddName.TabIndex = 12;
             CardNumberAddName.Text = "Card Number";
+            CardNumberAddName.UseWaitCursor = true;
             // 
             // CardNumberAddBox
             // 
@@ -272,6 +286,7 @@
             CardNumberAddBox.TabIndex = 11;
             CardNumberAddBox.Texts = "";
             CardNumberAddBox.UnderlinedStyle = false;
+            CardNumberAddBox.UseWaitCursor = true;
             // 
             // CardHolderAddName
             // 
@@ -281,6 +296,7 @@
             CardHolderAddName.Size = new Size(71, 15);
             CardHolderAddName.TabIndex = 10;
             CardHolderAddName.Text = "Card Holder";
+            CardHolderAddName.UseWaitCursor = true;
             CardHolderAddName.Click += CardHolderAddName_Click;
             // 
             // CardAddHolderNameBox1
@@ -303,6 +319,7 @@
             CardAddHolderNameBox1.TabIndex = 9;
             CardAddHolderNameBox1.Texts = "";
             CardAddHolderNameBox1.UnderlinedStyle = false;
+            CardAddHolderNameBox1.UseWaitCursor = true;
             // 
             // CardAddSubmitbtn
             // 
@@ -321,6 +338,7 @@
             CardAddSubmitbtn.Text = "Submit";
             CardAddSubmitbtn.TextColor = Color.White;
             CardAddSubmitbtn.UseVisualStyleBackColor = false;
+            CardAddSubmitbtn.UseWaitCursor = true;
             CardAddSubmitbtn.Click += CardAddSubmitbtn_Click;
             // 
             // CardAddName
@@ -331,6 +349,7 @@
             CardAddName.Size = new Size(39, 15);
             CardAddName.TabIndex = 1;
             CardAddName.Text = "Name";
+            CardAddName.UseWaitCursor = true;
             CardAddName.Click += CardAddName_Click;
             // 
             // CardAddNameBox
@@ -353,6 +372,7 @@
             CardAddNameBox.TabIndex = 0;
             CardAddNameBox.Texts = "";
             CardAddNameBox.UnderlinedStyle = false;
+            CardAddNameBox.UseWaitCursor = true;
             // 
             // SeureNoteAddItemPanel
             // 
@@ -364,18 +384,20 @@
             SeureNoteAddItemPanel.Controls.Add(CardAddNameBox1);
             SeureNoteAddItemPanel.Location = new Point(0, -1);
             SeureNoteAddItemPanel.Name = "SeureNoteAddItemPanel";
-            SeureNoteAddItemPanel.Size = new Size(838, 515);
+            SeureNoteAddItemPanel.Size = new Size(758, 504);
             SeureNoteAddItemPanel.TabIndex = 2;
+            SeureNoteAddItemPanel.UseWaitCursor = true;
             // 
             // CardAddItemForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(837, 514);
+            ClientSize = new Size(757, 503);
             Controls.Add(SeureNoteAddItemPanel);
             Name = "CardAddItemForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CardAddItemForm";
+            UseWaitCursor = true;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             SeureNoteAddItemPanel.ResumeLayout(false);

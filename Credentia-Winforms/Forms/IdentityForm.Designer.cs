@@ -42,6 +42,7 @@
             SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
             IdentitydataGridView = new DataGridView();
+            IdentityNoItems = new Label();
             IdentityNameColumn = new DataGridViewTextBoxColumn();
             IdentityUserNameColumn = new DataGridViewTextBoxColumn();
             IdentityTittleColumn = new DataGridViewTextBoxColumn();
@@ -56,7 +57,6 @@
             IdentityCountryColumn = new DataGridViewTextBoxColumn();
             NIDColumn = new DataGridViewTextBoxColumn();
             PassportColumn = new DataGridViewTextBoxColumn();
-            IdentityNoItems = new Label();
             CardPanel1.SuspendLayout();
             CardPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IdentitydataGridView).BeginInit();
@@ -138,7 +138,7 @@
             // 
             // CardPanel3
             // 
-            CardPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            CardPanel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             CardPanel3.BackColor = Color.FromArgb(238, 246, 247);
             CardPanel3.Controls.Add(IdentityDeletebtn);
             CardPanel3.Controls.Add(IdentityEditbtn);
@@ -296,76 +296,6 @@
             IdentitydataGridView.TabIndex = 8;
             IdentitydataGridView.CellContentClick += IdentitydataGridView_CellContentClick;
             // 
-            // IdentityNameColumn
-            // 
-            IdentityNameColumn.HeaderText = "Name";
-            IdentityNameColumn.Name = "IdentityNameColumn";
-            // 
-            // IdentityUserNameColumn
-            // 
-            IdentityUserNameColumn.HeaderText = "Username";
-            IdentityUserNameColumn.Name = "IdentityUserNameColumn";
-            // 
-            // IdentityTittleColumn
-            // 
-            IdentityTittleColumn.HeaderText = "Tittle";
-            IdentityTittleColumn.Name = "IdentityTittleColumn";
-            // 
-            // IdentityFirstNColumn
-            // 
-            IdentityFirstNColumn.HeaderText = "First Name";
-            IdentityFirstNColumn.Name = "IdentityFirstNColumn";
-            // 
-            // IdentityLastNColumn
-            // 
-            IdentityLastNColumn.HeaderText = "Last Name";
-            IdentityLastNColumn.Name = "IdentityLastNColumn";
-            // 
-            // IdentityCompanyColumn
-            // 
-            IdentityCompanyColumn.HeaderText = "Company";
-            IdentityCompanyColumn.Name = "IdentityCompanyColumn";
-            // 
-            // IdentityLNColumn
-            // 
-            IdentityLNColumn.HeaderText = "License Number";
-            IdentityLNColumn.Name = "IdentityLNColumn";
-            // 
-            // IdentityEmailColumn
-            // 
-            IdentityEmailColumn.HeaderText = "Email";
-            IdentityEmailColumn.Name = "IdentityEmailColumn";
-            // 
-            // IdentityPhoneColumn
-            // 
-            IdentityPhoneColumn.HeaderText = "Phone";
-            IdentityPhoneColumn.Name = "IdentityPhoneColumn";
-            // 
-            // AddressColumn
-            // 
-            AddressColumn.HeaderText = "Address";
-            AddressColumn.Name = "AddressColumn";
-            // 
-            // IdentityZipColumn
-            // 
-            IdentityZipColumn.HeaderText = "Zip";
-            IdentityZipColumn.Name = "IdentityZipColumn";
-            // 
-            // IdentityCountryColumn
-            // 
-            IdentityCountryColumn.HeaderText = "Country";
-            IdentityCountryColumn.Name = "IdentityCountryColumn";
-            // 
-            // NIDColumn
-            // 
-            NIDColumn.HeaderText = "NID no";
-            NIDColumn.Name = "NIDColumn";
-            // 
-            // PassportColumn
-            // 
-            PassportColumn.HeaderText = "Passport no";
-            PassportColumn.Name = "PassportColumn";
-            // 
             // IdentityNoItems
             // 
             IdentityNoItems.AutoSize = true;
@@ -375,6 +305,90 @@
             IdentityNoItems.TabIndex = 9;
             IdentityNoItems.Text = "No Item Available";
             IdentityNoItems.Visible = false;
+            // 
+            // IdentityNameColumn
+            // 
+            IdentityNameColumn.HeaderText = "Name";
+            IdentityNameColumn.Name = "IdentityNameColumn";
+            IdentityNameColumn.ReadOnly = true;
+            // 
+            // IdentityUserNameColumn
+            // 
+            IdentityUserNameColumn.HeaderText = "Username";
+            IdentityUserNameColumn.Name = "IdentityUserNameColumn";
+            IdentityUserNameColumn.ReadOnly = true;
+            // 
+            // IdentityTittleColumn
+            // 
+            IdentityTittleColumn.HeaderText = "Tittle";
+            IdentityTittleColumn.Name = "IdentityTittleColumn";
+            IdentityTittleColumn.ReadOnly = true;
+            // 
+            // IdentityFirstNColumn
+            // 
+            IdentityFirstNColumn.HeaderText = "First Name";
+            IdentityFirstNColumn.Name = "IdentityFirstNColumn";
+            IdentityFirstNColumn.ReadOnly = true;
+            // 
+            // IdentityLastNColumn
+            // 
+            IdentityLastNColumn.HeaderText = "Last Name";
+            IdentityLastNColumn.Name = "IdentityLastNColumn";
+            IdentityLastNColumn.ReadOnly = true;
+            // 
+            // IdentityCompanyColumn
+            // 
+            IdentityCompanyColumn.HeaderText = "Company";
+            IdentityCompanyColumn.Name = "IdentityCompanyColumn";
+            IdentityCompanyColumn.ReadOnly = true;
+            // 
+            // IdentityLNColumn
+            // 
+            IdentityLNColumn.HeaderText = "License Number";
+            IdentityLNColumn.Name = "IdentityLNColumn";
+            IdentityLNColumn.ReadOnly = true;
+            // 
+            // IdentityEmailColumn
+            // 
+            IdentityEmailColumn.HeaderText = "Email";
+            IdentityEmailColumn.Name = "IdentityEmailColumn";
+            IdentityEmailColumn.ReadOnly = true;
+            // 
+            // IdentityPhoneColumn
+            // 
+            IdentityPhoneColumn.HeaderText = "Phone";
+            IdentityPhoneColumn.Name = "IdentityPhoneColumn";
+            IdentityPhoneColumn.ReadOnly = true;
+            // 
+            // AddressColumn
+            // 
+            AddressColumn.HeaderText = "Address";
+            AddressColumn.Name = "AddressColumn";
+            AddressColumn.ReadOnly = true;
+            // 
+            // IdentityZipColumn
+            // 
+            IdentityZipColumn.HeaderText = "Zip";
+            IdentityZipColumn.Name = "IdentityZipColumn";
+            IdentityZipColumn.ReadOnly = true;
+            // 
+            // IdentityCountryColumn
+            // 
+            IdentityCountryColumn.HeaderText = "Country";
+            IdentityCountryColumn.Name = "IdentityCountryColumn";
+            IdentityCountryColumn.ReadOnly = true;
+            // 
+            // NIDColumn
+            // 
+            NIDColumn.HeaderText = "NID no";
+            NIDColumn.Name = "NIDColumn";
+            NIDColumn.ReadOnly = true;
+            // 
+            // PassportColumn
+            // 
+            PassportColumn.HeaderText = "Passport no";
+            PassportColumn.Name = "PassportColumn";
+            PassportColumn.ReadOnly = true;
             // 
             // IdentityForm
             // 
