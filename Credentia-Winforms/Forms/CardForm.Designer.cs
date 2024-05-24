@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             CardPanel3 = new Panel();
             CardEditBtn = new CustomControls.CustomButton();
             CardDeleteBtn = new CustomControls.CustomButton();
@@ -38,6 +38,7 @@
             CardSearchBox = new CustomControls.CustomTextBox();
             CardAddBtn = new CustomControls.CustomButton();
             CarddataGridView = new DataGridView();
+            NoItemsLabel = new Label();
             CardNameBoxColumn = new DataGridViewTextBoxColumn();
             CardHolderBoxColumn = new DataGridViewTextBoxColumn();
             CardNumberColumn = new DataGridViewTextBoxColumn();
@@ -45,7 +46,6 @@
             ExMonthColumn = new DataGridViewTextBoxColumn();
             ExYearColumn = new DataGridViewTextBoxColumn();
             SecurityCodeColumn = new DataGridViewTextBoxColumn();
-            NoItemsLabel = new Label();
             CardPanel3.SuspendLayout();
             CardPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CarddataGridView).BeginInit();
@@ -53,7 +53,7 @@
             // 
             // CardPanel3
             // 
-            CardPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            CardPanel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             CardPanel3.BackColor = Color.FromArgb(238, 246, 247);
             CardPanel3.Controls.Add(CardEditBtn);
             CardPanel3.Controls.Add(CardDeleteBtn);
@@ -205,57 +205,12 @@
             CarddataGridView.Location = new Point(12, 67);
             CarddataGridView.Name = "CarddataGridView";
             CarddataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(217, 217, 217);
-            CarddataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(217, 217, 217);
+            CarddataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             CarddataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CarddataGridView.Size = new Size(913, 425);
             CarddataGridView.TabIndex = 7;
             CarddataGridView.CellContentClick += CarddataGridView_CellContentClick;
-            // 
-            // CardNameBoxColumn
-            // 
-            CardNameBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            CardNameBoxColumn.FillWeight = 30F;
-            CardNameBoxColumn.HeaderText = "Name";
-            CardNameBoxColumn.Name = "CardNameBoxColumn";
-            // 
-            // CardHolderBoxColumn
-            // 
-            CardHolderBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            CardHolderBoxColumn.FillWeight = 65F;
-            CardHolderBoxColumn.HeaderText = "Card Holder Name";
-            CardHolderBoxColumn.Name = "CardHolderBoxColumn";
-            CardHolderBoxColumn.Width = 126;
-            // 
-            // CardNumberColumn
-            // 
-            CardNumberColumn.FillWeight = 2.32163739F;
-            CardNumberColumn.HeaderText = "Card Number";
-            CardNumberColumn.Name = "CardNumberColumn";
-            // 
-            // BrandColumn
-            // 
-            BrandColumn.FillWeight = 1F;
-            BrandColumn.HeaderText = "Brand";
-            BrandColumn.Name = "BrandColumn";
-            // 
-            // ExMonthColumn
-            // 
-            ExMonthColumn.FillWeight = 2.32163739F;
-            ExMonthColumn.HeaderText = "Expiration Month";
-            ExMonthColumn.Name = "ExMonthColumn";
-            // 
-            // ExYearColumn
-            // 
-            ExYearColumn.FillWeight = 2.32163739F;
-            ExYearColumn.HeaderText = "Expiration Year";
-            ExYearColumn.Name = "ExYearColumn";
-            // 
-            // SecurityCodeColumn
-            // 
-            SecurityCodeColumn.FillWeight = 2.32163739F;
-            SecurityCodeColumn.HeaderText = "Security Code";
-            SecurityCodeColumn.Name = "SecurityCodeColumn";
             // 
             // NoItemsLabel
             // 
@@ -266,6 +221,58 @@
             NoItemsLabel.TabIndex = 8;
             NoItemsLabel.Text = "No Item Available";
             NoItemsLabel.Visible = false;
+            // 
+            // CardNameBoxColumn
+            // 
+            CardNameBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            CardNameBoxColumn.FillWeight = 30F;
+            CardNameBoxColumn.HeaderText = "Name";
+            CardNameBoxColumn.Name = "CardNameBoxColumn";
+            CardNameBoxColumn.ReadOnly = true;
+            // 
+            // CardHolderBoxColumn
+            // 
+            CardHolderBoxColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            CardHolderBoxColumn.FillWeight = 65F;
+            CardHolderBoxColumn.HeaderText = "Card Holder Name";
+            CardHolderBoxColumn.Name = "CardHolderBoxColumn";
+            CardHolderBoxColumn.ReadOnly = true;
+            CardHolderBoxColumn.Width = 126;
+            // 
+            // CardNumberColumn
+            // 
+            CardNumberColumn.FillWeight = 2.32163739F;
+            CardNumberColumn.HeaderText = "Card Number";
+            CardNumberColumn.Name = "CardNumberColumn";
+            CardNumberColumn.ReadOnly = true;
+            // 
+            // BrandColumn
+            // 
+            BrandColumn.FillWeight = 1F;
+            BrandColumn.HeaderText = "Brand";
+            BrandColumn.Name = "BrandColumn";
+            BrandColumn.ReadOnly = true;
+            // 
+            // ExMonthColumn
+            // 
+            ExMonthColumn.FillWeight = 2.32163739F;
+            ExMonthColumn.HeaderText = "Expiration Month";
+            ExMonthColumn.Name = "ExMonthColumn";
+            ExMonthColumn.ReadOnly = true;
+            // 
+            // ExYearColumn
+            // 
+            ExYearColumn.FillWeight = 2.32163739F;
+            ExYearColumn.HeaderText = "Expiration Year";
+            ExYearColumn.Name = "ExYearColumn";
+            ExYearColumn.ReadOnly = true;
+            // 
+            // SecurityCodeColumn
+            // 
+            SecurityCodeColumn.FillWeight = 2.32163739F;
+            SecurityCodeColumn.HeaderText = "Security Code";
+            SecurityCodeColumn.Name = "SecurityCodeColumn";
+            SecurityCodeColumn.ReadOnly = true;
             // 
             // CardForm
             // 
@@ -300,6 +307,7 @@
         private CustomControls.CustomTextBox CardSearchBox;
         public CustomControls.CustomButton CardAddBtn;
         public DataGridView CarddataGridView;
+        public Label NoItemsLabel;
         private DataGridViewTextBoxColumn CardNameBoxColumn;
         private DataGridViewTextBoxColumn CardHolderBoxColumn;
         private DataGridViewTextBoxColumn CardNumberColumn;
@@ -307,6 +315,5 @@
         private DataGridViewTextBoxColumn ExMonthColumn;
         private DataGridViewTextBoxColumn ExYearColumn;
         private DataGridViewTextBoxColumn SecurityCodeColumn;
-        public Label NoItemsLabel;
     }
 }

@@ -289,7 +289,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(821, 495);
+            ClientSize = new Size(741, 495);
             Controls.Add(CardUpdatePanel);
             Name = "CardUpdateForm";
             StartPosition = FormStartPosition.CenterScreen;

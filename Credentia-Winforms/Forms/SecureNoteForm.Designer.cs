@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
@@ -36,9 +36,9 @@
             SecureNoteAddBtn = new CustomControls.CustomButton();
             customTextBox1 = new CustomControls.CustomTextBox();
             dataGridView2 = new DataGridView();
+            SCNoItemsLabel = new Label();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            SCNoItemsLabel = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -46,7 +46,7 @@
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panel1.Controls.Add(SecureNoteEditbtn);
             panel1.Controls.Add(SecureNoteDeletebtn);
             panel1.Location = new Point(1, 493);
@@ -154,30 +154,17 @@
             dataGridView2.BackgroundColor = Color.FromArgb(238, 246, 247);
             dataGridView2.BorderStyle = BorderStyle.None;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.ColumnHeadersVisible = false;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
             dataGridView2.GridColor = SystemColors.ScrollBar;
             dataGridView2.Location = new Point(12, 72);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(217, 217, 217);
-            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(217, 217, 217);
+            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(901, 423);
             dataGridView2.TabIndex = 3;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.FillWeight = 40.07614F;
-            dataGridViewTextBoxColumn1.HeaderText = "Name";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.FillWeight = 194.923859F;
-            dataGridViewTextBoxColumn2.HeaderText = "SecureNote";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // SCNoItemsLabel
             // 
@@ -188,6 +175,20 @@
             SCNoItemsLabel.TabIndex = 9;
             SCNoItemsLabel.Text = "No Item Available";
             SCNoItemsLabel.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.FillWeight = 40.07614F;
+            dataGridViewTextBoxColumn1.HeaderText = "Name";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.FillWeight = 194.923859F;
+            dataGridViewTextBoxColumn2.HeaderText = "SecureNote";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // SecureNoteForm
             // 
@@ -225,8 +226,8 @@
         public CustomControls.CustomButton SecureNoteAddBtn;
         public DataGridView dataGridView2;
         private CustomControls.CustomTextBox customTextBox1;
+        public Label SCNoItemsLabel;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        public Label SCNoItemsLabel;
     }
 }

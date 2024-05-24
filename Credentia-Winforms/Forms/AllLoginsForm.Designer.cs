@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             AllloginsPanel1 = new Panel();
@@ -35,10 +37,6 @@
             CardSearchBox = new CustomControls.CustomTextBox();
             AllloginsAddBtn = new CustomControls.CustomButton();
             AllloginsdataGridView = new DataGridView();
-            AllloginsNameColumn = new DataGridViewTextBoxColumn();
-            AllloginsUsernameColumn = new DataGridViewTextBoxColumn();
-            AllloginsPasswordColumn = new DataGridViewTextBoxColumn();
-            AllloginsURLColumn = new DataGridViewTextBoxColumn();
             AllloginPanel3 = new Panel();
             AllloginsDeletebtn = new CustomControls.CustomButton();
             AllloginsEditbtn = new CustomControls.CustomButton();
@@ -47,6 +45,10 @@
             SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
             NoItemsLabel = new Label();
+            AllloginsNameColumn = new DataGridViewTextBoxColumn();
+            AllloginsUsernameColumn = new DataGridViewTextBoxColumn();
+            AllloginsPasswordColumn = new DataGridViewTextBoxColumn();
+            AllloginsURLColumn = new DataGridViewTextBoxColumn();
             AllloginsPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AllloginsdataGridView).BeginInit();
             AllloginPanel3.SuspendLayout();
@@ -132,57 +134,45 @@
             AllloginsdataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             AllloginsdataGridView.BackgroundColor = Color.FromArgb(238, 246, 247);
             AllloginsdataGridView.BorderStyle = BorderStyle.None;
-            AllloginsdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(252, 92, 52);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            AllloginsdataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            AllloginsdataGridView.ColumnHeadersHeight = 35;
             AllloginsdataGridView.Columns.AddRange(new DataGridViewColumn[] { AllloginsNameColumn, AllloginsUsernameColumn, AllloginsPasswordColumn, AllloginsURLColumn });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            AllloginsdataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            AllloginsdataGridView.GridColor = SystemColors.ScrollBar;
+            AllloginsdataGridView.Location = new Point(12, 57);
+            AllloginsdataGridView.Name = "AllloginsdataGridView";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(252, 92, 52);
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            AllloginsdataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            AllloginsdataGridView.GridColor = SystemColors.ScrollBar;
-            AllloginsdataGridView.Location = new Point(12, 60);
-            AllloginsdataGridView.Name = "AllloginsdataGridView";
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            AllloginsdataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             AllloginsdataGridView.RowHeadersVisible = false;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(217, 217, 217);
             AllloginsdataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             AllloginsdataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            AllloginsdataGridView.Size = new Size(913, 425);
+            AllloginsdataGridView.Size = new Size(913, 433);
             AllloginsdataGridView.TabIndex = 8;
-            // 
-            // AllloginsNameColumn
-            // 
-            AllloginsNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            AllloginsNameColumn.FillWeight = 25F;
-            AllloginsNameColumn.HeaderText = "Name";
-            AllloginsNameColumn.Name = "AllloginsNameColumn";
-            AllloginsNameColumn.Width = 200;
-            // 
-            // AllloginsUsernameColumn
-            // 
-            AllloginsUsernameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            AllloginsUsernameColumn.FillWeight = 25F;
-            AllloginsUsernameColumn.HeaderText = "Username";
-            AllloginsUsernameColumn.Name = "AllloginsUsernameColumn";
-            AllloginsUsernameColumn.Width = 200;
-            // 
-            // AllloginsPasswordColumn
-            // 
-            AllloginsPasswordColumn.FillWeight = 25F;
-            AllloginsPasswordColumn.HeaderText = "Password";
-            AllloginsPasswordColumn.Name = "AllloginsPasswordColumn";
-            // 
-            // AllloginsURLColumn
-            // 
-            AllloginsURLColumn.FillWeight = 25F;
-            AllloginsURLColumn.HeaderText = "URL";
-            AllloginsURLColumn.Name = "AllloginsURLColumn";
             // 
             // AllloginPanel3
             // 
-            AllloginPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            AllloginPanel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             AllloginPanel3.BackColor = Color.FromArgb(238, 246, 247);
             AllloginPanel3.Controls.Add(AllloginsDeletebtn);
             AllloginPanel3.Controls.Add(AllloginsEditbtn);
@@ -321,6 +311,38 @@
             NoItemsLabel.Text = "No Item Available";
             NoItemsLabel.Visible = false;
             // 
+            // AllloginsNameColumn
+            // 
+            AllloginsNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            AllloginsNameColumn.FillWeight = 25F;
+            AllloginsNameColumn.HeaderText = "Name";
+            AllloginsNameColumn.Name = "AllloginsNameColumn";
+            AllloginsNameColumn.ReadOnly = true;
+            AllloginsNameColumn.Width = 200;
+            // 
+            // AllloginsUsernameColumn
+            // 
+            AllloginsUsernameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            AllloginsUsernameColumn.FillWeight = 25F;
+            AllloginsUsernameColumn.HeaderText = "Username";
+            AllloginsUsernameColumn.Name = "AllloginsUsernameColumn";
+            AllloginsUsernameColumn.ReadOnly = true;
+            AllloginsUsernameColumn.Width = 200;
+            // 
+            // AllloginsPasswordColumn
+            // 
+            AllloginsPasswordColumn.FillWeight = 25F;
+            AllloginsPasswordColumn.HeaderText = "Password";
+            AllloginsPasswordColumn.Name = "AllloginsPasswordColumn";
+            AllloginsPasswordColumn.ReadOnly = true;
+            // 
+            // AllloginsURLColumn
+            // 
+            AllloginsURLColumn.FillWeight = 25F;
+            AllloginsURLColumn.HeaderText = "URL";
+            AllloginsURLColumn.Name = "AllloginsURLColumn";
+            AllloginsURLColumn.ReadOnly = true;
+            // 
             // AllLoginsForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -358,11 +380,11 @@
         private CustomControls.CustomButton SecureNoteDeletebtn;
         private CustomControls.CustomButton AllloginsEditbtn;
         private CustomControls.CustomButton AllloginsDeletebtn;
+        private CustomControls.CustomTextBox AllloginsSearchBox;
+        public Label NoItemsLabel;
         private DataGridViewTextBoxColumn AllloginsNameColumn;
         private DataGridViewTextBoxColumn AllloginsUsernameColumn;
         private DataGridViewTextBoxColumn AllloginsPasswordColumn;
         private DataGridViewTextBoxColumn AllloginsURLColumn;
-        private CustomControls.CustomTextBox AllloginsSearchBox;
-        public Label NoItemsLabel;
     }
 }
