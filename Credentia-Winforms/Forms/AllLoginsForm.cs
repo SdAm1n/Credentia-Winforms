@@ -11,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
+using MySql.Data.MySqlClient;
 
 namespace Credentia_Winforms
 {
@@ -59,8 +61,8 @@ namespace Credentia_Winforms
         {
             // Selected row deleted
             int rowIndex = AllloginsdataGridView.CurrentCell.RowIndex;
-            
-            
+
+
             // Get the selected row
             DataGridViewRow selectedRow = AllloginsdataGridView.Rows[rowIndex];
 
@@ -110,32 +112,62 @@ namespace Credentia_Winforms
             }
         }
 
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            string searchQuery = AllloginsSearchBox.Texts.Trim();
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            BindGridView(sql, searchQuery);
+        }
+
 
         // Bind the DataGridView to the All Logins Table
-        void BindGridView(UsersDBCrud sql)
+        void BindGridView(UsersDBCrud sql, string searchQuery = "")
         {
             AllloginsdataGridView.Rows.Clear();
-            List<LoginsModel> logins = sql.GetLogins(ActiveUserDB);
 
-            try
+            if (string.IsNullOrEmpty(searchQuery))
             {
-                foreach (LoginsModel loginsModel in logins)
+                List<LoginsModel> logins = sql.GetLogins(ActiveUserDB);
+                try
                 {
-                    string decryptedPassword = AesHelper.Decrypt(loginsModel.Password);
+                    foreach (LoginsModel loginsModel in logins)
+                    {
+                            string decryptedPassword = AesHelper.Decrypt(loginsModel.Password);
 
-                    AllloginsdataGridView.Rows.Add(loginsModel.Name, loginsModel.Username, decryptedPassword, loginsModel.URL);
+                            AllloginsdataGridView.Rows.Add(loginsModel.Name, loginsModel.Username, decryptedPassword, loginsModel.URL);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                List<LoginsModel> search = sql.SearchLogins(searchQuery, ActiveUserDB);
+                try
+                {
+                    foreach (LoginsModel loginsModel in search)
+                    {
+                        string decryptedPassword = AesHelper.Decrypt(loginsModel.Password);
+
+                        AllloginsdataGridView.Rows.Add(loginsModel.Name, loginsModel.Username, decryptedPassword, loginsModel.URL);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+            
+
         }
 
 
 
 
         // -------------------- Database Operations -------------------------- //
+
 
         // Get id from logins_table
         private static int GetId(UsersDBCrud sql, string name, string username, string userDatabase)
@@ -158,5 +190,7 @@ namespace Credentia_Winforms
         {
             return DBConnectionHelper.GetConnectionString(connectionStringName);
         }
+
+        
     }
 }

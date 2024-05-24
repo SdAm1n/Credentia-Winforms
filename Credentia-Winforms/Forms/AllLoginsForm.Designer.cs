@@ -35,8 +35,13 @@
             AllloginsPanel1 = new Panel();
             AllloginsSearchBox = new CustomControls.CustomTextBox();
             CardSearchBox = new CustomControls.CustomTextBox();
+            SearchBtn = new CustomControls.CustomButton();
             AllloginsAddBtn = new CustomControls.CustomButton();
             AllloginsdataGridView = new DataGridView();
+            AllloginsNameColumn = new DataGridViewTextBoxColumn();
+            AllloginsUsernameColumn = new DataGridViewTextBoxColumn();
+            AllloginsPasswordColumn = new DataGridViewTextBoxColumn();
+            AllloginsURLColumn = new DataGridViewTextBoxColumn();
             AllloginPanel3 = new Panel();
             AllloginsDeletebtn = new CustomControls.CustomButton();
             AllloginsEditbtn = new CustomControls.CustomButton();
@@ -45,10 +50,6 @@
             SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
             NoItemsLabel = new Label();
-            AllloginsNameColumn = new DataGridViewTextBoxColumn();
-            AllloginsUsernameColumn = new DataGridViewTextBoxColumn();
-            AllloginsPasswordColumn = new DataGridViewTextBoxColumn();
-            AllloginsURLColumn = new DataGridViewTextBoxColumn();
             AllloginsPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)AllloginsdataGridView).BeginInit();
             AllloginPanel3.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             AllloginsPanel1.Controls.Add(AllloginsSearchBox);
             AllloginsPanel1.Controls.Add(CardSearchBox);
+            AllloginsPanel1.Controls.Add(SearchBtn);
             AllloginsPanel1.Controls.Add(AllloginsAddBtn);
             AllloginsPanel1.Location = new Point(0, 0);
             AllloginsPanel1.Name = "AllloginsPanel1";
@@ -108,6 +110,25 @@
             CardSearchBox.Texts = "";
             CardSearchBox.UnderlinedStyle = false;
             // 
+            // SearchBtn
+            // 
+            SearchBtn.BackColor = Color.Transparent;
+            SearchBtn.BackgroundColor = Color.Transparent;
+            SearchBtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SearchBtn.BorderRadius = 16;
+            SearchBtn.BorderSize = 2;
+            SearchBtn.FlatAppearance.BorderSize = 0;
+            SearchBtn.FlatStyle = FlatStyle.Flat;
+            SearchBtn.ForeColor = Color.Black;
+            SearchBtn.Location = new Point(579, 11);
+            SearchBtn.Name = "SearchBtn";
+            SearchBtn.Size = new Size(87, 32);
+            SearchBtn.TabIndex = 6;
+            SearchBtn.Text = "SEARCH";
+            SearchBtn.TextColor = Color.Black;
+            SearchBtn.UseVisualStyleBackColor = false;
+            SearchBtn.Click += SearchBtn_Click;
+            // 
             // AllloginsAddBtn
             // 
             AllloginsAddBtn.BackColor = Color.Transparent;
@@ -118,7 +139,7 @@
             AllloginsAddBtn.FlatAppearance.BorderSize = 0;
             AllloginsAddBtn.FlatStyle = FlatStyle.Flat;
             AllloginsAddBtn.ForeColor = Color.Black;
-            AllloginsAddBtn.Location = new Point(665, 11);
+            AllloginsAddBtn.Location = new Point(684, 11);
             AllloginsAddBtn.Name = "AllloginsAddBtn";
             AllloginsAddBtn.Size = new Size(57, 32);
             AllloginsAddBtn.TabIndex = 6;
@@ -169,6 +190,38 @@
             AllloginsdataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             AllloginsdataGridView.Size = new Size(913, 433);
             AllloginsdataGridView.TabIndex = 8;
+            // 
+            // AllloginsNameColumn
+            // 
+            AllloginsNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            AllloginsNameColumn.FillWeight = 25F;
+            AllloginsNameColumn.HeaderText = "Name";
+            AllloginsNameColumn.Name = "AllloginsNameColumn";
+            AllloginsNameColumn.ReadOnly = true;
+            AllloginsNameColumn.Width = 200;
+            // 
+            // AllloginsUsernameColumn
+            // 
+            AllloginsUsernameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            AllloginsUsernameColumn.FillWeight = 25F;
+            AllloginsUsernameColumn.HeaderText = "Username";
+            AllloginsUsernameColumn.Name = "AllloginsUsernameColumn";
+            AllloginsUsernameColumn.ReadOnly = true;
+            AllloginsUsernameColumn.Width = 200;
+            // 
+            // AllloginsPasswordColumn
+            // 
+            AllloginsPasswordColumn.FillWeight = 25F;
+            AllloginsPasswordColumn.HeaderText = "Password";
+            AllloginsPasswordColumn.Name = "AllloginsPasswordColumn";
+            AllloginsPasswordColumn.ReadOnly = true;
+            // 
+            // AllloginsURLColumn
+            // 
+            AllloginsURLColumn.FillWeight = 25F;
+            AllloginsURLColumn.HeaderText = "URL";
+            AllloginsURLColumn.Name = "AllloginsURLColumn";
+            AllloginsURLColumn.ReadOnly = true;
             // 
             // AllloginPanel3
             // 
@@ -311,38 +364,6 @@
             NoItemsLabel.Text = "No Item Available";
             NoItemsLabel.Visible = false;
             // 
-            // AllloginsNameColumn
-            // 
-            AllloginsNameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            AllloginsNameColumn.FillWeight = 25F;
-            AllloginsNameColumn.HeaderText = "Name";
-            AllloginsNameColumn.Name = "AllloginsNameColumn";
-            AllloginsNameColumn.ReadOnly = true;
-            AllloginsNameColumn.Width = 200;
-            // 
-            // AllloginsUsernameColumn
-            // 
-            AllloginsUsernameColumn.AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            AllloginsUsernameColumn.FillWeight = 25F;
-            AllloginsUsernameColumn.HeaderText = "Username";
-            AllloginsUsernameColumn.Name = "AllloginsUsernameColumn";
-            AllloginsUsernameColumn.ReadOnly = true;
-            AllloginsUsernameColumn.Width = 200;
-            // 
-            // AllloginsPasswordColumn
-            // 
-            AllloginsPasswordColumn.FillWeight = 25F;
-            AllloginsPasswordColumn.HeaderText = "Password";
-            AllloginsPasswordColumn.Name = "AllloginsPasswordColumn";
-            AllloginsPasswordColumn.ReadOnly = true;
-            // 
-            // AllloginsURLColumn
-            // 
-            AllloginsURLColumn.FillWeight = 25F;
-            AllloginsURLColumn.HeaderText = "URL";
-            AllloginsURLColumn.Name = "AllloginsURLColumn";
-            AllloginsURLColumn.ReadOnly = true;
-            // 
             // AllLoginsForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -386,5 +407,6 @@
         private DataGridViewTextBoxColumn AllloginsUsernameColumn;
         private DataGridViewTextBoxColumn AllloginsPasswordColumn;
         private DataGridViewTextBoxColumn AllloginsURLColumn;
+        public CustomControls.CustomButton SearchBtn;
     }
 }

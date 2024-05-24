@@ -310,6 +310,21 @@ namespace DataAccessLibrary
             }
         }
 
+        // search for a login in the logins_table
+        public List<LoginsModel> SearchLogins(string search, string userDatabase)
+        {
+            string sql = $"SELECT Name, Username, Password, URL FROM {userDatabase}.logins_table WHERE Name LIKE @Search OR Username LIKE @Search OR URL LIKE @Search";
+
+            try
+            {
+                return db.LoadData<LoginsModel, dynamic>(sql, new { Search = $"%{search}%" }, _connectionString);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
 
         // ----------------- Cards Table Operations ----------------- //
 
