@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
             panel2 = new Panel();
+            SearchBtn = new CustomControls.CustomButton();
             SecureNoteAddBtn = new CustomControls.CustomButton();
-            customTextBox1 = new CustomControls.CustomTextBox();
+            NoteSearchBox = new CustomControls.CustomTextBox();
             dataGridView2 = new DataGridView();
-            SCNoItemsLabel = new Label();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            SCNoItemsLabel = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -97,13 +98,34 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(SearchBtn);
             panel2.Controls.Add(SecureNoteAddBtn);
-            panel2.Controls.Add(customTextBox1);
+            panel2.Controls.Add(NoteSearchBox);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(744, 51);
             panel2.TabIndex = 2;
             panel2.Paint += panel2_Paint;
+            // 
+            // SearchBtn
+            // 
+            SearchBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            SearchBtn.BackColor = Color.Transparent;
+            SearchBtn.BackgroundColor = Color.Transparent;
+            SearchBtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SearchBtn.BorderRadius = 16;
+            SearchBtn.BorderSize = 2;
+            SearchBtn.FlatAppearance.BorderSize = 0;
+            SearchBtn.FlatStyle = FlatStyle.Flat;
+            SearchBtn.ForeColor = Color.Black;
+            SearchBtn.Location = new Point(579, 11);
+            SearchBtn.Name = "SearchBtn";
+            SearchBtn.Size = new Size(80, 32);
+            SearchBtn.TabIndex = 5;
+            SearchBtn.Text = "SEARCH";
+            SearchBtn.TextColor = Color.Black;
+            SearchBtn.UseVisualStyleBackColor = false;
+            SearchBtn.Click += SearchBtn_Click;
             // 
             // SecureNoteAddBtn
             // 
@@ -116,7 +138,7 @@
             SecureNoteAddBtn.FlatAppearance.BorderSize = 0;
             SecureNoteAddBtn.FlatStyle = FlatStyle.Flat;
             SecureNoteAddBtn.ForeColor = Color.Black;
-            SecureNoteAddBtn.Location = new Point(665, 11);
+            SecureNoteAddBtn.Location = new Point(684, 11);
             SecureNoteAddBtn.Name = "SecureNoteAddBtn";
             SecureNoteAddBtn.Size = new Size(57, 32);
             SecureNoteAddBtn.TabIndex = 5;
@@ -125,26 +147,26 @@
             SecureNoteAddBtn.UseVisualStyleBackColor = false;
             SecureNoteAddBtn.Click += SecureNoteAddBtn_Click;
             // 
-            // customTextBox1
+            // NoteSearchBox
             // 
-            customTextBox1.BackColor = Color.FromArgb(217, 217, 217);
-            customTextBox1.BorderColor = Color.Transparent;
-            customTextBox1.BorderFocusColor = Color.Transparent;
-            customTextBox1.BorderRadius = 16;
-            customTextBox1.BorderSize = 2;
-            customTextBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            customTextBox1.ForeColor = Color.DimGray;
-            customTextBox1.Location = new Point(220, 11);
-            customTextBox1.Multiline = false;
-            customTextBox1.Name = "customTextBox1";
-            customTextBox1.Padding = new Padding(7);
-            customTextBox1.PasswordChar = false;
-            customTextBox1.PlaceholderColor = Color.DarkGray;
-            customTextBox1.PlaceholderText = "";
-            customTextBox1.Size = new Size(353, 32);
-            customTextBox1.TabIndex = 0;
-            customTextBox1.Texts = "";
-            customTextBox1.UnderlinedStyle = false;
+            NoteSearchBox.BackColor = Color.FromArgb(217, 217, 217);
+            NoteSearchBox.BorderColor = Color.Transparent;
+            NoteSearchBox.BorderFocusColor = Color.Transparent;
+            NoteSearchBox.BorderRadius = 16;
+            NoteSearchBox.BorderSize = 2;
+            NoteSearchBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            NoteSearchBox.ForeColor = Color.DimGray;
+            NoteSearchBox.Location = new Point(220, 11);
+            NoteSearchBox.Multiline = false;
+            NoteSearchBox.Name = "NoteSearchBox";
+            NoteSearchBox.Padding = new Padding(7);
+            NoteSearchBox.PasswordChar = false;
+            NoteSearchBox.PlaceholderColor = Color.DarkGray;
+            NoteSearchBox.PlaceholderText = "";
+            NoteSearchBox.Size = new Size(353, 32);
+            NoteSearchBox.TabIndex = 0;
+            NoteSearchBox.Texts = "";
+            NoteSearchBox.UnderlinedStyle = false;
             // 
             // dataGridView2
             // 
@@ -159,22 +181,12 @@
             dataGridView2.Location = new Point(12, 72);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(217, 217, 217);
-            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(217, 217, 217);
+            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(901, 423);
             dataGridView2.TabIndex = 3;
             dataGridView2.CellContentClick += dataGridView2_CellContentClick;
-            // 
-            // SCNoItemsLabel
-            // 
-            SCNoItemsLabel.AutoSize = true;
-            SCNoItemsLabel.Location = new Point(390, 247);
-            SCNoItemsLabel.Name = "SCNoItemsLabel";
-            SCNoItemsLabel.Size = new Size(133, 21);
-            SCNoItemsLabel.TabIndex = 9;
-            SCNoItemsLabel.Text = "No Item Available";
-            SCNoItemsLabel.Visible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -189,6 +201,16 @@
             dataGridViewTextBoxColumn2.HeaderText = "SecureNote";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // SCNoItemsLabel
+            // 
+            SCNoItemsLabel.AutoSize = true;
+            SCNoItemsLabel.Location = new Point(390, 247);
+            SCNoItemsLabel.Name = "SCNoItemsLabel";
+            SCNoItemsLabel.Size = new Size(133, 21);
+            SCNoItemsLabel.TabIndex = 9;
+            SCNoItemsLabel.Text = "No Item Available";
+            SCNoItemsLabel.Visible = false;
             // 
             // SecureNoteForm
             // 
@@ -225,9 +247,10 @@
         private Panel panel2;
         public CustomControls.CustomButton SecureNoteAddBtn;
         public DataGridView dataGridView2;
-        private CustomControls.CustomTextBox customTextBox1;
+        private CustomControls.CustomTextBox NoteSearchBox;
         public Label SCNoItemsLabel;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        public CustomControls.CustomButton SearchBtn;
     }
 }

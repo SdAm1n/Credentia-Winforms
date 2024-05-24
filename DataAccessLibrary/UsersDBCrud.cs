@@ -242,6 +242,21 @@ namespace DataAccessLibrary
             }
         }
 
+        // Search for a Secure Note in the secure_notes_table
+        public List<SecureNotesModel> SearchSecureNotes(string search, string userDatabase)
+        {
+            string sql = $"SELECT Name, SecureNote FROM {userDatabase}.secure_notes_table WHERE Name LIKE @Search";
+
+            try
+            {
+                return db.LoadData<SecureNotesModel, dynamic>(sql, new { Search = $"%{search}%" }, _connectionString);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
         // ----------------- Logins Table Operations ----------------- //
         
         // Add items to logins_table
@@ -404,6 +419,22 @@ namespace DataAccessLibrary
             }
         }
 
+        // Search for a card in the cards_table
+        public List<CardsModel> SearchCards(string search, string userDatabase)
+        {
+            string sql = $"SELECT Name, CardholderName, CardNumber, Brand, ExpirationMonth, ExpirationYear, " +
+                $"SecurityCode FROM {userDatabase}.cards_table WHERE Name LIKE @Search OR CardholderName LIKE @Search OR Brand LIKE @Search";
+
+            try
+            {
+                return db.LoadData<CardsModel, dynamic>(sql, new { Search = $"%{search}%" }, _connectionString);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
 
         // ----------------- Identities Table Operations ----------------- //
 
@@ -496,6 +527,23 @@ namespace DataAccessLibrary
                 return 0;
             }
         }
+
+        // Search for an identity in the identities_table
+        public List<IdentitiesModel> SearchIdentities(string search, string userDatabase)
+        {
+            string sql = $"SELECT Name, Title, FirstName, LastName, Username, Company, LicenseNumber, Email, Phone, " +
+                $"Address, Zip, Country, NidNo, PassportNo FROM {userDatabase}.identities_table WHERE Name LIKE @Search OR Username LIKE @Search OR Email LIKE @Search";
+
+            try
+            {
+                return db.LoadData<IdentitiesModel, dynamic>(sql, new { Search = $"%{search}%" }, _connectionString);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
 
         // ----------------- User Cred Table Operations ----------------- //
 

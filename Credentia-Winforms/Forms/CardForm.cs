@@ -74,7 +74,7 @@ namespace Credentia_Winforms
 
             // get id from cards_table
             UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
-            int id = GetId(sql, selectedRow.Cells["CardNameBoxColumn"].Value.ToString(), 
+            int id = GetId(sql, selectedRow.Cells["CardNameBoxColumn"].Value.ToString(),
                 selectedRow.Cells["BrandColumn"].Value.ToString(), ActiveUserDB);
 
             try
@@ -133,24 +133,65 @@ namespace Credentia_Winforms
         {
 
         }
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            string searchQuery = CardSearchBox.Texts.Trim();
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            BindGridView(sql, searchQuery);
+        }
 
-        void BindGridView(UsersDBCrud sql)
+        void BindGridView(UsersDBCrud sql, string searchQuery = "")
         {
             CarddataGridView.Rows.Clear();
 
-            List<CardsModel> cards = sql.GetCards(ActiveUserDB);
-
-            foreach (CardsModel card in cards)
+            // if search is empty then show all cards
+            if (string.IsNullOrEmpty(searchQuery))
             {
-                // Decrypt the Card Number, Expiration Month, Expiration Year, and CVV
-                string decryptedCardNumber = AesHelper.Decrypt(card.CardNumber);
-                string decryptedExpirationMonth = AesHelper.Decrypt(card.ExpirationMonth);
-                string decryptedExpirationYear = AesHelper.Decrypt(card.ExpirationYear);
-                string decryptedCVV = AesHelper.Decrypt(card.SecurityCode);
+                List<CardsModel> cards = sql.GetCards(ActiveUserDB);
 
-                CarddataGridView.Rows.Add(card.Name, card.CardholderName, decryptedCardNumber, card.Brand, decryptedExpirationMonth, decryptedExpirationYear, decryptedCVV);
+                try
+                {
+                    foreach (CardsModel card in cards)
+                    {
+                        // Decrypt the Card Number, Expiration Month, Expiration Year, and CVV
+                        string decryptedCardNumber = AesHelper.Decrypt(card.CardNumber);
+                        string decryptedExpirationMonth = AesHelper.Decrypt(card.ExpirationMonth);
+                        string decryptedExpirationYear = AesHelper.Decrypt(card.ExpirationYear);
+                        string decryptedCVV = AesHelper.Decrypt(card.SecurityCode);
 
+                        CarddataGridView.Rows.Add(card.Name, card.CardholderName, decryptedCardNumber, card.Brand, decryptedExpirationMonth, decryptedExpirationYear, decryptedCVV);
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+            // for search
+            else
+            {
+                List<CardsModel> search = sql.SearchCards(searchQuery, ActiveUserDB);
+
+                try
+                {
+                    foreach (CardsModel card in search)
+                    {
+                        // Decrypt the Card Number, Expiration Month, Expiration Year, and CVV
+                        string decryptedCardNumber = AesHelper.Decrypt(card.CardNumber);
+                        string decryptedExpirationMonth = AesHelper.Decrypt(card.ExpirationMonth);
+                        string decryptedExpirationYear = AesHelper.Decrypt(card.ExpirationYear);
+                        string decryptedCVV = AesHelper.Decrypt(card.SecurityCode);
+
+                        CarddataGridView.Rows.Add(card.Name, card.CardholderName, decryptedCardNumber, card.Brand, decryptedExpirationMonth, decryptedExpirationYear, decryptedCVV);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
         }
 
         // ----------------------- DATABASE -----------------------//
@@ -176,5 +217,6 @@ namespace Credentia_Winforms
         {
             return DBConnectionHelper.GetConnectionString(connectionStringName);
         }
+
     }
 }

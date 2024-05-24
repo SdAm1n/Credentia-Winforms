@@ -133,26 +133,53 @@ namespace Credentia_Winforms
         {
 
         }
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            string searchQuery = NoteSearchBox.Texts.Trim();
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            BindGridView(sql, searchQuery);
+        }
 
-        void BindGridView(UsersDBCrud sql)
+        void BindGridView(UsersDBCrud sql, string searchQuery = "")
         {
             dataGridView2.Rows.Clear();
 
-            // Bind the DataGridView to the Secure Notes Table
-            List<SecureNotesModel> Notes = sql.GetSecureNotes(ActiveUserDB);
-
-            try
+            if (string.IsNullOrEmpty(searchQuery))
             {
-                foreach (SecureNotesModel note in Notes)
+                // Bind the DataGridView to the Secure Notes Table
+                List<SecureNotesModel> Notes = sql.GetSecureNotes(ActiveUserDB);
+
+                try
                 {
-                    string decrypted = AesHelper.Decrypt(note.SecureNote);
-                    dataGridView2.Rows.Add(note.Name, decrypted);
+                    foreach (SecureNotesModel note in Notes)
+                    {
+                        string decrypted = AesHelper.Decrypt(note.SecureNote);
+                        dataGridView2.Rows.Add(note.Name, decrypted);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                List<SecureNotesModel> search = sql.SearchSecureNotes(searchQuery, ActiveUserDB);
+
+                try
+                {
+                    foreach (SecureNotesModel note in search)
+                    {
+                        string decrypted = AesHelper.Decrypt(note.SecureNote);
+                        dataGridView2.Rows.Add(note.Name, decrypted);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+
 
         }
 

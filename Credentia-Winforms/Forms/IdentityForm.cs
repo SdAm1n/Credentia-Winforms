@@ -65,7 +65,7 @@ namespace Credentia_Winforms
             identityUpdateForm.Show();
         }
         private void IdentityDeletebtn_Click(object sender, EventArgs e)
-        { 
+        {
             // Selected row deleted
             int rowIndex = IdentitydataGridView.CurrentCell.RowIndex;
 
@@ -119,32 +119,79 @@ namespace Credentia_Winforms
         {
 
         }
+        private void SearchBtn_Click(object sender, EventArgs e)
+        {
+            string searchQuery = IdentitySearchBox.Texts.Trim();
+            UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={ActiveUserDB};");
+            BindGridView(sql, searchQuery);
+        }
 
         // Binding the DataGridView to the Identities Table
-        private void BindGridView(UsersDBCrud sql)
+        private void BindGridView(UsersDBCrud sql, string searchQuery = "")
         {
             // Clear the DataGridView
             IdentitydataGridView.Rows.Clear();
 
-            // Get the Identities from the user's database's identities_table
-            List<IdentitiesModel> identities = sql.GetIdentities(ActiveUserDB);
-
-            // Add the Identities to the DataGridView
-            foreach (IdentitiesModel identity in identities)
+            if (string.IsNullOrEmpty(searchQuery))
             {
-                // Decrypt the License Number, Phone, Address, Zip, and NID No
-                string decryptedLicenseNumber = AesHelper.Decrypt(identity.LicenseNumber);
-                string decryptedPhone = AesHelper.Decrypt(identity.Phone);
-                string decryptedAddress = AesHelper.Decrypt(identity.Address);
-                string decryptedZip = AesHelper.Decrypt(identity.Zip);
-                string decryptedNidNo = AesHelper.Decrypt(identity.NidNo);
-                string decryptedPassportNo = AesHelper.Decrypt(identity.PassportNo);
+                try
+                {
+                    // Get the Identities from the user's database's identities_table
+                    List<IdentitiesModel> identities = sql.GetIdentities(ActiveUserDB);
 
-                IdentitydataGridView.Rows.Add(identity.Name, identity.Title, identity.FirstName,
-                    identity.LastName, identity.Username, identity.Company, decryptedLicenseNumber,
-                    identity.Email, decryptedPhone, decryptedAddress, decryptedZip, identity.Country,
-                    decryptedNidNo, decryptedPassportNo);
+                    // Add the Identities to the DataGridView
+                    foreach (IdentitiesModel identity in identities)
+                    {
+                        // Decrypt the License Number, Phone, Address, Zip, and NID No
+                        string decryptedLicenseNumber = AesHelper.Decrypt(identity.LicenseNumber);
+                        string decryptedPhone = AesHelper.Decrypt(identity.Phone);
+                        string decryptedAddress = AesHelper.Decrypt(identity.Address);
+                        string decryptedZip = AesHelper.Decrypt(identity.Zip);
+                        string decryptedNidNo = AesHelper.Decrypt(identity.NidNo);
+                        string decryptedPassportNo = AesHelper.Decrypt(identity.PassportNo);
+
+                        IdentitydataGridView.Rows.Add(identity.Name, identity.Title, identity.FirstName,
+                            identity.LastName, identity.Username, identity.Company, decryptedLicenseNumber,
+                            identity.Email, decryptedPhone, decryptedAddress, decryptedZip, identity.Country,
+                            decryptedNidNo, decryptedPassportNo);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
+
+            else
+            {
+                List<IdentitiesModel> search = sql.SearchIdentities(searchQuery, ActiveUserDB);
+
+                try
+                {
+                    foreach (IdentitiesModel identity in search)
+                    {
+                        // Decrypt the License Number, Phone, Address, Zip, and NID No
+                        string decryptedLicenseNumber = AesHelper.Decrypt(identity.LicenseNumber);
+                        string decryptedPhone = AesHelper.Decrypt(identity.Phone);
+                        string decryptedAddress = AesHelper.Decrypt(identity.Address);
+                        string decryptedZip = AesHelper.Decrypt(identity.Zip);
+                        string decryptedNidNo = AesHelper.Decrypt(identity.NidNo);
+                        string decryptedPassportNo = AesHelper.Decrypt(identity.PassportNo);
+
+                        IdentitydataGridView.Rows.Add(identity.Name, identity.Title, identity.FirstName,
+                                                      identity.LastName, identity.Username, identity.Company, 
+                                                      decryptedLicenseNumber, identity.Email, decryptedPhone, 
+                                                      decryptedAddress, decryptedZip, identity.Country,
+                                                      decryptedNidNo, decryptedPassportNo);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+
         }
 
 

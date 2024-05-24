@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             CardPanel3 = new Panel();
             CardEditBtn = new CustomControls.CustomButton();
             CardDeleteBtn = new CustomControls.CustomButton();
@@ -38,7 +38,6 @@
             CardSearchBox = new CustomControls.CustomTextBox();
             CardAddBtn = new CustomControls.CustomButton();
             CarddataGridView = new DataGridView();
-            NoItemsLabel = new Label();
             CardNameBoxColumn = new DataGridViewTextBoxColumn();
             CardHolderBoxColumn = new DataGridViewTextBoxColumn();
             CardNumberColumn = new DataGridViewTextBoxColumn();
@@ -46,6 +45,8 @@
             ExMonthColumn = new DataGridViewTextBoxColumn();
             ExYearColumn = new DataGridViewTextBoxColumn();
             SecurityCodeColumn = new DataGridViewTextBoxColumn();
+            NoItemsLabel = new Label();
+            SearchBtn = new CustomControls.CustomButton();
             CardPanel3.SuspendLayout();
             CardPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)CarddataGridView).BeginInit();
@@ -145,6 +146,7 @@
             // CardPanel1
             // 
             CardPanel1.Controls.Add(CardSearchBox);
+            CardPanel1.Controls.Add(SearchBtn);
             CardPanel1.Controls.Add(CardAddBtn);
             CardPanel1.Location = new Point(0, 0);
             CardPanel1.Name = "CardPanel1";
@@ -183,7 +185,7 @@
             CardAddBtn.FlatAppearance.BorderSize = 0;
             CardAddBtn.FlatStyle = FlatStyle.Flat;
             CardAddBtn.ForeColor = Color.Black;
-            CardAddBtn.Location = new Point(665, 11);
+            CardAddBtn.Location = new Point(684, 11);
             CardAddBtn.Name = "CardAddBtn";
             CardAddBtn.Size = new Size(57, 32);
             CardAddBtn.TabIndex = 6;
@@ -205,22 +207,12 @@
             CarddataGridView.Location = new Point(12, 67);
             CarddataGridView.Name = "CarddataGridView";
             CarddataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(217, 217, 217);
-            CarddataGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(217, 217, 217);
+            CarddataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             CarddataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             CarddataGridView.Size = new Size(913, 425);
             CarddataGridView.TabIndex = 7;
             CarddataGridView.CellContentClick += CarddataGridView_CellContentClick;
-            // 
-            // NoItemsLabel
-            // 
-            NoItemsLabel.AutoSize = true;
-            NoItemsLabel.Location = new Point(390, 247);
-            NoItemsLabel.Name = "NoItemsLabel";
-            NoItemsLabel.Size = new Size(133, 21);
-            NoItemsLabel.TabIndex = 8;
-            NoItemsLabel.Text = "No Item Available";
-            NoItemsLabel.Visible = false;
             // 
             // CardNameBoxColumn
             // 
@@ -274,6 +266,35 @@
             SecurityCodeColumn.Name = "SecurityCodeColumn";
             SecurityCodeColumn.ReadOnly = true;
             // 
+            // NoItemsLabel
+            // 
+            NoItemsLabel.AutoSize = true;
+            NoItemsLabel.Location = new Point(390, 247);
+            NoItemsLabel.Name = "NoItemsLabel";
+            NoItemsLabel.Size = new Size(133, 21);
+            NoItemsLabel.TabIndex = 8;
+            NoItemsLabel.Text = "No Item Available";
+            NoItemsLabel.Visible = false;
+            // 
+            // SearchBtn
+            // 
+            SearchBtn.BackColor = Color.Transparent;
+            SearchBtn.BackgroundColor = Color.Transparent;
+            SearchBtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SearchBtn.BorderRadius = 16;
+            SearchBtn.BorderSize = 2;
+            SearchBtn.FlatAppearance.BorderSize = 0;
+            SearchBtn.FlatStyle = FlatStyle.Flat;
+            SearchBtn.ForeColor = Color.Black;
+            SearchBtn.Location = new Point(579, 11);
+            SearchBtn.Name = "SearchBtn";
+            SearchBtn.Size = new Size(80, 32);
+            SearchBtn.TabIndex = 6;
+            SearchBtn.Text = "SEARCH";
+            SearchBtn.TextColor = Color.Black;
+            SearchBtn.UseVisualStyleBackColor = false;
+            SearchBtn.Click += SearchBtn_Click;
+            // 
             // CardForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -315,5 +336,6 @@
         private DataGridViewTextBoxColumn ExMonthColumn;
         private DataGridViewTextBoxColumn ExYearColumn;
         private DataGridViewTextBoxColumn SecurityCodeColumn;
+        public CustomControls.CustomButton SearchBtn;
     }
 }

@@ -42,7 +42,6 @@
             SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
             IdentitydataGridView = new DataGridView();
-            IdentityNoItems = new Label();
             IdentityNameColumn = new DataGridViewTextBoxColumn();
             IdentityUserNameColumn = new DataGridViewTextBoxColumn();
             IdentityTittleColumn = new DataGridViewTextBoxColumn();
@@ -57,6 +56,8 @@
             IdentityCountryColumn = new DataGridViewTextBoxColumn();
             NIDColumn = new DataGridViewTextBoxColumn();
             PassportColumn = new DataGridViewTextBoxColumn();
+            IdentityNoItems = new Label();
+            SearchBtn = new CustomControls.CustomButton();
             CardPanel1.SuspendLayout();
             CardPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IdentitydataGridView).BeginInit();
@@ -66,6 +67,7 @@
             // 
             CardPanel1.Controls.Add(IdentitySearchBox);
             CardPanel1.Controls.Add(CardSearchBox);
+            CardPanel1.Controls.Add(SearchBtn);
             CardPanel1.Controls.Add(IdentityAddBtn);
             CardPanel1.Location = new Point(0, 0);
             CardPanel1.Name = "CardPanel1";
@@ -127,7 +129,7 @@
             IdentityAddBtn.FlatAppearance.BorderSize = 0;
             IdentityAddBtn.FlatStyle = FlatStyle.Flat;
             IdentityAddBtn.ForeColor = Color.Black;
-            IdentityAddBtn.Location = new Point(665, 11);
+            IdentityAddBtn.Location = new Point(684, 11);
             IdentityAddBtn.Name = "IdentityAddBtn";
             IdentityAddBtn.Size = new Size(57, 32);
             IdentityAddBtn.TabIndex = 6;
@@ -296,16 +298,6 @@
             IdentitydataGridView.TabIndex = 8;
             IdentitydataGridView.CellContentClick += IdentitydataGridView_CellContentClick;
             // 
-            // IdentityNoItems
-            // 
-            IdentityNoItems.AutoSize = true;
-            IdentityNoItems.Location = new Point(390, 247);
-            IdentityNoItems.Name = "IdentityNoItems";
-            IdentityNoItems.Size = new Size(133, 21);
-            IdentityNoItems.TabIndex = 9;
-            IdentityNoItems.Text = "No Item Available";
-            IdentityNoItems.Visible = false;
-            // 
             // IdentityNameColumn
             // 
             IdentityNameColumn.HeaderText = "Name";
@@ -390,6 +382,35 @@
             PassportColumn.Name = "PassportColumn";
             PassportColumn.ReadOnly = true;
             // 
+            // IdentityNoItems
+            // 
+            IdentityNoItems.AutoSize = true;
+            IdentityNoItems.Location = new Point(390, 247);
+            IdentityNoItems.Name = "IdentityNoItems";
+            IdentityNoItems.Size = new Size(133, 21);
+            IdentityNoItems.TabIndex = 9;
+            IdentityNoItems.Text = "No Item Available";
+            IdentityNoItems.Visible = false;
+            // 
+            // SearchBtn
+            // 
+            SearchBtn.BackColor = Color.Transparent;
+            SearchBtn.BackgroundColor = Color.Transparent;
+            SearchBtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SearchBtn.BorderRadius = 16;
+            SearchBtn.BorderSize = 2;
+            SearchBtn.FlatAppearance.BorderSize = 0;
+            SearchBtn.FlatStyle = FlatStyle.Flat;
+            SearchBtn.ForeColor = Color.Black;
+            SearchBtn.Location = new Point(579, 11);
+            SearchBtn.Name = "SearchBtn";
+            SearchBtn.Size = new Size(80, 32);
+            SearchBtn.TabIndex = 6;
+            SearchBtn.Text = "SEARCH";
+            SearchBtn.TextColor = Color.Black;
+            SearchBtn.UseVisualStyleBackColor = false;
+            SearchBtn.Click += SearchBtn_Click;
+            // 
             // IdentityForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -441,5 +462,6 @@
         private DataGridViewTextBoxColumn IdentityCountryColumn;
         private DataGridViewTextBoxColumn NIDColumn;
         private DataGridViewTextBoxColumn PassportColumn;
+        public CustomControls.CustomButton SearchBtn;
     }
 }
