@@ -43,6 +43,7 @@
             // 
             // AllloginsUppanel
             // 
+            AllloginsUppanel.BackColor = Color.FromArgb(238, 246, 247);
             AllloginsUppanel.Controls.Add(AllloginsUpSubmitbtn);
             AllloginsUppanel.Controls.Add(AllloginsUpdatePassword);
             AllloginsUppanel.Controls.Add(AllloginsUpdatename);
@@ -54,63 +55,67 @@
             AllloginsUppanel.Controls.Add(AllloginsUpdateNameBox);
             AllloginsUppanel.Location = new Point(2, -1);
             AllloginsUppanel.Name = "AllloginsUppanel";
-            AllloginsUppanel.Size = new Size(819, 478);
+            AllloginsUppanel.Size = new Size(719, 458);
             AllloginsUppanel.TabIndex = 11;
             // 
             // AllloginsUpSubmitbtn
             // 
-            AllloginsUpSubmitbtn.BackColor = Color.MediumSlateBlue;
-            AllloginsUpSubmitbtn.BackgroundColor = Color.MediumSlateBlue;
-            AllloginsUpSubmitbtn.BorderColor = Color.PaleVioletRed;
+            AllloginsUpSubmitbtn.BackColor = Color.FromArgb(238, 246, 247);
+            AllloginsUpSubmitbtn.BackgroundColor = Color.FromArgb(238, 246, 247);
+            AllloginsUpSubmitbtn.BorderColor = Color.FromArgb(252, 92, 52);
             AllloginsUpSubmitbtn.BorderRadius = 10;
-            AllloginsUpSubmitbtn.BorderSize = 0;
+            AllloginsUpSubmitbtn.BorderSize = 2;
             AllloginsUpSubmitbtn.FlatAppearance.BorderSize = 0;
             AllloginsUpSubmitbtn.FlatStyle = FlatStyle.Flat;
-            AllloginsUpSubmitbtn.ForeColor = Color.White;
+            AllloginsUpSubmitbtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AllloginsUpSubmitbtn.ForeColor = Color.Black;
             AllloginsUpSubmitbtn.Location = new Point(336, 375);
             AllloginsUpSubmitbtn.Name = "AllloginsUpSubmitbtn";
             AllloginsUpSubmitbtn.Size = new Size(79, 28);
             AllloginsUpSubmitbtn.TabIndex = 4;
             AllloginsUpSubmitbtn.Text = "Submit";
-            AllloginsUpSubmitbtn.TextColor = Color.White;
+            AllloginsUpSubmitbtn.TextColor = Color.Black;
             AllloginsUpSubmitbtn.UseVisualStyleBackColor = false;
             AllloginsUpSubmitbtn.Click += AllloginsUpSubmitbtn_Click;
             // 
             // AllloginsUpdatePassword
             // 
             AllloginsUpdatePassword.AutoSize = true;
-            AllloginsUpdatePassword.Location = new Point(256, 202);
+            AllloginsUpdatePassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AllloginsUpdatePassword.Location = new Point(160, 237);
             AllloginsUpdatePassword.Name = "AllloginsUpdatePassword";
-            AllloginsUpdatePassword.Size = new Size(57, 15);
+            AllloginsUpdatePassword.Size = new Size(76, 21);
             AllloginsUpdatePassword.TabIndex = 22;
             AllloginsUpdatePassword.Text = "Password";
             // 
             // AllloginsUpdatename
             // 
             AllloginsUpdatename.AutoSize = true;
-            AllloginsUpdatename.Location = new Point(256, 33);
+            AllloginsUpdatename.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AllloginsUpdatename.Location = new Point(160, 51);
             AllloginsUpdatename.Name = "AllloginsUpdatename";
-            AllloginsUpdatename.Size = new Size(39, 15);
+            AllloginsUpdatename.Size = new Size(52, 21);
             AllloginsUpdatename.TabIndex = 21;
             AllloginsUpdatename.Text = "Name";
             // 
             // AllloginsUpdateUrl
             // 
             AllloginsUpdateUrl.AutoSize = true;
-            AllloginsUpdateUrl.Location = new Point(256, 281);
+            AllloginsUpdateUrl.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AllloginsUpdateUrl.Location = new Point(160, 325);
             AllloginsUpdateUrl.Name = "AllloginsUpdateUrl";
-            AllloginsUpdateUrl.Size = new Size(28, 15);
+            AllloginsUpdateUrl.Size = new Size(39, 21);
             AllloginsUpdateUrl.TabIndex = 20;
             AllloginsUpdateUrl.Text = "URL";
             // 
             // AllloginsUpdatePasswordBox
             // 
-            AllloginsUpdatePasswordBox.BackColor = SystemColors.Window;
-            AllloginsUpdatePasswordBox.BorderColor = Color.MediumSlateBlue;
+            AllloginsUpdatePasswordBox.BackColor = Color.FromArgb(217, 217, 217);
+            AllloginsUpdatePasswordBox.BorderColor = Color.FromArgb(217, 217, 217);
             AllloginsUpdatePasswordBox.BorderFocusColor = Color.HotPink;
             AllloginsUpdatePasswordBox.BorderRadius = 10;
             AllloginsUpdatePasswordBox.BorderSize = 2;
-            AllloginsUpdatePasswordBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AllloginsUpdatePasswordBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AllloginsUpdatePasswordBox.ForeColor = Color.DimGray;
             AllloginsUpdatePasswordBox.Location = new Point(246, 220);
             AllloginsUpdatePasswordBox.Multiline = false;
@@ -119,19 +124,19 @@
             AllloginsUpdatePasswordBox.PasswordChar = false;
             AllloginsUpdatePasswordBox.PlaceholderColor = Color.DarkGray;
             AllloginsUpdatePasswordBox.PlaceholderText = "";
-            AllloginsUpdatePasswordBox.Size = new Size(250, 32);
+            AllloginsUpdatePasswordBox.Size = new Size(250, 36);
             AllloginsUpdatePasswordBox.TabIndex = 2;
             AllloginsUpdatePasswordBox.Texts = "";
             AllloginsUpdatePasswordBox.UnderlinedStyle = false;
             // 
             // AllloginsUpdateURlBox
             // 
-            AllloginsUpdateURlBox.BackColor = SystemColors.Window;
-            AllloginsUpdateURlBox.BorderColor = Color.MediumSlateBlue;
+            AllloginsUpdateURlBox.BackColor = Color.FromArgb(217, 217, 217);
+            AllloginsUpdateURlBox.BorderColor = Color.FromArgb(217, 217, 217);
             AllloginsUpdateURlBox.BorderFocusColor = Color.HotPink;
             AllloginsUpdateURlBox.BorderRadius = 10;
             AllloginsUpdateURlBox.BorderSize = 2;
-            AllloginsUpdateURlBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AllloginsUpdateURlBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AllloginsUpdateURlBox.ForeColor = Color.DimGray;
             AllloginsUpdateURlBox.Location = new Point(246, 308);
             AllloginsUpdateURlBox.Multiline = false;
@@ -140,7 +145,7 @@
             AllloginsUpdateURlBox.PasswordChar = false;
             AllloginsUpdateURlBox.PlaceholderColor = Color.DarkGray;
             AllloginsUpdateURlBox.PlaceholderText = "";
-            AllloginsUpdateURlBox.Size = new Size(250, 32);
+            AllloginsUpdateURlBox.Size = new Size(250, 36);
             AllloginsUpdateURlBox.TabIndex = 3;
             AllloginsUpdateURlBox.Texts = "";
             AllloginsUpdateURlBox.UnderlinedStyle = false;
@@ -148,20 +153,21 @@
             // AllloginsUpdateUsername
             // 
             AllloginsUpdateUsername.AutoSize = true;
-            AllloginsUpdateUsername.Location = new Point(256, 114);
+            AllloginsUpdateUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AllloginsUpdateUsername.Location = new Point(155, 132);
             AllloginsUpdateUsername.Name = "AllloginsUpdateUsername";
-            AllloginsUpdateUsername.Size = new Size(60, 15);
+            AllloginsUpdateUsername.Size = new Size(81, 21);
             AllloginsUpdateUsername.TabIndex = 16;
             AllloginsUpdateUsername.Text = "Username";
             // 
             // AllloginsUpdateUsernameBox
             // 
-            AllloginsUpdateUsernameBox.BackColor = SystemColors.Window;
-            AllloginsUpdateUsernameBox.BorderColor = Color.MediumSlateBlue;
+            AllloginsUpdateUsernameBox.BackColor = Color.FromArgb(217, 217, 217);
+            AllloginsUpdateUsernameBox.BorderColor = Color.FromArgb(217, 217, 217);
             AllloginsUpdateUsernameBox.BorderFocusColor = Color.HotPink;
             AllloginsUpdateUsernameBox.BorderRadius = 10;
             AllloginsUpdateUsernameBox.BorderSize = 2;
-            AllloginsUpdateUsernameBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AllloginsUpdateUsernameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AllloginsUpdateUsernameBox.ForeColor = Color.DimGray;
             AllloginsUpdateUsernameBox.Location = new Point(246, 132);
             AllloginsUpdateUsernameBox.Multiline = false;
@@ -170,19 +176,19 @@
             AllloginsUpdateUsernameBox.PasswordChar = false;
             AllloginsUpdateUsernameBox.PlaceholderColor = Color.DarkGray;
             AllloginsUpdateUsernameBox.PlaceholderText = "";
-            AllloginsUpdateUsernameBox.Size = new Size(250, 32);
+            AllloginsUpdateUsernameBox.Size = new Size(250, 36);
             AllloginsUpdateUsernameBox.TabIndex = 1;
             AllloginsUpdateUsernameBox.Texts = "";
             AllloginsUpdateUsernameBox.UnderlinedStyle = false;
             // 
             // AllloginsUpdateNameBox
             // 
-            AllloginsUpdateNameBox.BackColor = SystemColors.Window;
-            AllloginsUpdateNameBox.BorderColor = Color.MediumSlateBlue;
+            AllloginsUpdateNameBox.BackColor = Color.FromArgb(217, 217, 217);
+            AllloginsUpdateNameBox.BorderColor = Color.FromArgb(217, 217, 217);
             AllloginsUpdateNameBox.BorderFocusColor = Color.HotPink;
             AllloginsUpdateNameBox.BorderRadius = 10;
             AllloginsUpdateNameBox.BorderSize = 2;
-            AllloginsUpdateNameBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AllloginsUpdateNameBox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             AllloginsUpdateNameBox.ForeColor = Color.DimGray;
             AllloginsUpdateNameBox.Location = new Point(246, 51);
             AllloginsUpdateNameBox.Multiline = false;
@@ -191,7 +197,7 @@
             AllloginsUpdateNameBox.PasswordChar = false;
             AllloginsUpdateNameBox.PlaceholderColor = Color.DarkGray;
             AllloginsUpdateNameBox.PlaceholderText = "";
-            AllloginsUpdateNameBox.Size = new Size(250, 32);
+            AllloginsUpdateNameBox.Size = new Size(250, 36);
             AllloginsUpdateNameBox.TabIndex = 0;
             AllloginsUpdateNameBox.Texts = "";
             AllloginsUpdateNameBox.UnderlinedStyle = false;
@@ -200,7 +206,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(814, 411);
+            ClientSize = new Size(703, 419);
             Controls.Add(AllloginsUppanel);
             Name = "AllloginsUpdateForm";
             StartPosition = FormStartPosition.CenterScreen;
