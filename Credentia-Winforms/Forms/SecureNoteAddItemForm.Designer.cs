@@ -52,20 +52,21 @@
             // 
             // SecureNoteSubmitbtn
             // 
-            SecureNoteSubmitbtn.BackColor = Color.MediumSlateBlue;
-            SecureNoteSubmitbtn.BackgroundColor = Color.MediumSlateBlue;
-            SecureNoteSubmitbtn.BorderColor = Color.PaleVioletRed;
-            SecureNoteSubmitbtn.BorderRadius = 10;
-            SecureNoteSubmitbtn.BorderSize = 0;
+            SecureNoteSubmitbtn.BackColor = Color.FromArgb(238, 246, 247);
+            SecureNoteSubmitbtn.BackgroundColor = Color.FromArgb(238, 246, 247);
+            SecureNoteSubmitbtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SecureNoteSubmitbtn.BorderRadius = 16;
+            SecureNoteSubmitbtn.BorderSize = 2;
             SecureNoteSubmitbtn.FlatAppearance.BorderSize = 0;
             SecureNoteSubmitbtn.FlatStyle = FlatStyle.Flat;
-            SecureNoteSubmitbtn.ForeColor = Color.White;
+            SecureNoteSubmitbtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SecureNoteSubmitbtn.ForeColor = Color.Black;
             SecureNoteSubmitbtn.Location = new Point(188, 374);
             SecureNoteSubmitbtn.Name = "SecureNoteSubmitbtn";
             SecureNoteSubmitbtn.Size = new Size(150, 40);
-            SecureNoteSubmitbtn.TabIndex = 8;
+            SecureNoteSubmitbtn.TabIndex = 2;
             SecureNoteSubmitbtn.Text = "Submit";
-            SecureNoteSubmitbtn.TextColor = Color.White;
+            SecureNoteSubmitbtn.TextColor = Color.Black;
             SecureNoteSubmitbtn.UseVisualStyleBackColor = false;
             SecureNoteSubmitbtn.Click += SecureNoteSubmitbtn_Click;
             // 
@@ -80,8 +81,8 @@
             // 
             // SecureNoteTextBox1
             // 
-            SecureNoteTextBox1.BackColor = SystemColors.Window;
-            SecureNoteTextBox1.BorderColor = Color.MediumSlateBlue;
+            SecureNoteTextBox1.BackColor = Color.FromArgb(217, 217, 217);
+            SecureNoteTextBox1.BorderColor = Color.FromArgb(217, 217, 217);
             SecureNoteTextBox1.BorderFocusColor = Color.HotPink;
             SecureNoteTextBox1.BorderRadius = 10;
             SecureNoteTextBox1.BorderSize = 2;
@@ -95,7 +96,7 @@
             SecureNoteTextBox1.PlaceholderColor = Color.DarkGray;
             SecureNoteTextBox1.PlaceholderText = "";
             SecureNoteTextBox1.Size = new Size(477, 223);
-            SecureNoteTextBox1.TabIndex = 2;
+            SecureNoteTextBox1.TabIndex = 1;
             SecureNoteTextBox1.Texts = "";
             SecureNoteTextBox1.UnderlinedStyle = false;
             SecureNoteTextBox1._TextChanged += SecureNoteTextBox1__TextChanged;
@@ -111,8 +112,8 @@
             // 
             // nameTextBox1
             // 
-            nameTextBox1.BackColor = SystemColors.Window;
-            nameTextBox1.BorderColor = Color.MediumSlateBlue;
+            nameTextBox1.BackColor = Color.FromArgb(217, 217, 217);
+            nameTextBox1.BorderColor = Color.FromArgb(217, 217, 217);
             nameTextBox1.BorderFocusColor = Color.HotPink;
             nameTextBox1.BorderRadius = 10;
             nameTextBox1.BorderSize = 2;

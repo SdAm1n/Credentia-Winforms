@@ -97,8 +97,8 @@
             // 
             // CardUpExYrBox
             // 
-            CardUpExYrBox.BackColor = SystemColors.Window;
-            CardUpExYrBox.BorderColor = Color.MediumSlateBlue;
+            CardUpExYrBox.BackColor = Color.FromArgb(217, 217, 217);
+            CardUpExYrBox.BorderColor = Color.FromArgb(217, 217, 217);
             CardUpExYrBox.BorderFocusColor = Color.HotPink;
             CardUpExYrBox.BorderRadius = 10;
             CardUpExYrBox.BorderSize = 2;
@@ -118,8 +118,8 @@
             // 
             // CardUpSecurityCode
             // 
-            CardUpSecurityCode.BackColor = SystemColors.Window;
-            CardUpSecurityCode.BorderColor = Color.MediumSlateBlue;
+            CardUpSecurityCode.BackColor = Color.FromArgb(217, 217, 217);
+            CardUpSecurityCode.BorderColor = Color.FromArgb(217, 217, 217);
             CardUpSecurityCode.BorderFocusColor = Color.HotPink;
             CardUpSecurityCode.BorderRadius = 10;
             CardUpSecurityCode.BorderSize = 2;
@@ -157,8 +157,8 @@
             // 
             // ExMnUpTextBox
             // 
-            ExMnUpTextBox.BackColor = SystemColors.Window;
-            ExMnUpTextBox.BorderColor = Color.MediumSlateBlue;
+            ExMnUpTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            ExMnUpTextBox.BorderColor = Color.FromArgb(217, 217, 217);
             ExMnUpTextBox.BorderFocusColor = Color.HotPink;
             ExMnUpTextBox.BorderRadius = 10;
             ExMnUpTextBox.BorderSize = 2;
@@ -187,8 +187,8 @@
             // 
             // CardNumberUpBox
             // 
-            CardNumberUpBox.BackColor = SystemColors.Window;
-            CardNumberUpBox.BorderColor = Color.MediumSlateBlue;
+            CardNumberUpBox.BackColor = Color.FromArgb(217, 217, 217);
+            CardNumberUpBox.BorderColor = Color.FromArgb(217, 217, 217);
             CardNumberUpBox.BorderFocusColor = Color.HotPink;
             CardNumberUpBox.BorderRadius = 10;
             CardNumberUpBox.BorderSize = 2;
@@ -217,8 +217,8 @@
             // 
             // CardUpHolderNameBox1
             // 
-            CardUpHolderNameBox1.BackColor = SystemColors.Window;
-            CardUpHolderNameBox1.BorderColor = Color.MediumSlateBlue;
+            CardUpHolderNameBox1.BackColor = Color.FromArgb(217, 217, 217);
+            CardUpHolderNameBox1.BorderColor = Color.FromArgb(217, 217, 217);
             CardUpHolderNameBox1.BorderFocusColor = Color.HotPink;
             CardUpHolderNameBox1.BorderRadius = 10;
             CardUpHolderNameBox1.BorderSize = 2;
@@ -238,20 +238,20 @@
             // 
             // CardUpSubmitbtn
             // 
-            CardUpSubmitbtn.BackColor = Color.MediumSlateBlue;
-            CardUpSubmitbtn.BackgroundColor = Color.MediumSlateBlue;
-            CardUpSubmitbtn.BorderColor = Color.PaleVioletRed;
-            CardUpSubmitbtn.BorderRadius = 10;
-            CardUpSubmitbtn.BorderSize = 0;
+            CardUpSubmitbtn.BackColor = Color.FromArgb(238, 246, 247);
+            CardUpSubmitbtn.BackgroundColor = Color.FromArgb(238, 246, 247);
+            CardUpSubmitbtn.BorderColor = Color.FromArgb(252, 92, 52);
+            CardUpSubmitbtn.BorderRadius = 12;
+            CardUpSubmitbtn.BorderSize = 2;
             CardUpSubmitbtn.FlatAppearance.BorderSize = 0;
             CardUpSubmitbtn.FlatStyle = FlatStyle.Flat;
-            CardUpSubmitbtn.ForeColor = Color.White;
+            CardUpSubmitbtn.ForeColor = Color.Black;
             CardUpSubmitbtn.Location = new Point(335, 458);
             CardUpSubmitbtn.Name = "CardUpSubmitbtn";
             CardUpSubmitbtn.Size = new Size(79, 28);
             CardUpSubmitbtn.TabIndex = 8;
             CardUpSubmitbtn.Text = "Submit";
-            CardUpSubmitbtn.TextColor = Color.White;
+            CardUpSubmitbtn.TextColor = Color.Black;
             CardUpSubmitbtn.UseVisualStyleBackColor = false;
             CardUpSubmitbtn.Click += CardUpSubmitbtn_Click;
             // 
@@ -266,8 +266,8 @@
             // 
             // CardUpNameBox
             // 
-            CardUpNameBox.BackColor = SystemColors.Window;
-            CardUpNameBox.BorderColor = Color.MediumSlateBlue;
+            CardUpNameBox.BackColor = Color.FromArgb(217, 217, 217);
+            CardUpNameBox.BorderColor = Color.FromArgb(217, 217, 217);
             CardUpNameBox.BorderFocusColor = Color.HotPink;
             CardUpNameBox.BorderRadius = 10;
             CardUpNameBox.BorderSize = 2;

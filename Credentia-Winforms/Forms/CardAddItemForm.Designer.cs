@@ -170,8 +170,8 @@
             // 
             // CardAddExYrBox
             // 
-            CardAddExYrBox.BackColor = SystemColors.Window;
-            CardAddExYrBox.BorderColor = Color.MediumSlateBlue;
+            CardAddExYrBox.BackColor = Color.FromArgb(217, 217, 217);
+            CardAddExYrBox.BorderColor = Color.FromArgb(217, 217, 217);
             CardAddExYrBox.BorderFocusColor = Color.HotPink;
             CardAddExYrBox.BorderRadius = 10;
             CardAddExYrBox.BorderSize = 2;
@@ -192,8 +192,8 @@
             // 
             // CardAddSecurityCode
             // 
-            CardAddSecurityCode.BackColor = SystemColors.Window;
-            CardAddSecurityCode.BorderColor = Color.MediumSlateBlue;
+            CardAddSecurityCode.BackColor = Color.FromArgb(217, 217, 217);
+            CardAddSecurityCode.BorderColor = Color.FromArgb(217, 217, 217);
             CardAddSecurityCode.BorderFocusColor = Color.HotPink;
             CardAddSecurityCode.BorderRadius = 10;
             CardAddSecurityCode.BorderSize = 2;
@@ -236,8 +236,8 @@
             // 
             // ExMnAddTextBox
             // 
-            ExMnAddTextBox.BackColor = SystemColors.Window;
-            ExMnAddTextBox.BorderColor = Color.MediumSlateBlue;
+            ExMnAddTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            ExMnAddTextBox.BorderColor = Color.FromArgb(217, 217, 217);
             ExMnAddTextBox.BorderFocusColor = Color.HotPink;
             ExMnAddTextBox.BorderRadius = 10;
             ExMnAddTextBox.BorderSize = 2;
@@ -268,8 +268,8 @@
             // 
             // CardNumberAddBox
             // 
-            CardNumberAddBox.BackColor = SystemColors.Window;
-            CardNumberAddBox.BorderColor = Color.MediumSlateBlue;
+            CardNumberAddBox.BackColor = Color.FromArgb(217, 217, 217);
+            CardNumberAddBox.BorderColor = Color.FromArgb(217, 217, 217);
             CardNumberAddBox.BorderFocusColor = Color.HotPink;
             CardNumberAddBox.BorderRadius = 10;
             CardNumberAddBox.BorderSize = 2;
@@ -301,8 +301,8 @@
             // 
             // CardAddHolderNameBox1
             // 
-            CardAddHolderNameBox1.BackColor = SystemColors.Window;
-            CardAddHolderNameBox1.BorderColor = Color.MediumSlateBlue;
+            CardAddHolderNameBox1.BackColor = Color.FromArgb(217, 217, 217);
+            CardAddHolderNameBox1.BorderColor = Color.FromArgb(217, 217, 217);
             CardAddHolderNameBox1.BorderFocusColor = Color.HotPink;
             CardAddHolderNameBox1.BorderRadius = 10;
             CardAddHolderNameBox1.BorderSize = 2;
@@ -323,20 +323,20 @@
             // 
             // CardAddSubmitbtn
             // 
-            CardAddSubmitbtn.BackColor = Color.MediumSlateBlue;
-            CardAddSubmitbtn.BackgroundColor = Color.MediumSlateBlue;
-            CardAddSubmitbtn.BorderColor = Color.PaleVioletRed;
-            CardAddSubmitbtn.BorderRadius = 10;
-            CardAddSubmitbtn.BorderSize = 0;
+            CardAddSubmitbtn.BackColor = Color.FromArgb(238, 246, 247);
+            CardAddSubmitbtn.BackgroundColor = Color.FromArgb(238, 246, 247);
+            CardAddSubmitbtn.BorderColor = Color.FromArgb(252, 92, 52);
+            CardAddSubmitbtn.BorderRadius = 12;
+            CardAddSubmitbtn.BorderSize = 2;
             CardAddSubmitbtn.FlatAppearance.BorderSize = 0;
             CardAddSubmitbtn.FlatStyle = FlatStyle.Flat;
-            CardAddSubmitbtn.ForeColor = Color.White;
+            CardAddSubmitbtn.ForeColor = Color.Black;
             CardAddSubmitbtn.Location = new Point(335, 458);
             CardAddSubmitbtn.Name = "CardAddSubmitbtn";
             CardAddSubmitbtn.Size = new Size(79, 28);
             CardAddSubmitbtn.TabIndex = 8;
             CardAddSubmitbtn.Text = "Submit";
-            CardAddSubmitbtn.TextColor = Color.White;
+            CardAddSubmitbtn.TextColor = Color.Black;
             CardAddSubmitbtn.UseVisualStyleBackColor = false;
             CardAddSubmitbtn.UseWaitCursor = true;
             CardAddSubmitbtn.Click += CardAddSubmitbtn_Click;
@@ -354,8 +354,8 @@
             // 
             // CardAddNameBox
             // 
-            CardAddNameBox.BackColor = SystemColors.Window;
-            CardAddNameBox.BorderColor = Color.MediumSlateBlue;
+            CardAddNameBox.BackColor = Color.FromArgb(217, 217, 217);
+            CardAddNameBox.BorderColor = Color.FromArgb(217, 217, 217);
             CardAddNameBox.BorderFocusColor = Color.HotPink;
             CardAddNameBox.BorderRadius = 10;
             CardAddNameBox.BorderSize = 2;

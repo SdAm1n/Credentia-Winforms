@@ -44,10 +44,10 @@
             // 
             // CodeTextBox
             // 
-            CodeTextBox.BackColor = SystemColors.Window;
-            CodeTextBox.BorderColor = Color.MediumSlateBlue;
+            CodeTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            CodeTextBox.BorderColor = Color.FromArgb(217, 217, 217);
             CodeTextBox.BorderFocusColor = Color.HotPink;
-            CodeTextBox.BorderRadius = 0;
+            CodeTextBox.BorderRadius = 10;
             CodeTextBox.BorderSize = 2;
             CodeTextBox.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             CodeTextBox.ForeColor = Color.DimGray;
@@ -65,20 +65,21 @@
             // 
             // VerifyBtn
             // 
-            VerifyBtn.BackColor = Color.MediumSlateBlue;
-            VerifyBtn.BackgroundColor = Color.MediumSlateBlue;
-            VerifyBtn.BorderColor = Color.PaleVioletRed;
-            VerifyBtn.BorderRadius = 0;
-            VerifyBtn.BorderSize = 0;
+            VerifyBtn.BackColor = Color.FromArgb(238, 246, 247);
+            VerifyBtn.BackgroundColor = Color.FromArgb(238, 246, 247);
+            VerifyBtn.BorderColor = Color.FromArgb(252, 92, 52);
+            VerifyBtn.BorderRadius = 16;
+            VerifyBtn.BorderSize = 2;
             VerifyBtn.FlatAppearance.BorderSize = 0;
             VerifyBtn.FlatStyle = FlatStyle.Flat;
-            VerifyBtn.ForeColor = Color.White;
+            VerifyBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            VerifyBtn.ForeColor = Color.Black;
             VerifyBtn.Location = new Point(495, 335);
             VerifyBtn.Name = "VerifyBtn";
             VerifyBtn.Size = new Size(81, 32);
             VerifyBtn.TabIndex = 2;
             VerifyBtn.Text = "Verify";
-            VerifyBtn.TextColor = Color.White;
+            VerifyBtn.TextColor = Color.Black;
             VerifyBtn.UseVisualStyleBackColor = false;
             VerifyBtn.Click += VerifyBtn_Click;
             // 

@@ -117,8 +117,8 @@
             // 
             // IdentityAddPassportBox
             // 
-            IdentityAddPassportBox.BackColor = SystemColors.Window;
-            IdentityAddPassportBox.BorderColor = Color.MediumSlateBlue;
+            IdentityAddPassportBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityAddPassportBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityAddPassportBox.BorderFocusColor = Color.HotPink;
             IdentityAddPassportBox.BorderRadius = 10;
             IdentityAddPassportBox.BorderSize = 2;
@@ -138,8 +138,8 @@
             // 
             // IdentityAddNidBox
             // 
-            IdentityAddNidBox.BackColor = SystemColors.Window;
-            IdentityAddNidBox.BorderColor = Color.MediumSlateBlue;
+            IdentityAddNidBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityAddNidBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityAddNidBox.BorderFocusColor = Color.HotPink;
             IdentityAddNidBox.BorderRadius = 10;
             IdentityAddNidBox.BorderSize = 2;
@@ -177,8 +177,8 @@
             // 
             // IdentityAddCountryBox
             // 
-            IdentityAddCountryBox.BackColor = SystemColors.Window;
-            IdentityAddCountryBox.BorderColor = Color.MediumSlateBlue;
+            IdentityAddCountryBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityAddCountryBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityAddCountryBox.BorderFocusColor = Color.HotPink;
             IdentityAddCountryBox.BorderRadius = 10;
             IdentityAddCountryBox.BorderSize = 2;
@@ -198,8 +198,8 @@
             // 
             // IdentityAddZipBox
             // 
-            IdentityAddZipBox.BackColor = SystemColors.Window;
-            IdentityAddZipBox.BorderColor = Color.MediumSlateBlue;
+            IdentityAddZipBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityAddZipBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityAddZipBox.BorderFocusColor = Color.HotPink;
             IdentityAddZipBox.BorderRadius = 10;
             IdentityAddZipBox.BorderSize = 2;
@@ -229,8 +229,8 @@
             // 
             // IdentityAddAddressBox
             // 
-            IdentityAddAddressBox.BackColor = SystemColors.Window;
-            IdentityAddAddressBox.BorderColor = Color.MediumSlateBlue;
+            IdentityAddAddressBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityAddAddressBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityAddAddressBox.BorderFocusColor = Color.HotPink;
             IdentityAddAddressBox.BorderRadius = 10;
             IdentityAddAddressBox.BorderSize = 2;
@@ -259,8 +259,8 @@
             // 
             // IdentityAddPhoneBox
             // 
-            IdentityAddPhoneBox.BackColor = SystemColors.Window;
-            IdentityAddPhoneBox.BorderColor = Color.MediumSlateBlue;
+            IdentityAddPhoneBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityAddPhoneBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityAddPhoneBox.BorderFocusColor = Color.HotPink;
             IdentityAddPhoneBox.BorderRadius = 10;
             IdentityAddPhoneBox.BorderSize = 2;
@@ -289,8 +289,8 @@
             // 
             // IdentityAddEmailBox
             // 
-            IdentityAddEmailBox.BackColor = SystemColors.Window;
-            IdentityAddEmailBox.BorderColor = Color.MediumSlateBlue;
+            IdentityAddEmailBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityAddEmailBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityAddEmailBox.BorderFocusColor = Color.HotPink;
             IdentityAddEmailBox.BorderRadius = 10;
             IdentityAddEmailBox.BorderSize = 2;
@@ -337,8 +337,8 @@
             // 
             // CardAddCompanyBox
             // 
-            CardAddCompanyBox.BackColor = SystemColors.Window;
-            CardAddCompanyBox.BorderColor = Color.MediumSlateBlue;
+            CardAddCompanyBox.BackColor = Color.FromArgb(217, 217, 217);
+            CardAddCompanyBox.BorderColor = Color.FromArgb(217, 217, 217);
             CardAddCompanyBox.BorderFocusColor = Color.HotPink;
             CardAddCompanyBox.BorderRadius = 10;
             CardAddCompanyBox.BorderSize = 2;
@@ -358,8 +358,8 @@
             // 
             // IdentityAddLCNBox
             // 
-            IdentityAddLCNBox.BackColor = SystemColors.Window;
-            IdentityAddLCNBox.BorderColor = Color.MediumSlateBlue;
+            IdentityAddLCNBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityAddLCNBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityAddLCNBox.BorderFocusColor = Color.HotPink;
             IdentityAddLCNBox.BorderRadius = 10;
             IdentityAddLCNBox.BorderSize = 2;
@@ -389,8 +389,8 @@
             // 
             // IdentityUNAddTextBox
             // 
-            IdentityUNAddTextBox.BackColor = SystemColors.Window;
-            IdentityUNAddTextBox.BorderColor = Color.MediumSlateBlue;
+            IdentityUNAddTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityUNAddTextBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityUNAddTextBox.BorderFocusColor = Color.HotPink;
             IdentityUNAddTextBox.BorderRadius = 10;
             IdentityUNAddTextBox.BorderSize = 2;
@@ -410,8 +410,8 @@
             // 
             // IdentityLNAddBox
             // 
-            IdentityLNAddBox.BackColor = SystemColors.Window;
-            IdentityLNAddBox.BorderColor = Color.MediumSlateBlue;
+            IdentityLNAddBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityLNAddBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityLNAddBox.BorderFocusColor = Color.HotPink;
             IdentityLNAddBox.BorderRadius = 10;
             IdentityLNAddBox.BorderSize = 2;
@@ -442,8 +442,8 @@
             // 
             // IdentityFNAddBox
             // 
-            IdentityFNAddBox.BackColor = SystemColors.Window;
-            IdentityFNAddBox.BorderColor = Color.MediumSlateBlue;
+            IdentityFNAddBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityFNAddBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityFNAddBox.BorderFocusColor = Color.HotPink;
             IdentityFNAddBox.BorderRadius = 10;
             IdentityFNAddBox.BorderSize = 2;
@@ -472,8 +472,8 @@
             // 
             // IdentityAddTittleBox
             // 
-            IdentityAddTittleBox.BackColor = SystemColors.Window;
-            IdentityAddTittleBox.BorderColor = Color.MediumSlateBlue;
+            IdentityAddTittleBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityAddTittleBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityAddTittleBox.BorderFocusColor = Color.HotPink;
             IdentityAddTittleBox.BorderRadius = 10;
             IdentityAddTittleBox.BorderSize = 2;
@@ -493,20 +493,20 @@
             // 
             // IdentityAddSubmitbtn
             // 
-            IdentityAddSubmitbtn.BackColor = Color.MediumSlateBlue;
-            IdentityAddSubmitbtn.BackgroundColor = Color.MediumSlateBlue;
-            IdentityAddSubmitbtn.BorderColor = Color.PaleVioletRed;
-            IdentityAddSubmitbtn.BorderRadius = 10;
-            IdentityAddSubmitbtn.BorderSize = 0;
+            IdentityAddSubmitbtn.BackColor = Color.FromArgb(238, 246, 247);
+            IdentityAddSubmitbtn.BackgroundColor = Color.FromArgb(238, 246, 247);
+            IdentityAddSubmitbtn.BorderColor = Color.FromArgb(252, 92, 52);
+            IdentityAddSubmitbtn.BorderRadius = 12;
+            IdentityAddSubmitbtn.BorderSize = 2;
             IdentityAddSubmitbtn.FlatAppearance.BorderSize = 0;
             IdentityAddSubmitbtn.FlatStyle = FlatStyle.Flat;
-            IdentityAddSubmitbtn.ForeColor = Color.White;
+            IdentityAddSubmitbtn.ForeColor = Color.Black;
             IdentityAddSubmitbtn.Location = new Point(419, 537);
             IdentityAddSubmitbtn.Name = "IdentityAddSubmitbtn";
             IdentityAddSubmitbtn.Size = new Size(79, 28);
             IdentityAddSubmitbtn.TabIndex = 8;
             IdentityAddSubmitbtn.Text = "Submit";
-            IdentityAddSubmitbtn.TextColor = Color.White;
+            IdentityAddSubmitbtn.TextColor = Color.Black;
             IdentityAddSubmitbtn.UseVisualStyleBackColor = false;
             IdentityAddSubmitbtn.Click += IdentityAddSubmitbtn_Click;
             // 
@@ -521,8 +521,8 @@
             // 
             // IdentityAddNameBox
             // 
-            IdentityAddNameBox.BackColor = SystemColors.Window;
-            IdentityAddNameBox.BorderColor = Color.MediumSlateBlue;
+            IdentityAddNameBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityAddNameBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityAddNameBox.BorderFocusColor = Color.HotPink;
             IdentityAddNameBox.BorderRadius = 10;
             IdentityAddNameBox.BorderSize = 2;

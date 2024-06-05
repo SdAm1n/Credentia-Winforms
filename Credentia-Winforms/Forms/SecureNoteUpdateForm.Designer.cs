@@ -44,7 +44,7 @@
             SeureNoteUpdateItemPanel.Controls.Add(SecureNoteUpdateTextBox);
             SeureNoteUpdateItemPanel.Controls.Add(SecureNoteUpdateName);
             SeureNoteUpdateItemPanel.Controls.Add(SecureUpdateNoteNameBox);
-            SeureNoteUpdateItemPanel.Location = new Point(8, 8);
+            SeureNoteUpdateItemPanel.Location = new Point(2, 3);
             SeureNoteUpdateItemPanel.Name = "SeureNoteUpdateItemPanel";
             SeureNoteUpdateItemPanel.Size = new Size(800, 450);
             SeureNoteUpdateItemPanel.TabIndex = 2;
@@ -52,20 +52,21 @@
             // 
             // SecureNoteUpdateSubmitbtn
             // 
-            SecureNoteUpdateSubmitbtn.BackColor = Color.MediumSlateBlue;
-            SecureNoteUpdateSubmitbtn.BackgroundColor = Color.MediumSlateBlue;
-            SecureNoteUpdateSubmitbtn.BorderColor = Color.PaleVioletRed;
-            SecureNoteUpdateSubmitbtn.BorderRadius = 10;
-            SecureNoteUpdateSubmitbtn.BorderSize = 0;
+            SecureNoteUpdateSubmitbtn.BackColor = Color.FromArgb(238, 246, 247);
+            SecureNoteUpdateSubmitbtn.BackgroundColor = Color.FromArgb(238, 246, 247);
+            SecureNoteUpdateSubmitbtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SecureNoteUpdateSubmitbtn.BorderRadius = 16;
+            SecureNoteUpdateSubmitbtn.BorderSize = 2;
             SecureNoteUpdateSubmitbtn.FlatAppearance.BorderSize = 0;
             SecureNoteUpdateSubmitbtn.FlatStyle = FlatStyle.Flat;
-            SecureNoteUpdateSubmitbtn.ForeColor = Color.White;
+            SecureNoteUpdateSubmitbtn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            SecureNoteUpdateSubmitbtn.ForeColor = Color.Black;
             SecureNoteUpdateSubmitbtn.Location = new Point(188, 374);
             SecureNoteUpdateSubmitbtn.Name = "SecureNoteUpdateSubmitbtn";
             SecureNoteUpdateSubmitbtn.Size = new Size(150, 40);
             SecureNoteUpdateSubmitbtn.TabIndex = 8;
             SecureNoteUpdateSubmitbtn.Text = "Submit";
-            SecureNoteUpdateSubmitbtn.TextColor = Color.White;
+            SecureNoteUpdateSubmitbtn.TextColor = Color.Black;
             SecureNoteUpdateSubmitbtn.UseVisualStyleBackColor = false;
             SecureNoteUpdateSubmitbtn.Click += SecureNoteUpdateSubmitbtn_Click;
             // 
@@ -80,8 +81,8 @@
             // 
             // SecureNoteUpdateTextBox
             // 
-            SecureNoteUpdateTextBox.BackColor = SystemColors.Window;
-            SecureNoteUpdateTextBox.BorderColor = Color.MediumSlateBlue;
+            SecureNoteUpdateTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            SecureNoteUpdateTextBox.BorderColor = Color.FromArgb(217, 217, 217);
             SecureNoteUpdateTextBox.BorderFocusColor = Color.HotPink;
             SecureNoteUpdateTextBox.BorderRadius = 10;
             SecureNoteUpdateTextBox.BorderSize = 2;
@@ -110,8 +111,8 @@
             // 
             // SecureUpdateNoteNameBox
             // 
-            SecureUpdateNoteNameBox.BackColor = SystemColors.Window;
-            SecureUpdateNoteNameBox.BorderColor = Color.MediumSlateBlue;
+            SecureUpdateNoteNameBox.BackColor = Color.FromArgb(217, 217, 217);
+            SecureUpdateNoteNameBox.BorderColor = Color.FromArgb(217, 217, 217);
             SecureUpdateNoteNameBox.BorderFocusColor = Color.HotPink;
             SecureUpdateNoteNameBox.BorderRadius = 10;
             SecureUpdateNoteNameBox.BorderSize = 2;

@@ -117,8 +117,8 @@
             // 
             // IdentityPassportUpBox
             // 
-            IdentityPassportUpBox.BackColor = SystemColors.Window;
-            IdentityPassportUpBox.BorderColor = Color.MediumSlateBlue;
+            IdentityPassportUpBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityPassportUpBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityPassportUpBox.BorderFocusColor = Color.HotPink;
             IdentityPassportUpBox.BorderRadius = 10;
             IdentityPassportUpBox.BorderSize = 2;
@@ -138,8 +138,8 @@
             // 
             // IdentityNidUpBox
             // 
-            IdentityNidUpBox.BackColor = SystemColors.Window;
-            IdentityNidUpBox.BorderColor = Color.MediumSlateBlue;
+            IdentityNidUpBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityNidUpBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityNidUpBox.BorderFocusColor = Color.HotPink;
             IdentityNidUpBox.BorderRadius = 10;
             IdentityNidUpBox.BorderSize = 2;
@@ -177,8 +177,8 @@
             // 
             // IdentityUpCountryBox
             // 
-            IdentityUpCountryBox.BackColor = SystemColors.Window;
-            IdentityUpCountryBox.BorderColor = Color.MediumSlateBlue;
+            IdentityUpCountryBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityUpCountryBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityUpCountryBox.BorderFocusColor = Color.HotPink;
             IdentityUpCountryBox.BorderRadius = 10;
             IdentityUpCountryBox.BorderSize = 2;
@@ -198,8 +198,8 @@
             // 
             // IdentityUpZipBox
             // 
-            IdentityUpZipBox.BackColor = SystemColors.Window;
-            IdentityUpZipBox.BorderColor = Color.MediumSlateBlue;
+            IdentityUpZipBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityUpZipBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityUpZipBox.BorderFocusColor = Color.HotPink;
             IdentityUpZipBox.BorderRadius = 10;
             IdentityUpZipBox.BorderSize = 2;
@@ -229,8 +229,8 @@
             // 
             // IdentityUpAddressBox
             // 
-            IdentityUpAddressBox.BackColor = SystemColors.Window;
-            IdentityUpAddressBox.BorderColor = Color.MediumSlateBlue;
+            IdentityUpAddressBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityUpAddressBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityUpAddressBox.BorderFocusColor = Color.HotPink;
             IdentityUpAddressBox.BorderRadius = 10;
             IdentityUpAddressBox.BorderSize = 2;
@@ -259,8 +259,8 @@
             // 
             // IdentityUpPhoneBox
             // 
-            IdentityUpPhoneBox.BackColor = SystemColors.Window;
-            IdentityUpPhoneBox.BorderColor = Color.MediumSlateBlue;
+            IdentityUpPhoneBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityUpPhoneBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityUpPhoneBox.BorderFocusColor = Color.HotPink;
             IdentityUpPhoneBox.BorderRadius = 10;
             IdentityUpPhoneBox.BorderSize = 2;
@@ -289,8 +289,8 @@
             // 
             // IdentityUpEmailBox
             // 
-            IdentityUpEmailBox.BackColor = SystemColors.Window;
-            IdentityUpEmailBox.BorderColor = Color.MediumSlateBlue;
+            IdentityUpEmailBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityUpEmailBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityUpEmailBox.BorderFocusColor = Color.HotPink;
             IdentityUpEmailBox.BorderRadius = 10;
             IdentityUpEmailBox.BorderSize = 2;
@@ -337,8 +337,8 @@
             // 
             // IdentityUpCompanyBox
             // 
-            IdentityUpCompanyBox.BackColor = SystemColors.Window;
-            IdentityUpCompanyBox.BorderColor = Color.MediumSlateBlue;
+            IdentityUpCompanyBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityUpCompanyBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityUpCompanyBox.BorderFocusColor = Color.HotPink;
             IdentityUpCompanyBox.BorderRadius = 10;
             IdentityUpCompanyBox.BorderSize = 2;
@@ -358,8 +358,8 @@
             // 
             // IdentityUpLCNBox
             // 
-            IdentityUpLCNBox.BackColor = SystemColors.Window;
-            IdentityUpLCNBox.BorderColor = Color.MediumSlateBlue;
+            IdentityUpLCNBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityUpLCNBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityUpLCNBox.BorderFocusColor = Color.HotPink;
             IdentityUpLCNBox.BorderRadius = 10;
             IdentityUpLCNBox.BorderSize = 2;
@@ -388,8 +388,8 @@
             // 
             // IdentityUNUpTextBox
             // 
-            IdentityUNUpTextBox.BackColor = SystemColors.Window;
-            IdentityUNUpTextBox.BorderColor = Color.MediumSlateBlue;
+            IdentityUNUpTextBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityUNUpTextBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityUNUpTextBox.BorderFocusColor = Color.HotPink;
             IdentityUNUpTextBox.BorderRadius = 10;
             IdentityUNUpTextBox.BorderSize = 2;
@@ -409,8 +409,8 @@
             // 
             // IdentityLNUpBox
             // 
-            IdentityLNUpBox.BackColor = SystemColors.Window;
-            IdentityLNUpBox.BorderColor = Color.MediumSlateBlue;
+            IdentityLNUpBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityLNUpBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityLNUpBox.BorderFocusColor = Color.HotPink;
             IdentityLNUpBox.BorderRadius = 10;
             IdentityLNUpBox.BorderSize = 2;
@@ -440,8 +440,8 @@
             // 
             // IdentityFNUpBox
             // 
-            IdentityFNUpBox.BackColor = SystemColors.Window;
-            IdentityFNUpBox.BorderColor = Color.MediumSlateBlue;
+            IdentityFNUpBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityFNUpBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityFNUpBox.BorderFocusColor = Color.HotPink;
             IdentityFNUpBox.BorderRadius = 10;
             IdentityFNUpBox.BorderSize = 2;
@@ -470,8 +470,8 @@
             // 
             // IdentityUpTittleBox
             // 
-            IdentityUpTittleBox.BackColor = SystemColors.Window;
-            IdentityUpTittleBox.BorderColor = Color.MediumSlateBlue;
+            IdentityUpTittleBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityUpTittleBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityUpTittleBox.BorderFocusColor = Color.HotPink;
             IdentityUpTittleBox.BorderRadius = 10;
             IdentityUpTittleBox.BorderSize = 2;
@@ -491,20 +491,20 @@
             // 
             // IdentityUpSubmitbtn
             // 
-            IdentityUpSubmitbtn.BackColor = Color.MediumSlateBlue;
-            IdentityUpSubmitbtn.BackgroundColor = Color.MediumSlateBlue;
-            IdentityUpSubmitbtn.BorderColor = Color.PaleVioletRed;
-            IdentityUpSubmitbtn.BorderRadius = 10;
-            IdentityUpSubmitbtn.BorderSize = 0;
+            IdentityUpSubmitbtn.BackColor = Color.FromArgb(238, 246, 247);
+            IdentityUpSubmitbtn.BackgroundColor = Color.FromArgb(238, 246, 247);
+            IdentityUpSubmitbtn.BorderColor = Color.FromArgb(252, 92, 52);
+            IdentityUpSubmitbtn.BorderRadius = 12;
+            IdentityUpSubmitbtn.BorderSize = 2;
             IdentityUpSubmitbtn.FlatAppearance.BorderSize = 0;
             IdentityUpSubmitbtn.FlatStyle = FlatStyle.Flat;
-            IdentityUpSubmitbtn.ForeColor = Color.White;
+            IdentityUpSubmitbtn.ForeColor = Color.Black;
             IdentityUpSubmitbtn.Location = new Point(445, 497);
             IdentityUpSubmitbtn.Name = "IdentityUpSubmitbtn";
             IdentityUpSubmitbtn.Size = new Size(79, 28);
             IdentityUpSubmitbtn.TabIndex = 8;
             IdentityUpSubmitbtn.Text = "Submit";
-            IdentityUpSubmitbtn.TextColor = Color.White;
+            IdentityUpSubmitbtn.TextColor = Color.Black;
             IdentityUpSubmitbtn.UseVisualStyleBackColor = false;
             IdentityUpSubmitbtn.Click += IdentityUpSubmitbtn_Click;
             // 
@@ -519,8 +519,8 @@
             // 
             // IdentityUpNameBox
             // 
-            IdentityUpNameBox.BackColor = SystemColors.Window;
-            IdentityUpNameBox.BorderColor = Color.MediumSlateBlue;
+            IdentityUpNameBox.BackColor = Color.FromArgb(217, 217, 217);
+            IdentityUpNameBox.BorderColor = Color.FromArgb(217, 217, 217);
             IdentityUpNameBox.BorderFocusColor = Color.HotPink;
             IdentityUpNameBox.BorderRadius = 10;
             IdentityUpNameBox.BorderSize = 2;
