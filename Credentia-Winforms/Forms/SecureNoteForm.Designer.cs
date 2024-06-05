@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             panel1 = new Panel();
             SecureNoteEditbtn = new CustomControls.CustomButton();
             SecureNoteDeletebtn = new CustomControls.CustomButton();
@@ -181,8 +181,8 @@
             dataGridView2.Location = new Point(12, 72);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(217, 217, 217);
-            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(217, 217, 217);
+            dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView2.Size = new Size(901, 423);
             dataGridView2.TabIndex = 3;
@@ -226,6 +226,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "SecureNoteForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SecureNoteForm";
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);

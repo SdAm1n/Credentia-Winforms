@@ -231,6 +231,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "PasswordGeneratorForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PasswordGeneratorForm";
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);

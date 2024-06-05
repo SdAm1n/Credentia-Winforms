@@ -31,6 +31,7 @@
             QrCodePictureBox = new PictureBox();
             CodeTextBox = new CustomControls.CustomTextBox();
             VerifyBtn = new CustomControls.CustomButton();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)QrCodePictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -83,18 +84,31 @@
             VerifyBtn.UseVisualStyleBackColor = false;
             VerifyBtn.Click += VerifyBtn_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(239, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Scan QR Code using Any Authenticator App";
+            label1.Click += label1_Click;
+            // 
             // TwoFASetupForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(VerifyBtn);
             Controls.Add(CodeTextBox);
             Controls.Add(QrCodePictureBox);
             Name = "TwoFASetupForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "TwoFASetupForm";
             ((System.ComponentModel.ISupportInitialize)QrCodePictureBox).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -102,5 +116,6 @@
         private PictureBox QrCodePictureBox;
         private CustomControls.CustomTextBox CodeTextBox;
         private CustomControls.CustomButton VerifyBtn;
+        private Label label1;
     }
 }

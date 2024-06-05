@@ -84,7 +84,7 @@
             customCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
             customCircularPictureBox1.BorderColor = Color.RoyalBlue;
             customCircularPictureBox1.BorderColor2 = Color.HotPink;
-            customCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            customCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             customCircularPictureBox1.BorderSize = 2;
             customCircularPictureBox1.GradientAngle = 50F;
             customCircularPictureBox1.Image = (Image)resources.GetObject("customCircularPictureBox1.Image");
@@ -367,6 +367,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "SettingsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SettingsForm";
             Load += SettingsForm_Load;
             SettingsPanel.ResumeLayout(false);

@@ -158,6 +158,7 @@
             ClientSize = new Size(1029, 630);
             Controls.Add(tableLayoutPanel1);
             Name = "TwoFAVerifyForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "TwoFAVerifyForm";
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);

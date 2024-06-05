@@ -55,9 +55,9 @@ namespace Credentia_Winforms.Forms
 
             if (isValid)
             {
-                MessageBox.Show("Code is valid!", "2FA Verification", MessageBoxButtons.OK, 
+                MessageBox.Show("Code is valid!", "2FA Verification", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
-                
+
                 // save secret key to the database
                 UsersDBCrud sql = new UsersDBCrud(GetConnectionString() + $"Database={SignUpForm.createdUserDB};");
 
@@ -77,7 +77,7 @@ namespace Credentia_Winforms.Forms
             }
             else
             {
-                MessageBox.Show("Invalid code. Please try again.", "2FA Verification", MessageBoxButtons.OK, 
+                MessageBox.Show("Invalid code. Please try again.", "2FA Verification", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
@@ -96,6 +96,11 @@ namespace Credentia_Winforms.Forms
         private static string GetConnectionString(string connectionStringName = "Default")
         {
             return DBConnectionHelper.GetConnectionString(connectionStringName);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

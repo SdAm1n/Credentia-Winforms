@@ -33,6 +33,7 @@
             CardPanel1 = new Panel();
             IdentitySearchBox = new CustomControls.CustomTextBox();
             CardSearchBox = new CustomControls.CustomTextBox();
+            SearchBtn = new CustomControls.CustomButton();
             IdentityAddBtn = new CustomControls.CustomButton();
             CardPanel3 = new Panel();
             IdentityDeletebtn = new CustomControls.CustomButton();
@@ -57,7 +58,6 @@
             NIDColumn = new DataGridViewTextBoxColumn();
             PassportColumn = new DataGridViewTextBoxColumn();
             IdentityNoItems = new Label();
-            SearchBtn = new CustomControls.CustomButton();
             CardPanel1.SuspendLayout();
             CardPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)IdentitydataGridView).BeginInit();
@@ -118,6 +118,25 @@
             CardSearchBox.TabIndex = 0;
             CardSearchBox.Texts = "";
             CardSearchBox.UnderlinedStyle = false;
+            // 
+            // SearchBtn
+            // 
+            SearchBtn.BackColor = Color.Transparent;
+            SearchBtn.BackgroundColor = Color.Transparent;
+            SearchBtn.BorderColor = Color.FromArgb(252, 92, 52);
+            SearchBtn.BorderRadius = 16;
+            SearchBtn.BorderSize = 2;
+            SearchBtn.FlatAppearance.BorderSize = 0;
+            SearchBtn.FlatStyle = FlatStyle.Flat;
+            SearchBtn.ForeColor = Color.Black;
+            SearchBtn.Location = new Point(579, 11);
+            SearchBtn.Name = "SearchBtn";
+            SearchBtn.Size = new Size(80, 32);
+            SearchBtn.TabIndex = 6;
+            SearchBtn.Text = "SEARCH";
+            SearchBtn.TextColor = Color.Black;
+            SearchBtn.UseVisualStyleBackColor = false;
+            SearchBtn.Click += SearchBtn_Click;
             // 
             // IdentityAddBtn
             // 
@@ -392,25 +411,6 @@
             IdentityNoItems.Text = "No Item Available";
             IdentityNoItems.Visible = false;
             // 
-            // SearchBtn
-            // 
-            SearchBtn.BackColor = Color.Transparent;
-            SearchBtn.BackgroundColor = Color.Transparent;
-            SearchBtn.BorderColor = Color.FromArgb(252, 92, 52);
-            SearchBtn.BorderRadius = 16;
-            SearchBtn.BorderSize = 2;
-            SearchBtn.FlatAppearance.BorderSize = 0;
-            SearchBtn.FlatStyle = FlatStyle.Flat;
-            SearchBtn.ForeColor = Color.Black;
-            SearchBtn.Location = new Point(579, 11);
-            SearchBtn.Name = "SearchBtn";
-            SearchBtn.Size = new Size(80, 32);
-            SearchBtn.TabIndex = 6;
-            SearchBtn.Text = "SEARCH";
-            SearchBtn.TextColor = Color.Black;
-            SearchBtn.UseVisualStyleBackColor = false;
-            SearchBtn.Click += SearchBtn_Click;
-            // 
             // IdentityForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
@@ -425,6 +425,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "IdentityForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "IdentityForm";
             CardPanel1.ResumeLayout(false);
             CardPanel3.ResumeLayout(false);
