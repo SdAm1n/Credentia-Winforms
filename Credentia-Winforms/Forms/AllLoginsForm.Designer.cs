@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             AllloginsPanel1 = new Panel();
             AllloginsSearchBox = new CustomControls.CustomTextBox();
             CardSearchBox = new CustomControls.CustomTextBox();
@@ -155,38 +155,38 @@
             AllloginsdataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             AllloginsdataGridView.BackgroundColor = Color.FromArgb(238, 246, 247);
             AllloginsdataGridView.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(252, 92, 52);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            AllloginsdataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(252, 92, 52);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            AllloginsdataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             AllloginsdataGridView.ColumnHeadersHeight = 35;
             AllloginsdataGridView.Columns.AddRange(new DataGridViewColumn[] { AllloginsNameColumn, AllloginsUsernameColumn, AllloginsPasswordColumn, AllloginsURLColumn });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            AllloginsdataGridView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            AllloginsdataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             AllloginsdataGridView.GridColor = SystemColors.ScrollBar;
             AllloginsdataGridView.Location = new Point(12, 57);
             AllloginsdataGridView.Name = "AllloginsdataGridView";
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(252, 92, 52);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            AllloginsdataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(252, 92, 52);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            AllloginsdataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             AllloginsdataGridView.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(217, 217, 217);
-            AllloginsdataGridView.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(217, 217, 217);
+            AllloginsdataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             AllloginsdataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             AllloginsdataGridView.Size = new Size(913, 433);
             AllloginsdataGridView.TabIndex = 8;
@@ -235,7 +235,7 @@
             AllloginPanel3.Controls.Add(SecureNoteDeletebtn);
             AllloginPanel3.Location = new Point(0, 491);
             AllloginPanel3.Name = "AllloginPanel3";
-            AllloginPanel3.Size = new Size(940, 53);
+            AllloginPanel3.Size = new Size(935, 53);
             AllloginPanel3.TabIndex = 9;
             // 
             // AllloginsDeletebtn
@@ -249,7 +249,7 @@
             AllloginsDeletebtn.FlatAppearance.BorderSize = 0;
             AllloginsDeletebtn.FlatStyle = FlatStyle.Flat;
             AllloginsDeletebtn.ForeColor = Color.Black;
-            AllloginsDeletebtn.Location = new Point(853, 5);
+            AllloginsDeletebtn.Location = new Point(848, 5);
             AllloginsDeletebtn.Name = "AllloginsDeletebtn";
             AllloginsDeletebtn.Size = new Size(68, 37);
             AllloginsDeletebtn.TabIndex = 10;
@@ -269,7 +269,7 @@
             AllloginsEditbtn.FlatAppearance.BorderSize = 0;
             AllloginsEditbtn.FlatStyle = FlatStyle.Flat;
             AllloginsEditbtn.ForeColor = Color.Black;
-            AllloginsEditbtn.Location = new Point(780, 5);
+            AllloginsEditbtn.Location = new Point(775, 5);
             AllloginsEditbtn.Name = "AllloginsEditbtn";
             AllloginsEditbtn.Size = new Size(67, 37);
             AllloginsEditbtn.TabIndex = 10;
@@ -289,7 +289,7 @@
             CardEditBtn.FlatAppearance.BorderSize = 0;
             CardEditBtn.FlatStyle = FlatStyle.Flat;
             CardEditBtn.ForeColor = Color.Black;
-            CardEditBtn.Location = new Point(1507, -45);
+            CardEditBtn.Location = new Point(1502, -45);
             CardEditBtn.Name = "CardEditBtn";
             CardEditBtn.Size = new Size(67, 37);
             CardEditBtn.TabIndex = 4;
@@ -308,7 +308,7 @@
             CardDeleteBtn.FlatAppearance.BorderSize = 0;
             CardDeleteBtn.FlatStyle = FlatStyle.Flat;
             CardDeleteBtn.ForeColor = Color.Black;
-            CardDeleteBtn.Location = new Point(1578, -45);
+            CardDeleteBtn.Location = new Point(1573, -45);
             CardDeleteBtn.Name = "CardDeleteBtn";
             CardDeleteBtn.Size = new Size(68, 37);
             CardDeleteBtn.TabIndex = 3;
@@ -327,7 +327,7 @@
             SecureNoteEditbtn.FlatAppearance.BorderSize = 0;
             SecureNoteEditbtn.FlatStyle = FlatStyle.Flat;
             SecureNoteEditbtn.ForeColor = Color.Black;
-            SecureNoteEditbtn.Location = new Point(2231, -89);
+            SecureNoteEditbtn.Location = new Point(2226, -89);
             SecureNoteEditbtn.Name = "SecureNoteEditbtn";
             SecureNoteEditbtn.Size = new Size(69, 37);
             SecureNoteEditbtn.TabIndex = 2;
@@ -346,7 +346,7 @@
             SecureNoteDeletebtn.FlatAppearance.BorderSize = 0;
             SecureNoteDeletebtn.FlatStyle = FlatStyle.Flat;
             SecureNoteDeletebtn.ForeColor = Color.Black;
-            SecureNoteDeletebtn.Location = new Point(2306, -89);
+            SecureNoteDeletebtn.Location = new Point(2301, -89);
             SecureNoteDeletebtn.Name = "SecureNoteDeletebtn";
             SecureNoteDeletebtn.Size = new Size(68, 37);
             SecureNoteDeletebtn.TabIndex = 1;
