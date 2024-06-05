@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             SettingsPanel = new Panel();
+            customCircularPictureBox1 = new CustomControls.CustomCircularPictureBox();
             SettingsDeletebtn = new CustomControls.CustomButton();
             customTextBox6 = new CustomControls.CustomTextBox();
             label6 = new Label();
@@ -47,12 +49,14 @@
             STusername = new Label();
             ActiveUsernameLabel = new Label();
             SettingsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)customCircularPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // SettingsPanel
             // 
             SettingsPanel.Anchor = AnchorStyles.None;
             SettingsPanel.BackColor = Color.FromArgb(238, 246, 247);
+            SettingsPanel.Controls.Add(customCircularPictureBox1);
             SettingsPanel.Controls.Add(SettingsDeletebtn);
             SettingsPanel.Controls.Add(customTextBox6);
             SettingsPanel.Controls.Add(label6);
@@ -74,6 +78,22 @@
             SettingsPanel.Name = "SettingsPanel";
             SettingsPanel.Size = new Size(743, 540);
             SettingsPanel.TabIndex = 0;
+            // 
+            // customCircularPictureBox1
+            // 
+            customCircularPictureBox1.BorderCapStyle = System.Drawing.Drawing2D.DashCap.Flat;
+            customCircularPictureBox1.BorderColor = Color.RoyalBlue;
+            customCircularPictureBox1.BorderColor2 = Color.HotPink;
+            customCircularPictureBox1.BorderLineStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            customCircularPictureBox1.BorderSize = 2;
+            customCircularPictureBox1.GradientAngle = 50F;
+            customCircularPictureBox1.Image = (Image)resources.GetObject("customCircularPictureBox1.Image");
+            customCircularPictureBox1.Location = new Point(122, 12);
+            customCircularPictureBox1.Name = "customCircularPictureBox1";
+            customCircularPictureBox1.Size = new Size(70, 70);
+            customCircularPictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            customCircularPictureBox1.TabIndex = 18;
+            customCircularPictureBox1.TabStop = false;
             // 
             // SettingsDeletebtn
             // 
@@ -351,6 +371,7 @@
             Load += SettingsForm_Load;
             SettingsPanel.ResumeLayout(false);
             SettingsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)customCircularPictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -374,5 +395,6 @@
         private Label label6;
         private CustomControls.CustomTextBox DeleteMPTextBox;
         public CustomControls.CustomButton SettingsDeletebtn;
+        private CustomControls.CustomCircularPictureBox customCircularPictureBox1;
     }
 }

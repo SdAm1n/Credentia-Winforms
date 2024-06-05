@@ -145,5 +145,9 @@ namespace Credentia_Winforms
             return DBConnectionHelper.GetConnectionString(connectionStringName);
         }
 
+        private void SettingsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
