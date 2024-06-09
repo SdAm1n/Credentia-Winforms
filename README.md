@@ -15,7 +15,7 @@ Credentia is a digital credential storage system that allows users to store thei
 
 ## Signup Page
 
-![Signup Page](./Images/SignupPage.png)
+![Signup Page](./Images/signupPage.png)
 
 ## 2FA setup page
 
