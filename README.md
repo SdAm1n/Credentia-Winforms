@@ -54,9 +54,6 @@ Todo:
 - [x] Password Generator Page
 - [x] Settings Page
 - [x] Empty State Page
-- [ ] Loading Page
-- [ ] Animation and Styling
-- [ ] Light and Dark Mode
 - [x] Edit/Add Page
 - [x] Delete Page
 - [x] Profile Page (Can be included in settings)
@@ -65,11 +62,10 @@ Todo:
 ## Backend
 
 - [x] User Authentication
-- [x] Multi User Login System
+- [x] Multi-User Login System
 - [x] Hashing
 - [x] Encryption and Decryption
 - [x] Database
-- [ ] Password Strength
 - [x] 2FA
 - [x] Password Generator
 - [x] Search
